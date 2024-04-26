@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+
+.header{
+    width: 100%;
+    height: 75px;
+    display: block;
+    background-color: #2b2929;
+
+}
+
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+   
+}
+.logo{
+    
+    height: 45px;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    
+}
+
+.logo_name{
+    font-size: 45px;
+    font-family: "Almendra SC";
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+    
+}
+
+nav{
+
+    flex: 1;
+    text-align: right;
+}
+
+.profile{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+
+
+.cart{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+
+
+.search{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+
+.back{
+    position: relative;
+    top: 380px;
+    left: 150px;
+    text-decoration: none;
+    cursor: default;
+    
+}
+
+.krooked{
+    font-size: 40px;
+    font-family: "Almendra SC";
+    position: absolute;
+    bottom: 5px;
+    
+}
+.product_name{
+    font-size: 50px;
+    font-family: "Cinzel Decorative";
+    font-weight: bold;
+    position: absolute;
+    
+}
+.statement{
+    font-size: 20px;
+    font-family: "Satisfy";
+    position: absolute;
+    top: 70px;
+    left: 15px;
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+
+}
+
+.shop_button{
+    position: absolute;
+    left: 395px;
+    top: 150px;
+
+    background-color: black ;
+    opacity: 0.8;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
