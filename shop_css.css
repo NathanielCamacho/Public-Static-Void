@@ -102,72 +102,12 @@ nav{
     
 }
 
-.back{
-    position: relative;
-    top: 380px;
-    left: 150px;
-    text-decoration: none;
-    cursor: default;
-    
-}
-
-.krooked{
-    font-size: 40px;
-    font-family: "Almendra SC";
-    position: absolute;
-    bottom: 5px;
-    
-}
-.product_name{
-    font-size: 50px;
-    font-family: "Cinzel Decorative";
-    font-weight: bold;
-    position: absolute;
-    text-decoration: none;
-    color: black;
-    
-}
-.statement{
-    font-size: 20px;
-    font-family: "Satisfy";
-    position: absolute;
-    top: 70px;
-    left: 15px;
-}
-
-.bg{
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-
-}
-
-.shop_button{
-    position: absolute;
-    
-    top: 150px;
-
-    background-color: black ;
-    opacity: 0.8;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 15px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    
-}
-
 .top_text{
     font-size: 50px;
     font-family: "Almendra SC";
     text-align: center;
     cursor: default;
+    margin-top: 50px;
 }
 
 .products{
@@ -185,7 +125,7 @@ nav{
 
 .year{
     display: inline-block;
-    margin-left: 120px;
+    margin-left: 115px;
 
     width: 250px;
     height: 450px;
@@ -198,12 +138,10 @@ nav{
 .year_des{
     position: absolute;
     
-    
+    left:350px;
     font-size: 12px;
     cursor: default;
-    margin-top: 500px;
-    margin-left: 120px;
-
+    margin-top: 32%;
 }
 .Champs{
     display: inline-block;
@@ -217,12 +155,11 @@ nav{
 }
 .champs_des{
     position: absolute;
-    
-    
+   
+    left:627px;
     font-size: 12px;
     cursor: default;
-    margin-top: 500px;
-    margin-left: 400px;
+    margin-top: 32%;
 
 }
 
@@ -238,14 +175,129 @@ nav{
 }
 
 .mamba_des{
-    position: absolute;
+    position:absolute;
     
-    
+    left:912px;
     font-size: 12px;
     cursor: default;
-    margin-top: 500px;
-    margin-left: 690px;
+    margin-top: 32%;
    
+}
+
+
+
+.bottom_products{
+   
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    margin-top: 100px;
+   margin-bottom: 50px;
+    
+}
+
+.flames{
+    display: inline-block;
+    margin-left: 125px;
+
+    width: 255px;
+    height: 450px;
+    border: #2b2929;
+    border-style: solid;
+}
+
+.care{
+    display: inline-block;
+    margin-left: 25px;
+
+    width: 250px;
+    height: 450px;
+    border: #2b2929;
+    border-style: solid;
+   
+}
+
+.MONOGCHROME{
+    display: inline-block;
+    margin-left: 25px;
+
+    width: 260px;
+    height: 450px;
+    border: #2b2929;
+    border-style: solid;
+}
+
+.flames_des{
+    position: absolute;
+    
+    left:355px;
+    padding-top: 500px;
+    font-size: 12px;
+    cursor: default;
+}
+
+.care_des{
+    position: absolute;
+    
+   padding-left: 420px;
+    padding-top: 500px;
+    font-size: 12px;
+    cursor: default;
+    
+
+}
+
+.MONOGCHROME_des{
+
+    
+    position: absolute;
+    
+    left:930px;
+    padding-top: 500px;
+    font-size: 12px;
+    cursor: default;
+    
+   
+    
+
+}
+
+.bottom{
+    margin-top: 30px;
+    font-size: 50px;
+    font-family: "Almendra SC";
+    text-align: center;
+    cursor: default;
+}
+
+.windbreaker{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px ;
+    width: 50%;
+    border: #2b2929 ;
+    border-style: solid;
+
+
+}
+
+.windbreaker_txt{
+    
+    position: relative;
+    left: 40%;
+    font-size: 16px;
+    
+   
+    cursor: default;
+     
+    
+    
+    
 }
 
 
