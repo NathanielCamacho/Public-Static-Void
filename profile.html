@@ -12,12 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
     
-    <style>
-        .error {
-            color: rgb(252, 148, 148);
-            display: none;
-        }
-    </style>
+
 </head>
 <body>
     <div class="header">
@@ -49,8 +44,9 @@
             <span class="error" id="usernameError">Username cannot contain spaces.</span>
 
             <br></br><label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-                
+            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+            <span class="error" id="passwordError">Password must be at least 5 characters long.</span>
+    
             <button type="submit">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember" class="checkbox"> Remember me
@@ -71,6 +67,17 @@
                 error.style.display = 'inline';
             } else {
                 error.style.display = 'none';
+            }
+        });
+
+        document.getElementById('psw').addEventListener('input', function() {
+            var psw = this.value;
+            var passwordError = document.getElementById('passwordError');
+
+            if (psw.length < 5) {
+                passwordError.style.display = 'inline';
+            } else {
+                passwordError.style.display = 'none';
             }
         });
 
