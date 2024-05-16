@@ -133,6 +133,7 @@ input[type=text], input[type=password] {
 }
   
   button {
+    font-family: "Monaco";
     background-color: #44ce9b;
     color: rgb(58, 54, 54);
     padding: 14px 20px;
@@ -153,6 +154,7 @@ input[type=text], input[type=password] {
   }
 
 .psw{
+    font-family: "Monaco";
     cursor: default;
 }
 .pass{
@@ -172,4 +174,9 @@ input[type=text], input[type=password] {
     padding: 20px;
     background-color: #292828;
   }
+
+  .error {
+    color: #cd8022;
+    display: none;
+}
   
