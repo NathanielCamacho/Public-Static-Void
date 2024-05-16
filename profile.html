@@ -40,19 +40,19 @@
     <div class="main">
         <form id="unameForm">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+            <input autocomplete="off" type="text" placeholder="Enter Username" id="uname" name="uname" required>
             <span class="error" id="usernameError">Username cannot contain spaces.</span>
 
-            <br></br><label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+            <label for="psw"><b>Password</b></label>
+            <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="psw" required>
             <span class="error" id="passwordError">Password must be at least 5 characters long.</span>
-    
+
             <button type="submit">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember" class="checkbox"> Remember me
             </label>
         </form>
-      
+
         <div class="container">
             <span class="psw"><a href="#" class="pass">Forgot password?</a></span>
         </div>
