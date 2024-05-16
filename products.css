@@ -1,50 +1,43 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
 
-body{
+body {
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
-    background-image: linear-gradient(to top, gray,rgb(231, 218, 218)); 
-    
-
+    background-image: linear-gradient(to top, gray, rgb(231, 218, 218));
 }
 
-
-.header{
+.header {
     width: 100%;
     height: 75px;
     display: block;
     background-color: #2b2929;
-
 }
 
-.navbar{
+.navbar {
     height: 12%;
     display: flex;
     align-items: center;
-   
 }
-.logo{
-    
+
+.logo {
     height: 45px;
-    
     list-style: none;
     display: inline-block;
     position: relative;
     top: 15px;
     left: 15px;
     cursor: pointer;
-    
 }
 
-.logo_name{
+.logo_name {
     width: 100%;
     font-size: 45px;
     font-family: "Almendra SC";
@@ -54,17 +47,16 @@ body{
     text-decoration: none;
     color: #fff;
     cursor: default;
-    
-    
 }
 
-nav{
-
+nav {
     flex: 1;
     text-align: right;
 }
 
-.profile{
+.profile,
+.cart,
+.about {
     list-style: none;
     display: inline-block;
     margin-left: 25px;
@@ -74,168 +66,98 @@ nav{
     cursor: pointer;
     text-decoration: none;
     color: #fff;
-    width: 20%;
-    
-    
 }
 
-
-.cart{
-    list-style: none;
-    display: inline-block;
-    margin-left: 25px;
-    position: relative;
-    bottom: 73px;
-    right: 25px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-    
-    
-}
-
-
-.about{
-    list-style: none;
-    display: inline-block;
-    margin-left: 25px;
-    position: relative;
-    bottom: 73px;
-    right: 25px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-    
-    
-}
-.product{
+.product {
     display: inline-flex;
     align-items: center;
     width: 100%;
-    
 }
 
-.product img{
-   
-   
+.product img {
     height: 800px;
     width: auto;
     border: #2b2929 solid 2px;
     margin-left: 5%;
     margin-top: 5%;
-    
-    
-    
-
-
 }
 
-
-.product_container{
-    
-   
-   
-   padding-top: 5%;
-   padding-bottom: 5%;
-   padding-left: 20px;
-  
-   padding-right: 17%;
-  
+.product_container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 20px;
+    padding-right: 17%;
     border: #2b2929 solid 3px;
-  margin-left: 10%;
+    margin-left: 10%;
 }
 
-
-.product_container .description{
+.product_container .description {
     font-family: 'Sedan';
-    font-weight:400;
+    font-weight: 400;
     text-align: left;
     font-size: 40px;
     margin-bottom: 10px;
-
-
 }
-.product_container .price{
-    
-    
+
+.product_container .price {
     text-align: left;
     font-size: 25px;
     margin-bottom: 10px;
-
 }
 
-.product_container hr{
-    height:1.5px;
-    border-width:0;
-    color:rgb(9, 9, 9);
-    background-color:rgb(8, 7, 7);
+.product_container hr {
+    height: 1.5px;
+    border-width: 0;
+    color: rgb(9, 9, 9);
+    background-color: rgb(8, 7, 7);
     margin: 1px;
 }
 
-.color button{
-        padding: 5px;
-        margin-left: 10px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-      
-       
-        cursor: pointer;
-       
+.color button {
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-
-
-
-
-
-.size button{
+.size button {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 5px;
     cursor: pointer;
-
 }
 
-
-
-
-
-
-
-
-.qty-input input{
+.qty-input input {
     margin-top: 5px;
     margin-left: 15px;
     text-align: center;
     border: #2b2929 solid 1px;
-
 }
 
-.submit{
-   
+.submit {
     text-align: center;
 }
 
-.submit button{
+.submit button {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 50px;
     padding-right: 50px;
     text-align: left;
-
-    
     margin: 10px;
 }
-hr{
-    height:2px;
-    
-    color:rgb(9, 9, 9);
-    background-color:rgb(8, 7, 7);
+
+hr {
+    height: 2px;
+    color: rgb(9, 9, 9);
+    background-color: rgb(8, 7, 7);
     margin-top: 50px;
     margin-bottom: 20px;
 }
-.text3{
+
+.text3 {
     font-family: "Cinzel Decorative";
     font-weight: bold;
     font-style: italic;
@@ -248,86 +170,117 @@ hr{
     cursor: default;
 }
 
-.products{
+.products {
     display: inline-block;
-    
     align-items: center;
     width: 200px;
     border: 2px solid black;
-    
     margin-bottom: 15px;
     margin-left: 12.5%;
     background-color: #1d1919;
-
-        
-    
-   
-
 }
 
-.products .description{
+.products .description {
     padding: 10px;
     text-align: center;
     font-size: 17px;
     font-family: 'Calibri';
-    
     cursor: default;
     color: whitesmoke;
 }
 
-.products img{
+.products img {
     width: 100%;
     height: auto;
 }
 
-.products:hover{
-    border: 2px solid rgb(188, 174, 174) ;
-  
+.products:hover {
+    border: 2px solid rgb(188, 174, 174);
 }
 
-
-
-
-
-
-
-.footer{
-    
+.footer {
     width: 100%;
     background: #333;
     color: #efefef;
-   
     padding-top: 10px;
     cursor: default;
     margin-top: 15px;
-        
 }
 
-.footer div{
-    text-align: center ;
+.footer div {
+    text-align: center;
 }
 
-
-
-
-
-.col-1 a{
+.col-1 a {
     display: block;
     text-decoration: none;
     color: white;
     display: inline-block;
-    
 }
 
-.social-icons{
+.social-icons {
     margin-top: 2px;
     margin-bottom: 2px;
-
 }
 
-.social-icons i{
+.social-icons i {
     font-size: 22px;
     margin: 10px;
     cursor: pointer;
-    
+}
+
+/* color and size css */
+.container form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+}
+
+.container label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.container label input:checked + span {
+    background-color: #414181;
+    color: white;
+}
+
+.container label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+.container label span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+    color: #414181;
+}
+
+.container label span:hover {
+    background-color: #d6d6e5;
+}
+
+.container label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #00005c;
 }
