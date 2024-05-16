@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: linear-gradient(to top, gray,rgb(231, 218, 218)); 
+    
+
+}
+
+
+.header{
+    width: 100%;
+    height: 75px;
+    display: block;
+    background-color: #2b2929;
+
+}
+
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+   
+}
+.logo{
+    
+    height: 45px;
+    
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    
+}
+
+.logo_name{
+    width: 100%;
+    font-size: 45px;
+    font-family: "Almendra SC";
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+    
+    
+}
+
+nav{
+
+    flex: 1;
+    text-align: right;
+}
+
+.profile{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    width: 20%;
+    
+    
+}
+
+
+.cart{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+
+
+.about{
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+    bottom: 73px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+.product{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.product img{
+   
+   
+    height: 800px;
+    width: auto;
+    border: #2b2929 solid 2px;
+    margin-left: 5%;
+    margin-top: 5%;
+    
+    
+    
+
+
+}
+
+
+.product_container{
+    
+   
+   
+   padding-top: 5%;
+   padding-bottom: 5%;
+   padding-left: 20px;
+  
+   padding-right: 17%;
+  
+    border: #2b2929 solid 3px;
+  margin-left: 10%;
+}
+
+
+.product_container .description{
+    font-family: 'Sedan';
+    font-weight:400;
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 10px;
+
+
+}
+.product_container .price{
+    
+    
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 10px;
+
+}
+
+.product_container hr{
+    height:1.5px;
+    border-width:0;
+    color:rgb(9, 9, 9);
+    background-color:rgb(8, 7, 7);
+    margin: 1px;
+}
+
+.color button{
+        padding: 5px;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      
+       
+        cursor: pointer;
+       
+}
+
+
+
+
+
+
+.size button{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+.qty-input input{
+    margin-top: 5px;
+    margin-left: 15px;
+    text-align: center;
+    border: #2b2929 solid 1px;
+
+}
+
+.submit{
+   
+    text-align: center;
+}
+
+.submit button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+
+    
+    margin: 10px;
+}
+hr{
+    height:2px;
+    
+    color:rgb(9, 9, 9);
+    background-color:rgb(8, 7, 7);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.text3{
+    font-family: "Cinzel Decorative";
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 15px;
+    font-size: 25px;
+    margin-bottom: 35px;
+    position: relative;
+    top: 15px;
+    cursor: default;
+}
+
+.products{
+    display: inline-block;
+    
+    align-items: center;
+    width: 200px;
+    border: 2px solid black;
+    
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    background-color: #1d1919;
+
+        
+    
+   
+
+}
+
+.products .description{
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Calibri';
+    
+    cursor: default;
+    color: whitesmoke;
+}
+
+.products img{
+    width: 100%;
+    height: auto;
+}
+
+.products:hover{
+    border: 2px solid rgb(188, 174, 174) ;
+  
+}
+
+
+
+
+
+
+
+.footer{
+    
+    width: 100%;
+    background: #333;
+    color: #efefef;
+   
+    padding-top: 10px;
+    cursor: default;
+    margin-top: 15px;
+        
+}
+
+.footer div{
+    text-align: center ;
+}
+
+
+
+
+
+.col-1 a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    
+}
+
+.social-icons{
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+}
+
+.social-icons i{
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+    
+}
