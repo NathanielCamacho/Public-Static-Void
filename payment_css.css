@@ -64,6 +64,22 @@ nav ul li a{
     
 }
 
+.container{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+
+}
+.container img{
+    margin: 25px;
+    height: 500px;
+    border: #000000 solid 1px;
+}
+
+.referenceID{
+    margin: 50px;
+}
+
 
 
 
