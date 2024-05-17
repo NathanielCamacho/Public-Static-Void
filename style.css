@@ -82,8 +82,8 @@ nav ul li a{
 }
 
 .container {
-    display: inline-block;  
-    height: 88%;  
+    display: flex;  
+    height: 100%;  
     align-items: center;
     margin-left: 10%;
 }
