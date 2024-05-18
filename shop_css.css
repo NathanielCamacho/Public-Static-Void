@@ -75,19 +75,24 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .windbreaker img {
     display: block;
     width: 500px;
+
 }
 
-.windbreaker .description {
+.description {
     padding: 10px;
     text-align: center;
     cursor: default;
     color: #efefef;
     font-family: 'Calibri';
+
+
+    
 }
 
 
@@ -97,6 +102,7 @@ hr {
     border-width: 0;
     color: rgb(5, 5, 5);
     background-color: rgb(2, 2, 2);
+    margin-top: 15px;
 }
 
 .text3 {
@@ -139,11 +145,20 @@ hr {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    
+    background-color:#1f1d1d ;
+}
+
+.products .wrapper {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .parent {
     width: 90%;
-    margin: 30px;
+    margin: 10px;
     height: 333px;
     overflow: hidden;
     display: inline-block;
