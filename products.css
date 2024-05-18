@@ -193,10 +193,6 @@ hr {
     height: auto;
 }
 
-.products:hover {
-    border: 2px solid rgb(188, 174, 174);
-}
-
 .footer {
     width: 100%;
     background: #333;
