@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
+    <form action="checkout.php" method="post">
     <div class="header">
         <div class="navbar">
             <a href="homepage.html">
@@ -31,12 +32,13 @@
     <div class="product">
         <img src="krooked product/mamba.png">
         <div class="product_container">
-            <div class="description">Windbreaker</div>
-            <div class="price">₱999.00</div>
+
+            <div class="description">Mamba</div>
+            <div class="price">₱500.00</div>
             <hr>
             <div class="container">
                 <form>
-                    <label><input type="radio" name="radio" checked=""><span>Black</span></label>
+                    <label><input type="radio" name="color" checked=""><span>Black</span></label>
                 </form>
             </div>
             <br>
@@ -50,10 +52,10 @@
                 </form>
             </div>
             <div class="qty-input">
-                <div class="qty">Quantity: <br><input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1"></div>
+                <div class="qty">Quantity: <br><input class="product-qty" type="number" name="qty" min="0" max="10" value="1"></div>
             </div>
             <div class="submit">
-                <button>Add to cart</button>
+                <button name="submit">Add to cart</button>
             </div>
         </div>
     </div>
@@ -116,5 +118,6 @@
             <h3>@Bart Ceria</h3>
         </div>
     </div>
+</form>
 </body>
 </html>
