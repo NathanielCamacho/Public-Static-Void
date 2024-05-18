@@ -1,7 +1,7 @@
 <?php
-$color = $_POST['color'];
-$size = $_POST['size'];
-$qty = $_POST['qty'];
+$color = $_POST["color"];
+$size = $_POST["size"];
+$qty = $_POST["qty"];
 
 
  ?>
@@ -42,7 +42,12 @@ $qty = $_POST['qty'];
         </div>
     </div> 
 
-    echo"$color";
+    <?php
+        echo "IMONG KULAY AY ".$color .$qty . $size ;
+    ?>
+
+   
+  
 
     <div class="footer">
         <div class="col-1">
