@@ -140,7 +140,7 @@ body {
 
 input[type="text"],
 input[type="password"] {
-    max-width: 1000px;
+    max-width: 925px;
     height: 44px;
     background-color: #05060f0a;
     border-radius: .5rem;
