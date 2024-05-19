@@ -2,6 +2,9 @@
 $color = $_POST["color"];
 $size = $_POST["size"];
 $qty = $_POST["qty"];
+$product = $_POST["product"];
+$price = 500;
+$w_price = 999;
 
 
  ?>
@@ -12,7 +15,7 @@ $qty = $_POST["qty"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krooked Clothing</title>
-    <link rel="stylesheet" href="payment_css.css">
+    <link rel="stylesheet" href="checkout.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +45,47 @@ $qty = $_POST["qty"];
         </div>
     </div> 
 
-    <?php
-        echo "IMONG KULAY AY ".$color .$qty . $size ;
-    ?>
+   <div class="container">
+    <table>
+   <tr >
+            <th>PRODUCT</th>
+            <th>Quantity</th>
+            <th>COLOR</th>
+            <th>PRICE</th>
+          
+    </tr>
+
+    <tr>
+        <td><?php
+        echo $product;
+        ?></td>
+        <td><?php echo$qty;
+        ?></td>
+         <td><?php echo$color;
+        ?></td>
+         <td><?php echo$price;
+        ?></td>
+    </tr>
+    </table>
+
+   </div>
+
+   <div class="payContainer">
+    <h1>Shipping information</h1>
+    Email: <br>
+    <input type="text" name="email"  ><br>
+    Address: <br>
+    <input type="text" name="address" id=""><br>
+    <div class="submit">
+                <button class="Btn">
+                   
+                    <span class="text">Proceed to Payment</span>
+                       
+                </button>
+            </div>
+   </div>
+
+    <a href="mamba.html"><button>back</button></a>
 
    
   

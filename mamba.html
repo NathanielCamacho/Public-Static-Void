@@ -34,12 +34,13 @@
         <img src="krooked product/mamba.png" alt="lebron">
         <div class="product_container">
             <div class="description">Mamba</div> 
+            <input type="hidden" name="price" value="500">
             <div class="price">₱500.00</div>
             <hr>
             <div class="container">
                
                     <label>
-                        <input type="radio" name="radio" checked="">
+                        <input type="radio" name="color" value="Black" checked="">
                         <span>Black</span>
                     </label>
                 
@@ -50,15 +51,15 @@
             <div class="container">
               
                     <label>
-                        <input type="radio" name="size" checked="">
+                        <input type="radio" name="size" value="Small" checked="">
                         <span>Small</span>
                     </label>
                     <label>
-                        <input type="radio" name="size">
+                        <input type="radio" name="size" value="Medium">
                         <span>Medium</span>
                     </label>
                     <label>
-                        <input type="radio" name="size">
+                        <input type="radio" name="size" value="Large">
                         <span>Large</span>
                     </label>
                 
@@ -68,13 +69,15 @@
             <div class="qty-input">
                 <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
                 <div class="qty">
-                    <input class="product-qty" type="number" name="product-qty" min="1" max="10" value="1">
+                    <input class="product-qty" type="number" name="qty" min="1" max="10" value="1">
                 </div>
                 <div class="number-right" data-content="+" onclick="increaseQty()"></div>
             </div>
             <br>
             <div class="submit">
                 <button class="Btn">
+                    <input type="hidden" name="product" value="Mamba">
+                    
                     <span class="text">Add To Cart</span>
                         <span class="svgIcon">
                         <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
