@@ -67,18 +67,60 @@ nav ul li a{
 .container{
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
 
 }
 .container img{
-    margin: 25px;
+    margin: 20px;
     height: 500px;
-    border: #000000 solid 1px;
+    border: #000000 solid 3px;
+}
+
+.id{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .referenceID{
-    margin: 50px;
+    margin: 15px;
+    border: #000000 solid 3px;
+    padding: 5.5px;
+
 }
+
+.referencePIC{
+    background-color: rgb(225, 241, 218);
+    margin: 15px;
+    border: #000000 solid 3px;
+    padding: 3px;
+    font-family: "Calibri";
+    
+   
+}
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+
+}
+.submit{
+    
+    background-color: rgb(225, 241, 218);
+    border: #000000 solid 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Calibri";
+}
+
 
 
 
@@ -92,6 +134,7 @@ nav ul li a{
 
 
 .footer {
+    margin-top: 15px;
     width: 100%;
     background: #333;
     color: #efefef;
