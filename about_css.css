@@ -10,6 +10,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    background-color: rgb(15, 13, 13);
 }
 
 .header {
@@ -64,25 +65,53 @@ nav ul li a{
 }   
 
 .container {
+    display: inline-flex;  
+   
+   
+   
+   
+   
+}
+
+.container h1{
+    font-family: "Almendra SC";
+    color: #efefef;
+}
+
+.container p{
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    color: white;
+}
+
+.about{
     display: block;  
     height: 100%;  
     align-items: center;
     margin-left: 10%;
     margin-top: 15%;
+    margin-right: 25%;
    
     width: 20%;
 }
 
-.container h1{
-    font-family: "Almendra SC";
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    
+}
+ img{
+    
+    height: 300px;
 }
 
 
 .footer {
-    width: 100%;
+
     background: #333;
     color: #efefef;
-    position: relative;
     padding-top: 10px;
     cursor: default;
     margin-top: 15%;
