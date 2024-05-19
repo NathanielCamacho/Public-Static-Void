@@ -128,13 +128,57 @@ nav ul li a{
     cursor: pointer;
 }
 
+/* quantity CSS */
 .qty-input input {
     margin-top: 5px;
-    margin-left: 15px;
     text-align: center;
     border: #2b2929 solid 1px;
 }
 
+.qty-input {
+    display: flex;
+    align-items: center;
+}
+
+.number-left::before,
+.number-right::after {
+    margin-top: 5px;
+    content: attr(data-content);
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 23px;
+    height: 23px;
+    color: white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.number-left::before {
+    content: "-";
+}
+
+.number-right::after {
+    content: "+";
+}
+
+.product-qty {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+    appearance: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.number-left:hover::before,
+.number-right:hover::after {
+    background-color: #666666;
+}
+
+/* Submit Button */
 .submit {
     text-align: center;
 }

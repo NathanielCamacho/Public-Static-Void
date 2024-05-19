@@ -50,8 +50,13 @@
                 <label><input type="radio" name="size"><span>Large</span></label>
             </form>
         </div>
+        <br>Quantity: <br>
         <div class="qty-input">
-            <div class="qty">Quantity: <br><input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1"></div>
+            <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
+            <div class="qty">
+                <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+            </div>
+            <div class="number-right" data-content="+" onclick="increaseQty()"></div>
         </div>
         <div class="submit">
             <button>Add to cart</button>
@@ -118,6 +123,6 @@
         <h3>@Bart Ceria</h3>
     </div>
 </div>
-
+<script src="script.js"></script>   
 </body>
 </html>

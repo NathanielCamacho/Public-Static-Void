@@ -70,8 +70,13 @@
                 </form>
             </div>
             <div class="qty-input">
-                <div class="qty">Quantity: <br>
-                    <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                <br>Quantity: <br>
+                <div class="qty-input">
+                    <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
+                    <div class="qty">
+                        <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                    </div>
+                    <div class="number-right" data-content="+" onclick="increaseQty()"></div>
                 </div>
             </div>
             <div class="submit">
@@ -138,5 +143,6 @@
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
