@@ -1,33 +1,111 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
 
-body{
+body {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
-    
-
 }
 
-
-.header{
+.header {
     width: 100%;
     height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #2b2929;
-
+    padding-left: 3%;
+    padding-right: 5%;
+    box-sizing: border-box;
 }
 
-.logo{
+.navbar {
+    height: 100%;
+    display: flex;
+    align-items:center;   
+    
+    
+}
+
+
+.logo {
     height: 45px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.logo_name {
+   
+    font-size: 45px;
+    font-family: "Almendra SC";
+    margin-left: 15px;
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+    
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    
+}   
+
+.container {
+    display: block;  
+    height: 100%;  
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 15%;
+   
+    width: 20%;
+}
+
+.container h1{
+    font-family: "Almendra SC";
 }
 
 
+.footer {
+    width: 100%;
+    background: #333;
+    color: #efefef;
+    position: relative;
+    padding-top: 10px;
+    cursor: default;
+    margin-top: 15%;
+}
+
+.footer div {
+    text-align: center ;
+}
+
+.col-1 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+.social-icons {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
