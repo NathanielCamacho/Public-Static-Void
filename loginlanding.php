@@ -19,7 +19,7 @@
             <div class="logo_name">The Krooked</div>
             <nav>
                 <ul>
-                    <li><a href="profile.html" class="profile">
+                    <li><a href="loginpage.php" class="profile">
                         <i class="fa-regular fa-user fa-xl"></i>
                     </a></li>
                     <li><a href="shopnow.html" class="cart">
