@@ -1,3 +1,40 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "krookedweb";
+
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_SESSION['username'];
+$sql = "SELECT username, regdate, completedorders, pendingorders FROM users WHERE username='$username'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userInfo = [
+        'username' => $row['username'],
+        'regdate' => $row['regdate'],
+        'completedorders' => $row['completedorders'],
+        'pendingorders' => $row['pendingorders']
+    ];
+} else {
+    echo "No user found with the provided username.";
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,26 +70,10 @@
         </div>
     </div>
     <div class="main">
-        <form id="unameForm" action="refconn.php" method="post">
-            <label for="uname"><b>Username</b></label>
-            <input autocomplete="off" type="text" placeholder="Enter Username" id="uname" name="username" required>
-            <span class="error" id="usernameError">Username cannot contain spaces.</span>
-
-            <label for="psw"><b>Password</b></label>
-            <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="password" required>
-            <span class="error" id="passwordError">Password must be at least 8 characters long and contain only letters and numbers.<br></span>
-
-            <button type="submit" name="action" value="login">Login</button>
-            <button type="submit" name="action" value="signup">Sign up</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember" class="checkbox"> Remember me
-            </label>
-        </form>
-
-        <div class="container">
-            <span class="psw"><a href="#" class="pass">Forgot password?</a></span>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <h1>Welcome, <?php echo $userInfo['username']; ?>!</h1>
+        <p>Registration Date: <?php echo $userInfo['registration_date']; ?></p>
+        <p>Number of Completed Orders: <?php echo $userInfo['completed_orders']; ?></p>
+        <p>Number of Pending Orders: <?php echo $userInfo['pending_orders']; ?></p>
+        <button onclick="window.location.href='order_details.php'">View Order Details</button>
+        </body>
 </html>

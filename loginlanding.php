@@ -36,11 +36,11 @@
         <?php
         session_start();
         if (!isset($_SESSION['username'])) {
-            header("Location: profile.html");
+            header("Location: loginpage.php");
             exit();
         }
-        echo "Login successful.";
+        echo "<h1>Login successful.</h1><br><br>";
         ?>
-        <a href="shopnow.html">Continue to product catalog</a>
+        <a href="shopnow.html"><h1>Continue to product catalog</h1></a>
         </body>
 </html>
