@@ -71,9 +71,9 @@ $conn->close();
     </div>
     <div class="main">
         <h1>Welcome, <?php echo $userInfo['username']; ?>!</h1>
-        <p>Registration Date: <?php echo $userInfo['registration_date']; ?></p>
-        <p>Number of Completed Orders: <?php echo $userInfo['completed_orders']; ?></p>
-        <p>Number of Pending Orders: <?php echo $userInfo['pending_orders']; ?></p>
-        <button onclick="window.location.href='order_details.php'">View Order Details</button>
+        <p>Registration Date: <?php echo $userInfo['regdate']; ?></p>
+        <p>Number of Completed Orders: <?php echo $userInfo['completedorders']; ?></p>
+        <p>Number of Pending Orders: <?php echo $userInfo['pendingorders']; ?></p>
+        <button onclick="window.location.href='placeholder.html'">View Order Details</button>
         </body>
 </html>
