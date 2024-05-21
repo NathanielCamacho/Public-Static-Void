@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 if(isset($_SESSION['username'])) {
-    header("Location: testpage.php");
-    exit(); 
+    header("Location: userprofile.php");
+    exit();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

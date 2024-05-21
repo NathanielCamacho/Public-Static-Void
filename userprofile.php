@@ -1,4 +1,38 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
 
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "krookedweb";
+
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_SESSION['username'];
+$sql = "SELECT username, regdate, completedorders, pendingorders FROM userdata WHERE username='$username'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userInfo = [
+        'username' => $row['username'],
+        'regdate' => $row['regdate'],
+    ];
+} else {
+    echo "No user found with the provided username.";
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,17 +68,8 @@
         </div>
     </div>
     <div class="main">
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])) {
-        $_SESSION = array();
-        session_destroy();
-        echo "<h1>Logout successful.</h1>";
-    } else {
-        header("Location: loginpage.php");
-        exit();
-    }
-    ?>
-        <a href="homepage.html"><h1>Go back to home page.</h1></a>
+        <h1>Welcome, <?php echo $userInfo['username']; ?>!</h1>
+        <p>Registration Date: <?php echo $userInfo['regdate']; ?></p>
+        <button onclick="window.location.href='logout.php'">Log Out Account</button>
         </body>
 </html>
