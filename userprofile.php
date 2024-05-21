@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION['username'];
-$sql = "SELECT username, regdate, completedorders, pendingorders FROM users WHERE username='$username'";
+$sql = "SELECT username, regdate, completedorders, pendingorders FROM userdata WHERE username='$username'";
 
 $result = $conn->query($sql);
 
@@ -75,5 +75,6 @@ $conn->close();
         <p>Number of Completed Orders: <?php echo $userInfo['completedorders']; ?></p>
         <p>Number of Pending Orders: <?php echo $userInfo['pendingorders']; ?></p>
         <button onclick="window.location.href='placeholder.html'">View Order Details</button>
+        <button onclick="window.location.href='logout.php'">Log Out Account</button>
         </body>
 </html>
