@@ -1,8 +1,41 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     header("Location: userprofile.php");
     exit();
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $servername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
+    $dbname = "krookedweb"; 
+    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $inputUsername = $_POST['username'];
+    $inputPassword = $_POST['password'];
+
+    $sql = "SELECT userid, password FROM userdata WHERE username = '$inputUsername'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($inputPassword == $row['password']) {
+            $_SESSION['username'] = $inputUsername;
+            $_SESSION['userid'] = $row['userid']; // Set the userid session variable
+            header("Location: userprofile.php");
+            exit();
+        } else {
+            echo "Invalid password.";
+        }
+    } else {
+        echo "No user found with that username.";
+    }
+
+    $conn->close();
 }
 ?>
 <!DOCTYPE html>
@@ -20,7 +53,7 @@ if(isset($_SESSION['username'])) {
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.html">
+            <a href="homepage.php">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -29,7 +62,7 @@ if(isset($_SESSION['username'])) {
                     <li><a href="loginpage.php" class="profile">
                         <i class="fa-regular fa-user fa-xl"></i>
                     </a></li>
-                    <li><a href="shopnow.html" class="cart">
+                    <li><a href="shopnow.php" class="cart">
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>
                     </a></li>
                     <li><a href="about.html" class="about">

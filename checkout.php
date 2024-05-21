@@ -1,40 +1,76 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])) {
-    header("Location: loginpage.php");
-    exit();
-}
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $productID = $_POST['itemid'];
-    $productName = $_POST['itemname'];
-    $productPrice = $_POST['itemprice'];
-    $productColor = $_POST['itemcolor'];
-    $productSize = $_POST['itemsize'];
-    $productQuantity = $_POST['itemquantity'];
-    $cartItem = [
-        'id' => $productID,
-        'name' => $productName,
-        'price' => $productPrice,
-        'color' => $productColor,
-        'size' => $productSize,
-        'quantity' => $productQuantity,
-    ];
-    if(!isset($_SESSION['cart'])){
-        $_SESSION['cart'] = [];
-    }
-    $found = false;
-    foreach($_SESSION['cart'] as &$item) {
-        if ($item['id'] == $productId && $item['color'] == $productColor && $item['size'] == $productSize) {
-            $item['quantity'] += $productQuantity;
-            $found = true;
-            break;
-        }
-    }
-    if (!$found){
-        $_SESSION['cart'][] = $cartItem;
-    }
-    header("Location: cart.php");
+if (isset($_SESSION['username'])) {
+    header("Location: userprofile.php");
     exit();
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile_css.css">
+    <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color: black;
+        }
+        .header
+        .main h1,
+        .main p,
+        .main button {
+            color: black;
+        }
+        .header nav ul li a {
+            color: white; /* Keep navigation links white */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <a href="homepage.html">
+                <img src="krooked product/white_logo.png" class="logo">
+            </a>
+            <div class="logo_name">The Krooked</div>
+            <nav>
+                <ul>
+                    <li><a href="loginpage.php" class="profile">
+                        <i class="fa-regular fa-user fa-xl"></i>
+                    </a></li>
+                    <li><a href="shopnow.php" class="cart">
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    </a></li>
+                    <li><a href="about.html" class="about">
+                        <i class="fa-regular fa-address-card fa-xl"></i>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="main">
+        <h1>Payment Instructions</h1>
+        <p>Please follow the steps below to complete your payment:</p><br>
+        <ol>
+            <li>Open GCash app</li><br>
+            <li>Scan QR code</li><br>
+        </ol>
+        <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
+        <form action="paymentlanding.php" method="post">
+            <label for="gcash_name">GCash Account Name:</label>
+            <input type="text" id="gcash_name" name="gcashname" required>
+            <label for="gcash_number">GCash Number:</label>
+            <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
+            <label for="reference_number">Reference Number:</label>
+            <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
+            <button type="submit">Submit Payment</button>
+            
+        </form>
+    </div>
+</body>
+</html>

@@ -1,43 +1,18 @@
 <?php
 session_start();
-$userInfo = [];
-
 if (!isset($_SESSION['username'])) {
     header("Location: loginpage.php");
     exit();
 }
-
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "krookedweb";
-
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$username = $_SESSION['username'];
-$sql = "SELECT username, createstamp FROM userdata WHERE username='$username'";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $userInfo = [
-        'username' => $row['username'],
-        'regdate' => $row['createstamp'],
-    ];
-}
-$conn->close();
+$cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Your Cart</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +22,7 @@ $conn->close();
         body {
             color: black;
         }
-        .header
+        .header,
         .main h1,
         .main p,
         .main button {
@@ -81,12 +56,43 @@ $conn->close();
         </div>
     </div>
     <div class="main">
-        <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-        <?php if (!empty($userInfo)): ?>
-            <p>Registration Date & Time: <?php echo isset($userInfo['regdate']) ? $userInfo['regdate'] : 'N/A'; ?></p>
+        <center><h1>Your Shopping Cart</h1></center>
+        <?php if (count($cartItems) > 0): ?>
+            <center><table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <?php
+                $totalPrice = 0;
+                foreach ($cartItems as $item):
+                    $itemTotal = $item['price'] * $item['quantity'];
+                    $totalPrice += $itemTotal;
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name']); ?></td>
+                    <td><?php echo number_format($item['price'], 2); ?></td>
+                    <td><?php echo $item['quantity']; ?></td>
+                    <td><?php echo number_format($itemTotal, 2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                    <td><?php echo number_format($totalPrice, 2); ?></td>
+                </tr>
+            </table></center>
+            <form action="checkout.php" method="post">
+                <button type="submit" class="checkout-button">Proceed to Checkout</button>
+            </form>
+            <form action="clearcart.php" method="post">
+                <button type="submit" class="clear-cart-button">Clear Cart</button>
+            </form>
+        <?php else: ?>
+            <center><p>Your cart is empty.</p></center>
+            <center><a href="shopnow.php">Continue Shopping</a></center>
         <?php endif; ?>
-        <button onclick="window.location.href='logout.php'">Log Out Account</button>
-        <button onclick="window.location.href='orderspage.php'">Check my Orders</button>
     </div>
 </body>
 </html>

@@ -27,7 +27,7 @@
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.php">
+            <a href="homepage.html">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -47,14 +47,53 @@
         </div>
     </div>
     <div class="main">
-        <?php
-        session_start();
-        if (!isset($_SESSION['username'])) {
-            header("Location: loginpage.php");
-            exit();
+    <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $gcashname = $_POST['gcashname'];
+    $gcashnumber = $_POST['gcashnum'];
+    $refnumber = $_POST['refnumber'];
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "krookedweb";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $username = $_SESSION['username'];
+    $userid_query = "SELECT userid FROM userdata WHERE username = '$username'";
+    $result = $conn->query($userid_query);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $userid = $row['userid'];
+
+        
+        $sql = "INSERT INTO userpayments (userid, gcashname, gcashnum, refnumber, paymentstatus) 
+                VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Payment submitted successfully. Redirecting...";
+            header("refresh:3;url=userprofile.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        echo "<h1>Login successful.</h1><br><br>";
-        ?>
-        <a href="shopnow.php"><h1>Continue to product catalog</h1></a>
-        </body>
+    } else {
+        echo "Error: User not found.";
+    }
+
+    $conn->close();
+}
+?>
+    </div>
+</body>
 </html>
