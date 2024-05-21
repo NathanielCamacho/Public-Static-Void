@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color: black;
+        }
+        .header
+        .main h1,
+        .main p,
+        .main button {
+            color: black;
+        }
+        .header nav ul li a {
+            color: white; /* Keep navigation links white */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -39,7 +52,7 @@
     if(isset($_SESSION['username'])) {
         $_SESSION = array();
         session_destroy();
-        echo "<h1>Logout successful.</h1>";
+        echo "Logout successful.";
     } else {
         header("Location: loginpage.php");
         exit();
