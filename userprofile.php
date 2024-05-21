@@ -1,5 +1,7 @@
 <?php
 session_start();
+$userInfo = [];
+
 if (!isset($_SESSION['username'])) {
     header("Location: loginpage.php");
     exit();
@@ -17,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION['username'];
-$sql = "SELECT username, regdate, completedorders, pendingorders FROM userdata WHERE username='$username'";
+$sql = "SELECT username, createstamp FROM userdata WHERE username='$username'";
 
 $result = $conn->query($sql);
 
@@ -25,12 +27,9 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $userInfo = [
         'username' => $row['username'],
-        'regdate' => $row['regdate'],
+        'regdate' => $row['createstamp'],
     ];
-} else {
-    echo "No user found with the provided username.";
 }
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -44,11 +43,25 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color: black;
+        }
+        .header
+        .main h1,
+        .main p,
+        .main button {
+            color: black;
+        }
+        .header nav ul li a {
+            color: white; /* Keep navigation links white */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.html">
+            <a href="homepage.php">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -57,7 +70,7 @@ $conn->close();
                     <li><a href="loginpage.php" class="profile">
                         <i class="fa-regular fa-user fa-xl"></i>
                     </a></li>
-                    <li><a href="shopnow.html" class="cart">
+                    <li><a href="shopnow.php" class="cart">
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>
                     </a></li>
                     <li><a href="about.html" class="about">
@@ -68,8 +81,12 @@ $conn->close();
         </div>
     </div>
     <div class="main">
-        <h1>Welcome, <?php echo $userInfo['username']; ?>!</h1>
-        <p>Registration Date: <?php echo $userInfo['regdate']; ?></p>
+        <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
+        <?php if (!empty($userInfo)): ?>
+            <p>Registration Date & Time: <?php echo isset($userInfo['regdate']) ? $userInfo['regdate'] : 'N/A'; ?></p>
+        <?php endif; ?>
         <button onclick="window.location.href='logout.php'">Log Out Account</button>
-        </body>
+        <button onclick="window.location.href='receipts.php'">Check Payments</button>
+    </div>
+</body>
 </html>

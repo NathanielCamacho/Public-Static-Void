@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: userprofile.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +20,7 @@ if (!isset($_SESSION['username'])) {
             color: black;
         }
         .header nav ul li a {
-            color: white; /* Keep navigation links white */
+            color: white;
         }
     </style>
 </head>
@@ -54,23 +47,52 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
     <div class="main">
-        <h1>Payment Instructions</h1>
-        <p>Please follow the steps below to complete your payment:</p><br>
-        <ol>
-            <li>Open GCash app</li><br>
-            <li>Scan QR code</li><br>
-        </ol>
-        <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
-        <form action="paymentlanding.php" method="post">
-            <label for="gcash_name">GCash Account Name:</label>
-            <input type="text" id="gcash_name" name="gcashname" required>
-            <label for="gcash_number">GCash Number:</label>
-            <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
-            <label for="reference_number">Reference Number:</label>
-            <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
-            <button type="submit">Submit Payment</button>
-            
-        </form>
+    <h2>User Payments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>GCash Account Name</th>
+                <th>GCash Registered Number</th>
+                <th>Transaction Reference Number</th>
+                <th>Payment Status</th>
+                <th>Payment Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Fetch payment details from userpayments table and display in table rows
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "krookedweb";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT gcashname, gcashnum, refnumber, paymentstatus, paymentstamp FROM userpayments";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $formattedTime = date("m/d/Y h:i A", strtotime($row['paymentstamp']));
+                    echo "<tr>";
+                    echo "<td>" . $row['gcashname'] . "</td>";
+                    echo "<td>" . $row['gcashnum'] . "</td>";
+                    echo "<td>" . $row['refnumber'] . "</td>";
+                    echo "<td>" . $row['paymentstatus'] . "</td>";
+                    echo "<td>" . $formattedTime . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>No payments found.</td></tr>";
+            }
+
+            $conn->close();
+            ?>
+        </tbody>
+    </table>
     </div>
 </body>
 </html>

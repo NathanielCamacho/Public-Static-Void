@@ -1,21 +1,22 @@
 /**
- * Quantity Script
+ * Quantity Script ---- inedit ko ~hans
  */
 function increaseQty() {
-    let qtyInput = document.querySelector('.product-qty');
-    let currentValue = parseInt(qtyInput.value);
-    if (currentValue < parseInt(qtyInput.max)) {
-        qtyInput.value = currentValue + 1;
+    const qtyInput = document.querySelector('.product-qty');
+    let qty = parseInt(qtyInput.value);
+    if (qty < 10) {
+        qtyInput.value = qty + 1;
     }
 }
 
 function decreaseQty() {
-    let qtyInput = document.querySelector('.product-qty');
-    let currentValue = parseInt(qtyInput.value);
-    if (currentValue > parseInt(qtyInput.min)) {
-        qtyInput.value = currentValue - 1;
+    const qtyInput = document.querySelector('.product-qty');
+    let qty = parseInt(qtyInput.value);
+    if (qty > 1) {
+        qtyInput.value = qty - 1;
     }
 }
+
 
 /**
  * Profile Script
