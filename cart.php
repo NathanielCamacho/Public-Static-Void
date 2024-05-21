@@ -1,6 +1,12 @@
 <?php
 session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+$cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,27 +56,43 @@ session_start();
         </div>
     </div>
     <div class="main">
-        <h1>Payment Instructions</h1>
-        <p>Please follow the steps below to complete your payment:</p><br>
-        <ol>
-            <li>Open GCash app</li><br>
-            <li>Scan QR code</li><br>
-        </ol>
-        <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
-        <form action="paymentlanding.php" method="post">
-            <label for="gcash_name">GCash Account Name:</label>
-            <input type="text" id="gcash_name" name="gcashname" required>
-            <label for="gcash_number">GCash Number:</label>
-            <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
-            <label for="reference_number">Reference Number:</label>
-            <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
-            <button type="submit">Submit Payment</button>
-            <?php
-            $_SESSION['latestorderdetails'] = $orderid;
-            header("Location: paymentlanding.php");
-            exit();
-            ?>
-        </form>
+        <center><h1>Your Shopping Cart</h1></center>
+        <?php if (count($cartItems) > 0): ?>
+            <center><table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <?php
+                $totalPrice = 0;
+                foreach ($cartItems as $item):
+                    $itemTotal = $item['price'] * $item['quantity'];
+                    $totalPrice += $itemTotal;
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name']); ?></td>
+                    <td><?php echo number_format($item['price'], 2); ?></td>
+                    <td><?php echo $item['quantity']; ?></td>
+                    <td><?php echo number_format($itemTotal, 2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                    <td><?php echo number_format($totalPrice, 2); ?></td>
+                </tr>
+            </table></center>
+            <form action="checkout.php" method="post">
+                <button type="submit" class="checkout-button">Proceed to Checkout</button>
+            </form>
+            <form action="clearcart.php" method="post">
+                <button type="submit" class="clear-cart-button">Clear Cart</button>
+            </form>
+        <?php else: ?>
+            <center><p>Your cart is empty.</p></center>
+            <center><a href="shopnow.php">Continue Shopping</a></center>
+        <?php endif; ?>
     </div>
 </body>
 </html>
