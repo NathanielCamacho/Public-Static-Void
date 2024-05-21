@@ -87,9 +87,6 @@ $w_price = 999;
 
     <a href="mamba.html"><button>back</button></a>
 
-   
-  
-
     <div class="footer">
         <div class="col-1">
             <h3>CONTACTS</h3>
