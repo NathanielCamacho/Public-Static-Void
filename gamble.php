@@ -99,7 +99,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-2">
-                        <a href="mamba.html">
+                        <a href="mamba.php">
                             <img src="krooked product/mamba.png">
                         </a>
                     </div>
@@ -112,7 +112,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-3">
-                        <a href="lebron.html">
+                        <a href="lebron.php">
                             <img src="krooked product/lebron.png">
                         </a>
                     </div>

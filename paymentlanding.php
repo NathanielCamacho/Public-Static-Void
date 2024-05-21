@@ -27,7 +27,7 @@
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.html">
+            <a href="homepage.php">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -77,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $userid = $row['userid'];
 
-        
         $sql = "INSERT INTO userpayments (userid, gcashname, gcashnum, refnumber, paymentstatus) 
                 VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending')";
 
