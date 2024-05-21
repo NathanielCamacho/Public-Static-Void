@@ -1,12 +1,10 @@
 <?php
-$color = $_POST["color"];
-$size = $_POST["size"];
-$qty = $_POST["qty"];
-$product = $_POST["product"];
-$price = 500;
-$w_price = 999;
-
-
+$session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: loginpage.php");
+    exit();
+}
+$cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
  ?>
 
 <!DOCTYPE html>
@@ -45,47 +43,39 @@ $w_price = 999;
         </div>
     </div> 
 
-   <div class="container">
-    <table>
-   <tr >
-            <th>PRODUCT</th>
-            <th>Quantity</th>
-            <th>COLOR</th>
-            <th>PRICE</th>
-          
-    </tr>
-
-    <tr>
-        <td><?php
-        echo $product;
-        ?></td>
-        <td><?php echo$qty;
-        ?></td>
-         <td><?php echo$color;
-        ?></td>
-         <td><?php echo$price;
-        ?></td>
-    </tr>
-    </table>
-
-   </div>
-
-   <div class="payContainer">
-    <h1>Shipping information</h1>
-    Email: <br>
-    <input type="text" name="email"  ><br>
-    Address: <br>
-    <input type="text" name="address" id=""><br>
-    <div class="submit">
-                <button class="Btn">
-                   
-                    <span class="text">Proceed to Payment</span>
-                       
-                </button>
-            </div>
-   </div>
-
-    <a href="mamba.html"><button>back</button></a>
+   <div class="main">
+   <h1>Your Shopping Cart</h1>
+        <?php if (count($cartItems) > 0): ?>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <?php
+                $totalPrice = 0;
+                foreach ($cartItems as $item):
+                    $itemTotal = $item['price'] * $item['quantity'];
+                    $totalPrice += $itemTotal;
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name']); ?></td>
+                    <td><?php echo number_format($item['price'], 2); ?></td>
+                    <td><?php echo $item['quantity']; ?></td>
+                    <td><?php echo number_format($itemTotal, 2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                    <td><?php echo number_format($totalPrice, 2); ?></td>
+                </tr>
+            </table>
+            <a href="checkout.php" class="checkout-button">Proceed to Checkout</a>
+        <?php else: ?>
+            <p>Your cart is empty.</p>
+            <a href="shopnow.html">Continue Shopping</a>
+        <?php endif; ?>
 
     <div class="footer">
         <div class="col-1">
