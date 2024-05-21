@@ -34,6 +34,7 @@
     </div>
     <div class="main">
         <?php
+        session_start();
 $servername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
