@@ -14,7 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="checkout.php" method="post">
+<form action="cartadder.php" method="post">
+    <input type="hidden" name="product_id" value="6">
+    <input type="hidden" name="product_name" value="Dali Doll"> 
+    <input type="hidden" name="product_price" value="500.00">
     <div class="header">
         <div class="navbar">
             <a href="homepage.php">
@@ -46,7 +49,7 @@
             <div class="container">
                 
                     <label>
-                        <input type="radio" name="radio" checked="">
+                        <input type="radio" name="color" value="Black" checked="">
                         <span>Black</span>
                     </label>
                
@@ -55,15 +58,15 @@
             <div class="container">
                
                     <label>
-                        <input type="radio" name="size" checked="">
+                        <input type="radio" name="size" value="Small" checked="">
                         <span>Small</span>
                     </label>
                     <label>
-                        <input type="radio" name="size">
+                        <input type="radio" name="size" value="Medium">
                         <span>Medium</span>
                     </label>
                     <label>
-                        <input type="radio" name="size">
+                        <input type="radio" name="size" value="Large">
                         <span>Large</span>
                     </label>
                 
@@ -72,15 +75,15 @@
             <div class="qty-input">
                 <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
                 <div class="qty">
-                    <input class="product-qty" type="number" name="product-qty" min="1" max="10" value="1">
+                    <input class="product-qty" type="number" name="quantity" min="1" max="10" value="1">
                 </div>
                 <div class="number-right" data-content="+" onclick="increaseQty()"></div>
             </div>
             <br>
             <div class="submit">
-                <button class="Btn">
+                <button class="Btn" type="submit">
                     <span class="text">Add To Cart</span>
-                        <span class="svgIcon">
+                    <span class="svgIcon">
                         <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
                         </svg>
@@ -99,7 +102,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-2">
-                        <a href="mamba.php">
+                        <a href="mamba.html">
                             <img src="krooked product/mamba.png">
                         </a>
                     </div>
@@ -112,7 +115,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-3">
-                        <a href="lebron.php">
+                        <a href="lebron.html">
                             <img src="krooked product/lebron.png">
                         </a>
                     </div>

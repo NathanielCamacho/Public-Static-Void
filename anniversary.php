@@ -43,7 +43,6 @@ if (!isset($_SESSION['username'])) {
                 </nav>
             </div>
         </div>
-
         <div class="product">
             <img src="krooked product/tee.png">
             <div class="product_container">

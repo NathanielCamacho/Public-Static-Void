@@ -1,28 +1,21 @@
+<?php
+session_start();
+if (!isset($_SESSION['reset_username'])) {
+    header("Location: forgotpw.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
-    <style>
-        body {
-            color: black;
-        }
-        .header
-        .main h1,
-        .main p,
-        .main button {
-            color: black;
-        }
-        .header nav ul li a {
-            color: white; /* Keep navigation links white */
-        }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -47,17 +40,15 @@
         </div>
     </div>
     <div class="main">
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])) {
-        $_SESSION = array();
-        session_destroy();
-        echo "<h1>Logout successful.</h1>";
-    } else {
-        header("Location: loginpage.php");
-        exit();
-    }
-    ?>
-        <a href="homepage.php"><h1>Go back to home page.</h1></a>
-        </body>
+        <h1>Create New Password</h1>
+        <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
+        <form action="resetpwlanding.php" method="post">
+            <label for="password1">New Password:</label>
+            <input type="password" id="password1" name="password1" required>
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2" required>
+            <button type="submit">Reset Password</button>
+        </form>
+    </div>
+</body>
 </html>

@@ -22,7 +22,7 @@ if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantit
     $quantity = intval($_POST['quantity']);
 
     // Query the database to get item details
-    $sql = "SELECT * FROM products WHERE itemid = $itemid";
+    $sql = "SELECT itemid, itemname, itemprice FROM products WHERE itemid = $itemid";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -48,14 +48,14 @@ if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantit
         exit();
     } else {
         // If item not found, redirect to the shop page
-        header("Location: shopnow.html");
+        header("Location: shopnow.php");
         exit();
     }
 
     $conn->close();
 } else {
     // If necessary data not provided, redirect to the shop page
-    header("Location: shopnow.html");
+    header("Location: shopnow.php");
     exit();
 }
 ?>

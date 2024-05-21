@@ -1,33 +1,24 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
-    <style>
-        body {
-            color: black;
-        }
-        .header
-        .main h1,
-        .main p,
-        .main button {
-            color: black;
-        }
-        .header nav ul li a {
-            color: white; /* Keep navigation links white */
-        }
-    </style>
 </head>
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.html">
+            <a href="homepage.php">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -47,56 +38,58 @@
         </div>
     </div>
     <div class="main">
-    <?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: loginpage.php");
-    exit();
+        <h1>Reset Password</h1>
+        <p>Please enter your username and the date when your account was created to proceed with password reset.</p>
+        <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="createstamp">Account Creation Date:</label>
+            <input type="text" name="createstamp" id="createstamp" placeholder="yyyy-mm-dd" required>
+            <button type="submit">Validate</button>
+        </form>
+        <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "krookedweb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
+$error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $gcashname = $_POST['gcashname'];
-    $gcashnumber = $_POST['gcashnum'];
-    $refnumber = $_POST['refnumber'];
-
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "krookedweb";
-
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $username = $_SESSION['username'];
-    $userid_query = "SELECT userid FROM userdata WHERE username = '$username'";
-    $result = $conn->query($userid_query);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $userid = $row['userid'];
+    if (isset($_POST['username']) && isset($_POST['createstamp'])) {
+        $username = $_POST['username'];
+        $createstamp_input = $_POST['createstamp'];
 
-        
-        $sql = "INSERT INTO userpayments (userid, gcashname, gcashnum, refnumber, paymentstatus) 
-                VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending')";
+        $sql = "SELECT *, DATE(createstamp) AS date_created FROM userdata WHERE username = '$username'";
+        $result = $conn->query($sql);
 
-        if ($conn->query($sql) === TRUE) {
-            $sql_update = "UPDATE userpayments SET paymentstatus = 'Successful' WHERE userid = '$userid' AND refnumber = '$refnumber'";
-            if ($conn->query($sql_update) === TRUE) {
-                echo "Payment submitted successfully. Redirecting...";
-                header("refresh:3;url=userprofile.php");
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $createstamp = $row['date_created'];
+            if ($createstamp === $createstamp_input) {
+                $_SESSION['reset_username'] = $username;
+                header("Location: resetpw.php");
+                exit();
             } else {
-                echo "Error updating payment status: " . $conn->error;
+                $error = "Entered date does not match the account creation date.";
             }
         } else {
-            echo "Error inserting payment details: " . $conn->error;
+            $error = "User not found.";
+        }
+        $conn->close();
     }
-} else {
-echo "Error: User not found.";
-}
-
-    $conn->close();
 }
 ?>
     </div>

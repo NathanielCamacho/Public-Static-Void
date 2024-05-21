@@ -3,26 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
-    <style>
-        body {
-            color: black;
-        }
-        .header
-        .main h1,
-        .main p,
-        .main button {
-            color: black;
-        }
-        .header nav ul li a {
-            color: white; /* Keep navigation links white */
-        }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -47,17 +33,39 @@
         </div>
     </div>
     <div class="main">
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])) {
-        $_SESSION = array();
-        session_destroy();
-        echo "<h1>Logout successful.</h1>";
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "krookedweb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}            
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_SESSION['reset_username'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
+
+    if ($password1 === $password2) {
+        $update_sql = "UPDATE userdata SET password = '$password1' WHERE username = '$username'";
+        
+        if ($conn->query($update_sql) === TRUE) {
+            echo "Password updated successfully. You can now <a href='loginpage.php'>login</a> with your new password.";
+            unset($_SESSION['reset_username']);
+            exit();
+        } else {
+            echo "Error updating password: " . $conn->error;
+            exit();
+        }
     } else {
-        header("Location: loginpage.php");
-        exit();
+        $error = "Passwords do not match.";
     }
-    ?>
-        <a href="homepage.php"><h1>Go back to home page.</h1></a>
-        </body>
+}
+?>
+</div>
+</body>
 </html>

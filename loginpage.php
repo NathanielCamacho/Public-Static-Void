@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
 
         <div class="container">
-            <span class="psw"><a href="#" class="pass">Forgot password?</a></span>
+            <span class="psw"><a href="forgotpw.php" class="pass">Forgot password?</a></span>
         </div>
     </div>
     <script src="script.js"></script>

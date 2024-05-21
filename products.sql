@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 04:23 PM
+-- Generation Time: May 21, 2024 at 11:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,7 +31,6 @@ CREATE TABLE `products` (
   `itemid` int(11) NOT NULL,
   `itemname` varchar(255) NOT NULL,
   `itemprice` decimal(10,2) NOT NULL,
-  `description` text DEFAULT NULL,
   `imageurl` varchar(255) DEFAULT NULL,
   `createstamp` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -41,13 +40,14 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`itemid`, `itemname`, `itemprice`, `description`, `imageurl`, `createstamp`, `updatestamp`) VALUES
-(1, 'Mamba', 500.00, NULL, 'mamba.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
-(2, 'LeBron', 500.00, NULL, 'lebron.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
-(3, 'Anniversary Tee', 500.00, NULL, 'tee.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
-(4, 'Felix', 500.00, NULL, 'tommy.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
-(5, 'Magatta', 500.00, NULL, 'cypunk.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
-(6, 'Dali Doll', 500.00, NULL, 'gamble.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02');
+INSERT INTO `products` (`itemid`, `itemname`, `itemprice`, `imageurl`, `createstamp`, `updatestamp`) VALUES
+(1, 'Mamba', 500.00, 'mamba.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(2, 'LeBron', 500.00, 'lebron.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(3, 'Anniversary Tee', 500.00, 'tee.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(4, 'Felix', 500.00, 'tommy.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(5, 'Magatta', 500.00, 'cypunk.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(6, 'Dali Doll', 500.00, 'gamble.png', '2024-05-21 11:19:02', '2024-05-21 11:19:02'),
+(7, 'Windbreaker', 999.00, 'windbreaker.png', '2024-05-21 11:19:02', '2024-05-21 19:27:44');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +67,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `itemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `itemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
