@@ -52,7 +52,7 @@
     if(isset($_SESSION['username'])) {
         $_SESSION = array();
         session_destroy();
-        echo "<h1>Logout successful.</h1>";
+        echo "Logout successful.";
     } else {
         header("Location: loginpage.php");
         exit();
