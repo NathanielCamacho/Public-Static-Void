@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    header("Location: userprofile.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +27,7 @@ if (isset($_SESSION['username'])) {
 <body>
     <div class="header">
         <div class="navbar">
-            <a href="homepage.html">
+            <a href="homepage.php">
                 <img src="krooked product/white_logo.png" class="logo">
             </a>
             <div class="logo_name">The Krooked</div>
@@ -68,8 +61,7 @@ if (isset($_SESSION['username'])) {
             <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
             <label for="reference_number">Reference Number:</label>
             <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
-            <button type="submit">Submit Payment</button>
-            
+            <button type="submit">Submit Payment</button> 
         </form>
     </div>
 </body>

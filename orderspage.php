@@ -58,31 +58,24 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "krookedweb";
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$orderId = isset($_GET['orderid']) ? intval($_GET['orderid']) : 0;
-$orderDetails = [];
-$orderContents = [];
-
-if ($orderId > 0) {
-    $order_query = "SELECT * FROM orders WHERE orderid = '$orderId'";
-    $result = $conn->query($order_query);
-    if ($result->num_rows > 0) {
-        $orderDetails = $result->fetch_assoc();
-    }
-
-    $order_contents_query = "SELECT oc.*, p.itemname, p.itemprice FROM ordercontents oc
-                             JOIN products p ON oc.itemid = p.itemid
-                             WHERE oc.orderid = '$orderId'";
-    $result = $conn->query($order_contents_query);
-    while ($row = $result->fetch_assoc()) {
-        $orderContents[] = $row;
-    }
+$username = $_SESSION['username'];
+$sql_user = "SELECT userid FROM userdata WHERE username = '$username'";
+$result_user = $conn->query($sql_user);
+if ($result_user->num_rows > 0) {
+    $row_user = $result_user->fetch_assoc();
+    $userid = $row_user['userid'];
+} else {
+    echo "User ID not found.";
+    exit();
 }
+
+$sql_orders = "SELECT * FROM orders WHERE userid = $userid";
+$result_orders = $conn->query($sql_orders);
 
 $conn->close();
 ?>
