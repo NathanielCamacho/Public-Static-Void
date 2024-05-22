@@ -23,26 +23,33 @@ if (!isset($_SESSION['username'])) {
         <input type="hidden" name="product_name" value="Anniversary Tee"> 
         <input type="hidden" name="product_price" value="500.00">
         <div class="header">
-            <div class="navbar">
-                <a href="homepage.php">
-                    <img src="krooked product/white_logo.png" class="logo">  
-                </a>
-                <div class="logo_name">The Krooked</div>
-                <nav>   
-                    <ul>
-                        <li><a href="loginpage.php" class="profile">
-                            <i class="fa-regular fa-user fa-xl"></i>         
-                        </a></li>
-                        <li><a href="shopnow.php" class="cart">
-                            <i class="fa-solid fa-cart-shopping fa-xl"></i>
-                        </a></li>
-                        <li><a href="about.html" class="about">
-                            <i class="fa-regular fa-address-card fa-xl"></i>
-                        </a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="navbar">
+            <a href="homepage.php"> 
+                <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
+            </a> 
+            <div class="logo_name">The Krooked</div>
+        
+        <nav>   
+            <ul>
+                <li> 
+                    <a href="loginpage.php" class="profile">
+                        <i class="fa-regular fa-user fa-xl"></i>         
+                    </a>   
+                </li>       
+                <li> 
+                    <a href="shopnow.php" class="about">
+                        <i class="fa-solid fa-table-list fa-xl"></i> 
+                    </a>
+                </li>
+                <li>     
+                    <a href="cart.php" class="cart">
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                    </a>
+                </li>
+            </ul>
+        </nav>  
         </div>
+    </div>
         <div class="product">
             <img src="krooked product/tee.png">
             <div class="product_container">
