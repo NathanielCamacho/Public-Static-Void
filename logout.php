@@ -52,6 +52,7 @@
         exit();
     }
     ?>
+    <hr>
         <a href="homepage.php"><h1>Go back to home page.</h1></a>
         </body>
 </html>

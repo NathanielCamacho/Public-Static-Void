@@ -219,3 +219,18 @@ h1 {
 p {
     color: black;
 }
+
+table, th, td {
+    padding: 5px;
+    border: 1px solid;
+  }
+
+.display_btn{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.display_btn button{
+    width: 96%;
+}

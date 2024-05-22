@@ -90,16 +90,19 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                     <td><?php echo number_format($totalPrice, 2); ?></td>
                 </tr>
             </table></center>
-            <form action="checkout.php" method="post">
-                <button type="submit" class="checkout-button">Proceed to Checkout</button>
-            </form>
+
+            <div class="display_btn">
             <form action="clearcart.php" method="post">
                 <button type="submit" class="clear-cart-button">Clear Cart</button>
+            </form>
+            <form action="checkout.php" method="post">
+                <button type="submit" class="checkout-button">Proceed to Checkout</button>
             </form>
         <?php else: ?>
             <center><p>Your cart is empty.</p></center>
             <center><a href="shopnow.php">Continue Shopping</a></center>
         <?php endif; ?>
+    </div>
     </div>
 </body>
 </html>
