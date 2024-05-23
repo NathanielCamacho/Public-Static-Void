@@ -30,23 +30,25 @@ if (!isset($_SESSION['username'])) {
             <div class="logo_name">The Krooked</div>
         
         <nav>   
-            <ul>
-                <li> 
-                    <a href="loginpage.php" class="profile">
-                        <i class="fa-regular fa-user fa-xl"></i>         
-                    </a>   
-                </li>       
-                <li> 
-                    <a href="shopnow.php" class="about">
-                        <i class="fa-solid fa-table-list fa-xl"></i> 
-                    </a>
-                </li>
-                <li>     
-                    <a href="cart.php" class="cart">
-                        <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                    </a>
-                </li>
-            </ul>
+        <ul>
+                      
+                      <li> 
+                          <a href="shopnow.php" class="about">
+                              <i class="fa-solid fa-table-list fa-xl"></i> 
+                          </a>
+                      </li>
+                      <li>     
+                          <a href="cart.php" class="cart">
+                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                          </a>
+                      </li>
+                      
+                      <li> 
+                          <a href="loginpage.php" class="profile">
+                              <i class="fa-regular fa-user fa-xl"></i>         
+                          </a>   
+                      </li> 
+                  </ul>
         </nav>  
         </div>
     </div>
@@ -103,47 +105,49 @@ if (!isset($_SESSION['username'])) {
         <hr>
 
         <div class="background">
-            <div class="text3">You may Also Like:</div>
-
-            <div class="products">
-                <div class="wrapper">
-                    <div class="parent">
-                        <div class="child bg-7">
-                            <a href="gamble.html">
-                                <img src="krooked product/gamble.png">
-                            </a>
-                        </div>
-                    </div>
+    <div class="text3">You may Also Like: </div>
+    
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-2">
+                    <a href="mamba.php">
+                        <img src="krooked product/mamba.png">
+                    </a>        
                 </div>
-                <div class="description">Dali doll - ₱500.00</div>
-            </div>
-
-            <div class="products">
-                <div class="wrapper">
-                    <div class="parent">
-                        <div class="child bg-6">
-                            <a href="cypunk.html">
-                                <img src="krooked product/cypunk.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="description">Magatta - ₱500.00</div>
-            </div>
-
-            <div class="products">
-                <div class="wrapper">
-                    <div class="parent">
-                        <div class="child bg-5">
-                            <a href="tommy.html">
-                                <img src="krooked product/tommy.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="description">Felix - ₱500.00</div>
             </div>
         </div>
+        <div class="description">Mamba - ₱500.00</div>
+    </div>
+  
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-3">
+                    <a href="lebron.php">
+                        <img src="krooked product/lebron.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="description">Lebron - ₱500.00</div>
+    </div>
+
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-4">
+                    <a href="anniversary.php">
+                        <img src="krooked product/tee.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="description">Anniversary - ₱500.00</div>
+    </div>
+
+</div>
+
 
         <div class="footer">
             <div class="col-1">

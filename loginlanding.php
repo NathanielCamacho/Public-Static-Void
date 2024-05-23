@@ -34,11 +34,8 @@
         
         <nav>   
             <ul>
-                <li> 
-                    <a href="loginpage.php" class="profile">
-                        <i class="fa-regular fa-user fa-xl"></i>         
-                    </a>   
-                </li>       
+            <ul>
+                      
                 <li> 
                     <a href="shopnow.php" class="about">
                         <i class="fa-solid fa-table-list fa-xl"></i> 
@@ -49,6 +46,12 @@
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>        
                     </a>
                 </li>
+                
+                <li> 
+                    <a href="loginpage.php" class="profile">
+                        <i class="fa-regular fa-user fa-xl"></i>         
+                    </a>   
+                </li> 
             </ul>
         </nav>  
         </div>

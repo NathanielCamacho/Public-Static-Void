@@ -112,7 +112,7 @@ button:hover {
 
 
 .main {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
     padding: 20px; /* Updated padding for better spacing */
@@ -159,15 +159,10 @@ label {
     text-align: left; /* Ensuring label text alignment */
 }
 
-.container {
-    
-    padding: 20px;
-    background-color: #292828;
-   
-   
-}
+
 
 .login{
+    border: #000000 1px solid;
     padding: 20px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -183,7 +178,7 @@ label {
 .home{
     
     padding: 20px;
-
+    border: #000000 1px solid;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -215,9 +210,11 @@ label {
 }
 h1 {
     color: black;
+    cursor: default;
   }
 p {
     color: black;
+    cursor: default;
 }
 
 table, th, td {
@@ -234,3 +231,4 @@ table, th, td {
 .display_btn button{
     width: 96%;
 }
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="profile_css.css">
+   <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,23 +20,25 @@
             <div class="logo_name">The Krooked</div>
         
         <nav>   
-            <ul>
-                <li> 
-                    <a href="loginpage.php" class="profile">
-                        <i class="fa-regular fa-user fa-xl"></i>         
-                    </a>   
-                </li>       
-                <li> 
-                    <a href="shopnow.php" class="about">
-                        <i class="fa-solid fa-table-list fa-xl"></i> 
-                    </a>
-                </li>
-                <li>     
-                    <a href="cart.php" class="cart">
-                        <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                    </a>
-                </li>
-            </ul>
+        <ul>
+                      
+                      <li> 
+                          <a href="shopnow.php" class="about">
+                              <i class="fa-solid fa-table-list fa-xl"></i> 
+                          </a>
+                      </li>
+                      <li>     
+                          <a href="cart.php" class="cart">
+                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                          </a>
+                      </li>
+                      
+                      <li> 
+                          <a href="loginpage.php" class="profile">
+                              <i class="fa-regular fa-user fa-xl"></i>         
+                          </a>   
+                      </li> 
+                  </ul>
         </nav>  
         </div>
     </div>
@@ -102,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-    <div class="container">
+   <hr>
         <div class="login">
         <a href=loginpage.php ><h1>Go back to login page.</h1></a></div>
         <div class="home"><a href=homepage.php ><h1>Go back to home page.</h1></a></div>
-    </div>
+  
     </div>
     </body>
 </html>

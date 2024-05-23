@@ -26,23 +26,25 @@
             <div class="logo_name">The Krooked</div>
         
         <nav>   
-            <ul>
-                <li> 
-                    <a href="loginpage.php" class="profile">
-                        <i class="fa-regular fa-user fa-xl"></i>         
-                    </a>   
-                </li>       
-                <li> 
-                    <a href="shopnow.php" class="about">
-                        <i class="fa-solid fa-table-list fa-xl"></i> 
-                    </a>
-                </li>
-                <li>     
-                    <a href="cart.php" class="cart">
-                        <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                    </a>
-                </li>
-            </ul>
+        <ul>
+                      
+                      <li> 
+                          <a href="shopnow.php" class="about">
+                              <i class="fa-solid fa-table-list fa-xl"></i> 
+                          </a>
+                      </li>
+                      <li>     
+                          <a href="cart.php" class="cart">
+                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                          </a>
+                      </li>
+                      
+                      <li> 
+                          <a href="loginpage.php" class="profile">
+                              <i class="fa-regular fa-user fa-xl"></i>         
+                          </a>   
+                      </li> 
+                  </ul>
         </nav>  
         </div>
     </div>
@@ -108,7 +110,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-7">
-                        <a href="gamble.html">
+                        <a href="gamble.php">
                             <img src="krooked product/gamble.png" >
                         </a>
                     </div>
@@ -121,7 +123,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-6">
-                        <a href="cypunk.html">
+                        <a href="cypunk.php">
                             <img src="krooked product/cypunk.png">
                         </a>
                     </div>
@@ -134,7 +136,7 @@
             <div class="wrapper">
                 <div class="parent">
                     <div class="child bg-5">
-                        <a href="tommy.html">
+                        <a href="tommy.php">
                             <img src="krooked product/tommy.png" >
                         </a>
                     </div>

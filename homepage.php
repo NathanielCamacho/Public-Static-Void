@@ -20,11 +20,7 @@
         
         <nav>   
             <ul>
-                <li> 
-                    <a href="loginpage.php" class="profile">
-                        <i class="fa-regular fa-user fa-xl"></i>         
-                    </a>   
-                </li>       
+                      
                 <li> 
                     <a href="shopnow.php" class="about">
                         <i class="fa-solid fa-table-list fa-xl"></i> 
@@ -35,6 +31,12 @@
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>        
                     </a>
                 </li>
+                
+                <li> 
+                    <a href="loginpage.php" class="profile">
+                        <i class="fa-regular fa-user fa-xl"></i>         
+                    </a>   
+                </li> 
             </ul>
         </nav>  
         </div>
@@ -67,7 +69,7 @@
             <div class="wrapper">
               <div class="parent">
                 <div class="child bg-2">
-                  <a href="mamba.html">
+                  <a href="mamba.php">
                     <img src="krooked product/mamba.png">
                   </a>
                 </div>
@@ -80,7 +82,7 @@
             <div class="wrapper">
               <div class="parent">
                 <div class="child bg-3">
-                  <a href="lebron.html">
+                  <a href="lebron.php">
                     <img src="krooked product/lebron.png">
                   </a>
                 </div>
