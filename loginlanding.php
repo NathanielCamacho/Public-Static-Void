@@ -66,8 +66,8 @@
         echo "<h1>Login successful.</h1><br>";
         ?>
         <hr>
-        <div class="product_catalog">
-        <a href="shopnow.php"><h1>Continue to product catalog</h1></a>
-    </div>
+       
+        <a href="shopnow.php" class="btn"><button><h1>Continue to product catalog</h1></button></a>
+    
         </body>
 </html>

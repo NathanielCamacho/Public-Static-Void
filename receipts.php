@@ -91,8 +91,10 @@
         </tbody>
 
         
-    </table><br>
-    <button class="back_btn"><a href="userprofile.php">BACK</a></button>
+    </table>
+    <br>
+    <a href="userprofile.php">
+    <button >BACK</button></a>
     </div>
 </body>
 </html>

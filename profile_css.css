@@ -121,6 +121,7 @@ button:hover {
     margin: auto;
     position: relative;
     top: 50px;
+    font-family: 'Times New Roman';
     
 }
 
@@ -161,43 +162,14 @@ label {
 
 
 
-.login{
-    border: #000000 1px solid;
-    padding: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    
-}
 
-.login:hover{
-  
-    background-color: #00ff4c;
-    
-}
-
-.home{
+.container {
     
     padding: 20px;
-    border: #000000 1px solid;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    background-color: #292828;
+   
+   
 }
-
-.home:hover{
-  
-    background-color: #00ff4c;
-    
-}
-
-.product_catalog{
-    margin: 3px;
-    padding: 15px;
-}
-
-.product_catalog:hover{
-    background-color: #00ff4c;
-}
-
 
 
 
@@ -230,5 +202,22 @@ table, th, td {
 
 .display_btn button{
     width: 96%;
+}
+
+
+.continue_btn{
+    text-decoration: none;
+    color: #000000;
+    
+}
+
+.continue_btn button{
+    width: 30%;
+}
+
+
+.btn button,h1{
+    width: 100%;
+    cursor: pointer;
 }
 

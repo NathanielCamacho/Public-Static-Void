@@ -89,7 +89,8 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
             </form>
         <?php else: ?>
             <center><p>Your cart is empty.</p></center>
-            <center><a href="shopnow.php">Continue Shopping</a></center>
+          
+            <center><a href="shopnow.php" class="continue_btn"> <button >Continue Shopping </button></a></center>
         <?php endif; ?>
     </div>
     </div>

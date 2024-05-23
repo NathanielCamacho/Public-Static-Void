@@ -105,9 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
    <hr>
-        <div class="login">
-        <a href=loginpage.php ><h1>Go back to login page.</h1></a></div>
-        <div class="home"><a href=homepage.php ><h1>Go back to home page.</h1></a></div>
+        
+        <a href=loginpage.php class="btn"><button><h1>Go back to login page.</h1></button></a>
+       <a href=homepage.php class="btn"><button><h1>Go back to home page.</h1></button></a>
   
     </div>
     </body>

@@ -59,3 +59,15 @@ document.getElementById('unameForm').addEventListener('submit', function(event) 
         event.preventDefault();
     }
 });
+
+/**
+ * show password shitssss
+ */
+function myFunction() {
+    var passwordField = document.getElementById("psw");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
