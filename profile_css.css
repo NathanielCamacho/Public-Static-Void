@@ -123,6 +123,7 @@ button:hover {
     top: 50px;
     font-family: 'Times New Roman';
     
+  
 }
 
 
@@ -192,11 +193,19 @@ p {
 table, th, td {
     padding: 5px;
     border: 1px solid;
+   
   }
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .display_btn{
     display: flex;
     justify-content: center;
+
     
 }
 
@@ -219,5 +228,17 @@ table, th, td {
 .btn button,h1{
     width: 100%;
     cursor: pointer;
+    border-radius: 5px;
 }
 
+.text{
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+
+    margin: 10px;
+    width: 100%;
+    cursor: default;
+}

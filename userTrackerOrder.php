@@ -1,37 +1,3 @@
-<?php
-session_start();
-$userInfo = [];
-
-if (!isset($_SESSION['username'])) {
-    header("Location: loginpage.php");
-    exit();
-}
-
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "krookedweb";
-
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$username = $_SESSION['username'];
-$sql = "SELECT username, createstamp FROM userdata WHERE username='$username'";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $userInfo = [
-        'username' => $row['username'],
-        'regdate' => $row['createstamp'],
-    ];
-}
-$conn->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,14 +42,29 @@ $conn->close();
         </nav>  
         </div>
     </div>
+
+
+    <h1 class="text">Parcel Information</h1>
     <div class="main">
-        <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-        <?php if (!empty($userInfo)): ?>
-            <p>Registration Date & Time: <?php echo isset($userInfo['regdate']) ? $userInfo['regdate'] : 'N/A'; ?></p>
-        <?php endif; ?>
-        <button onclick="window.location.href='logout.php'">Log Out Account</button>
-        <button onclick="window.location.href='receipts.php'">Check Payments</button>
-        <button onclick="window.location.href='userTrackerOrder.php'">Track Order</button>
+        <div class="content">
+    <table>
+            <tr>
+                <th>Customers ID</th>
+                <th>Order</th>
+                <th>Order Status</th>
+            </tr>
+
+            <tr>
+                <td>#45131354</td>
+                <td></td>
+                <td>mamba black small 1pc</td>
+               
+            </tr>
+            </div>
+         </table>
+        
+    </div> <div class="display_btn">
+        <a href="userprofile.php"><button>Back</button></a>
     </div>
-</body>
-</html>
+    
+    

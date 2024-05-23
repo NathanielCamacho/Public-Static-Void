@@ -30,17 +30,34 @@
         </nav>  
         </div>
     </div>
+            <h1 class="text">Customer Confirmation of Order</h1>
 
+<div class="main">
+    <div class="Customers">
 
-    <div class="container">
-        <h1>Placeholder</h1>
-   <a href="confirmOrder.php" class="btn"><button>Confirmation of Order</button></a>
-   <a href="trackOrder.php" class="btn"><button>Track Order</button></a>
-   <a href="#" class="btn"><button>#</button></a>
+        <table>
+            <tr>
+                <th>Customers</th>
+                <th>Reference Number</th>
+                <th>Order</th>
+                <th>Total</th>
+                <th>Order Status</th>
+            </tr>
 
-</div>
+            <tr>
+                <td>Customer#1</td>
+                <td></td>
+                <td>mamba black small 1pc</td>
+                <td></td>
+                <td><select name="" id=""><option value="Confirm">Confirm</option><option value="">Cancel</option></select></td>
+            </tr>
+            
+           </div>
+           
 
-  
-   
-</body>
-</html>
+        </table>
+        <div class="display_btn">
+        <a href="Admin.php"><button>back</button></a>
+        <button style="width: 15%; margin-left:5px">Update</button>
+    </div>
+    </div>

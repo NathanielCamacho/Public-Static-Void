@@ -64,8 +64,12 @@ if (!isset($_SESSION['username'])) {
             <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
             <label for="reference_number">Reference Number:</label>
             <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
+             <!--
+            <label>Address:</label>
+            <input type="text" name="" id="" required> -->
             <button type="submit">Submit Payment</button>
-            
+           
+
         </form>
     </div>
 </body>
