@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 04:23 PM
+-- Generation Time: May 24, 2024 at 06:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,13 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ordercontents` (
-  `contentid` int(11) NOT NULL,
-  `orderid` int(11) NOT NULL,
-  `itemid` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `color` varchar(50) DEFAULT NULL,
-  `size` varchar(50) DEFAULT NULL
+  `contentid` int(3) NOT NULL,
+  `orderid` int(3) NOT NULL,
+  `itemid` int(3) NOT NULL,
+  `quantity` int(3) NOT NULL,
+  `color` enum('black','white') DEFAULT NULL,
+  `size` enum('S','M','L') DEFAULT NULL,
+  `createstamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updatestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ordercontents`
+--
+
+INSERT INTO `ordercontents` (`contentid`, `orderid`, `itemid`, `quantity`, `color`, `size`, `createstamp`, `updatestamp`) VALUES
+(10, 22, 3, 6, 'black', 'L', '2024-05-24 16:20:21', '2024-05-24 16:20:21');
 
 --
 -- Indexes for dumped tables
@@ -56,7 +65,7 @@ ALTER TABLE `ordercontents`
 -- AUTO_INCREMENT for table `ordercontents`
 --
 ALTER TABLE `ordercontents`
-  MODIFY `contentid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contentid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

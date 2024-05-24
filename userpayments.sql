@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 04:24 PM
+-- Generation Time: May 24, 2024 at 06:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,8 +34,17 @@ CREATE TABLE `userpayments` (
   `gcashnum` varchar(11) NOT NULL,
   `refnumber` varchar(10) NOT NULL,
   `paymentstatus` enum('Pending','Successful','Failed') NOT NULL DEFAULT 'Pending',
-  `paymentstamp` timestamp NOT NULL DEFAULT current_timestamp()
+  `paymentstamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `shipaddress` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `userpayments`
+--
+
+INSERT INTO `userpayments` (`paymentid`, `userid`, `gcashname`, `gcashnum`, `refnumber`, `paymentstatus`, `paymentstamp`, `shipaddress`) VALUES
+(6, 1, 'Lars Ulrich Jumaquio Pons', '09763430975', '1234567890', 'Pending', '2024-05-24 03:48:40', 'aaaaaaa'),
+(7, 3, 'Hans Dominic Arcilla', '09763430975', '1234567891', 'Pending', '2024-05-24 16:20:42', 'aaaaaaa');
 
 --
 -- Indexes for dumped tables
@@ -56,7 +65,7 @@ ALTER TABLE `userpayments`
 -- AUTO_INCREMENT for table `userpayments`
 --
 ALTER TABLE `userpayments`
-  MODIFY `paymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `paymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
