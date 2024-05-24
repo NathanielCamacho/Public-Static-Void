@@ -39,6 +39,7 @@
             <tr>
                 <th>Customers</th>
                 <th>Reference Number</th>
+                <th>Customer's Address</th>
                 <th>Order</th>
                 <th>Total</th>
                 <th>Order Status</th>
@@ -46,6 +47,7 @@
 
             <tr>
                 <td>Customer#1</td>
+                <td></td>
                 <td></td>
                 <td>mamba black small 1pc</td>
                 <td></td>
@@ -61,3 +63,7 @@
         <button style="width: 15%; margin-left:5px">Update</button>
     </div>
     </div>
+
+    <script src="script.js"></script>  
+</body>
+</html>

@@ -81,16 +81,14 @@ nav ul li a{
     font-family: 'Times New Roman';
 }
 
+
+
 .btn button{
     font-size: 40px;
     font-family:'Times New Roman', Times, serif;
 
     margin: 10px;
     width: 100%;
-  
-
-    
-   
     font-weight: bold;
    
     color: #3a3636;
@@ -98,6 +96,7 @@ nav ul li a{
     margin: 8px 0;
     margin-right: 15px;
     border: black solid 1.5px;
+    
     border-radius: 5px;
     cursor: pointer;
     
@@ -176,6 +175,11 @@ select{
     border: black solid 1px;
     border-radius: 3px;
     padding: 3px;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bold;
 }
 
 

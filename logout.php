@@ -55,6 +55,6 @@
     }
     ?>
     <hr>
-        <a href="homepage.php" class="btn"><button><h1>Go back to home page.</h1></button></a>
+        <a href="homepage.php" class="btn"><button><h2>Go back to home page.</h2></button></a>
         </body>
 </html>

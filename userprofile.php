@@ -81,9 +81,9 @@ $conn->close();
         <?php if (!empty($userInfo)): ?>
             <p>Registration Date & Time: <?php echo isset($userInfo['regdate']) ? $userInfo['regdate'] : 'N/A'; ?></p>
         <?php endif; ?>
-        <button onclick="window.location.href='logout.php'">Log Out Account</button>
-        <button onclick="window.location.href='receipts.php'">Check Payments</button>
-        <button onclick="window.location.href='userTrackerOrder.php'">Track Order</button>
+        <button onclick="window.location.href='logout.php'" style="width: 20%;">Log Out Account</button>
+        <button onclick="window.location.href='receipts.php'"style="width: 20%;">Check Payments</button>
+        <button onclick="window.location.href='userTrackerOrder.php'"style="width: 19.1%;">Track Order</button>
     </div>
 </body>
 </html>

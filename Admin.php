@@ -33,14 +33,17 @@
 
 
     <div class="container">
-        <h1>Placeholder</h1>
+        <h1>Admin Panel</h1>
+        <br>
+        <hr>
+        <br>
    <a href="confirmOrder.php" class="btn"><button>Confirmation of Order</button></a>
    <a href="trackOrder.php" class="btn"><button>Track Order</button></a>
-   <a href="#" class="btn"><button>#</button></a>
+   <a href="#" class="btn"><button>Sales</button></a>
 
 </div>
 
   
-   
+<script src="script.js"></script>  
 </body>
 </html>

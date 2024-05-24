@@ -66,23 +66,7 @@ nav ul li a{
     
 }
 
-button {
-    font-size: medium;
-    font-family: "Monaco";
-    font-weight: bold;
-    background-color: #44ce9b;
-    color: #3a3636;
-    padding: 10px 20px;
-    margin: 8px 0;
-    margin-right: 15px;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-}
 
-button:hover {
-    opacity: 0.8;
-}
 
 .cancelbtn {
     padding: 10px 18px;
@@ -225,10 +209,32 @@ table, th, td {
 }
 
 
-.btn button,h1{
+.btn button,h2{
+    font-size: 30px;
     width: 100%;
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+button{
+    margin: 10px;
+    width: 20%;
+    font-weight: bold;
+   
+    color: #3a3636;
+    padding: 10px 20px;
+    margin: 8px 0;
+    margin-right: 15px;
+    border: black solid 1.5px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #97cf97;
 }
 
 .text{
@@ -241,4 +247,10 @@ table, th, td {
     margin: 10px;
     width: 100%;
     cursor: default;
+}
+
+.unclickable {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
 }

@@ -44,27 +44,34 @@
     </div>
 
 
-    <h1 class="text">Parcel Information</h1>
-    <div class="main">
+   
+    <div class="main"> <h1 class="text">Parcel Information</h1>
         <div class="content">
     <table>
             <tr>
                 <th>Customers ID</th>
                 <th>Order</th>
                 <th>Order Status</th>
+                <th>To Recieved</th>
+               
             </tr>
 
             <tr>
                 <td>#45131354</td>
-                <td></td>
                 <td>mamba black small 1pc</td>
+                <td></td>
+                <td>  <button id="myButton" class="unclickable" disabled style="width: 100%;">Recieved</button></td>
+               
                
             </tr>
             </div>
          </table>
+         
         
     </div> <div class="display_btn">
         <a href="userprofile.php"><button>Back</button></a>
     </div>
-    
+    <script src="script.js"></script>  
+</body>
+</html>
     

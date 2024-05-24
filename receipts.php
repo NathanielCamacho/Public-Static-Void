@@ -94,7 +94,7 @@
     </table>
     <br>
     <a href="userprofile.php">
-    <button >BACK</button></a>
+    <button style="width: 20%;" >BACK</button></a>
     </div>
 </body>
 </html>

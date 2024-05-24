@@ -31,33 +31,34 @@
         </div>
     </div>
 
-   <h1 class="text">Track of Customer Order</h1>
+  
     <div class="main"> 
         
     <div class="Customers">
-
-        <table>
-            <tr>
-                <th>Customers</th>
-                <th>Reference Number</th>
-                <th>Order</th>
-                <th>Total</th>
-                <th>Order Status</th>
-            </tr>
-
-            <tr>
-                <td>Customer#1</td>
-                <td></td>
-                <td>mamba black small 1pc</td>
-                <td>    </td>
-                <td><select name="" id="">
+ <h1 class="text">Track of Customer Order</h1>
+ <table>
+        <tr>
+            <th>Customers</th>
+            <th>Reference Number</th>
+            <th>Customer's Address</th>
+            <th>Order</th>
+            <th>Order Status</th>
+        </tr>
+        <tr>
+            <td>Customer#1</td>
+            <td></td>
+            <td></td>
+            <td>mamba black small 1pc</td>
+            <td>
+                <select >
                     <option value="">Payment Information Confirm</option>
                     <option value="">Order Place</option>
                     <option value="">Order Ship</option>
-                    
-                </select></td>
-            </tr></div>
-            </table>
+                    <option value="">Out for Delivery</option>
+                </select>
+            </td>
+        </tr>
+    </table>
             
             <div class="display_btn">
         <a href="Admin.php"><button>back</button></a>
@@ -67,5 +68,7 @@
   
 
            
-
+    <script src="script.js"></script>  
+</body>
+</html>
         
