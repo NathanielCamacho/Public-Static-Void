@@ -1,12 +1,14 @@
 <?php
 session_start();
+
 if (isset($_SESSION['username'])) {
     if ($_SESSION['usertype'] == 'admin') {
         header("Location: adminprofile.php");
+        exit();
     } else {
-    header("Location: loginpage.php"); 
-    } 
-exit();
+        header("Location: userprofile.php");
+        exit();
+    }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

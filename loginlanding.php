@@ -57,17 +57,17 @@
         </div>
     </div>
     <div class="main">
-        <?php
-        session_start();
-        if (!isset($_SESSION['username'])) {
-            header("Location: loginpage.php");
-            exit();
-        }
-        echo "<h1>Login successful.</h1><br>";
-        ?>
+    <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+?>
         <hr>
        
-        <a href="shopnow.php" class="btn"><button><h2>Continue to product catalog</h2></button></a>
+        <a href="shopnow.php" class="btn"><button><h1>Continue to product catalog</h1></button></a>
     
         </body>
 </html>
