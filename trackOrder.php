@@ -31,8 +31,10 @@
     </div>
 </div>
 
-<h1 class="text">Track of Customer Order</h1>
-<div class="main"> 
+
+<div class="main"> <h1 class="text">Track of Customer Order</h1>
+<hr>
+<br>
     <div class="Customers">
         <table>
             <tr>
@@ -67,11 +69,32 @@
                         <td>
                             <form action="orderupdate.php" method="post">
                                 <input type="hidden" name="orderid" value="<?php echo $row["orderid"]; ?>">
-                                <input type="radio" name="orderstatus" value="placed" <?php if ($row["orderstatus"] === "placed") echo "checked"; ?>>Placed
-                                <input type="radio" name="orderstatus" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>Payment Confirmed
-                                <input type="radio" name="orderstatus" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>Packed
-                                <input type="radio" name="orderstatus" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>Shipped
-                                <button type="submit">Update</button>
+                               
+                                <div class="radio-group">
+    <input class="radio-input" name="orderstatus" id="radio1" type="radio" value="placed" <?php if ($row["orderstatus"] === "placed") echo "checked"; ?> >
+    <label class="radio-label" for="radio1">
+      <span class="radio-inner-circle"></span>
+      Placed
+    </label>
+    
+    <input class="radio-input" name="radio-group" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
+    <label class="radio-label" for="radio2">
+      <span class="radio-inner-circle"></span>
+      Payment Confirmed
+    </label>
+    
+    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
+    <label class="radio-label" for="radio3">
+      <span class="radio-inner-circle"></span>
+      Packed
+    </label>
+    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
+    <label class="radio-label" for="radio3">
+      <span class="radio-inner-circle"></span>
+      Shipped
+    </label>
+  </div>
+                               <div class="display_btn"> <button type="submit">Update</button></div>
                             </form>
                         </td>
                     </tr>
@@ -86,7 +109,7 @@
     </div>
     <div class="clear-orders">
         <form action="clearorders.php" method="post">
-            <button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button>
+           <div class="clear_btn"> <button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button></div>
         </form>
     </div>
     <div class="display_btn">

@@ -65,7 +65,8 @@ $conn->close();
     </div>
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-       
+        <br>
+       <hr>
        <div class="btn"> <button onclick="window.location.href='confirmOrder.php'">Check Payments</button></div>
         <div class="btn"><button onclick="window.location.href='trackOrder.php'">Track Order</button> </div>
         

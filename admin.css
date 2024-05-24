@@ -118,6 +118,10 @@ table, th, td {
     border: 1px solid;
     border-radius: 2px;
     cursor: default;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+
   }
 
 
@@ -133,6 +137,7 @@ table, th, td {
     position: relative;
     top: 50px;
     font-family: 'Times New Roman';
+   
 }
 
 .display_btn{
@@ -154,15 +159,20 @@ table, th, td {
     width: 100%;
 }
 
-.text{
-    display: flex;
-    justify-content: center;
-    border: none;
-    font-size: 40px;
+.clear_btn button{
+    font-size: 17px;
     font-family:'Times New Roman', Times, serif;
-    margin: 10px;
-    width: 100%;
+    font-weight: bold;
+    color: #3a3636;
+    padding: 5px 15px;
+    margin: 8px 0;
+    margin-right: 15px;
+    border: black solid 1.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 22%;
 }
+
 
 select{
     border: black solid 1px;
@@ -175,6 +185,72 @@ h1{
     font-weight: bold;
 }
 
+.radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radio-label {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .radio-label:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .radio-input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .radio-input:checked + .radio-label {
+    background-color: #ffc3c3;
+    border-color: #ff1111;
+  }
+  
+  .radio-input:focus + .radio-label {
+    outline: 2px solid #ff1111;
+  }
+  
+  .radio-inner-circle {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #888;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  
+  .radio-label:hover .radio-inner-circle {
+    border-color: #555;
+  }
+  
+  .radio-input:checked + .radio-label .radio-inner-circle {
+    border-color: #ff1111;
+  }
+  
+  .radio-input:checked + .radio-label .radio-inner-circle::after {
+    content: '';
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #ff1111;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+      
 
 
 
