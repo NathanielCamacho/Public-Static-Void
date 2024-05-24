@@ -47,8 +47,9 @@ $result = $conn->query($sql);
     </div>
 </div>
 
-<h1 class="text"><font color="white">Parcel Information</font></h1>
-<div class="main">
+
+<div class="main"><h2>Parcel Information</h2>
+<br>
     <div class="content">
         <table>
             <tr>
@@ -85,10 +86,10 @@ $result = $conn->query($sql);
             $conn->close();
             ?>
         </table>
-    </div>
-</div>
-<div class="display_btn">
+    </div><div class="display_btn">
     <a href="userprofile.php"><button>Back</button></a>
 </div>
+</div>
+
 </body>
 </html>

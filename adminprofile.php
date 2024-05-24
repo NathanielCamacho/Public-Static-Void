@@ -47,39 +47,28 @@ $conn->close();
 <body>
 <div class="header">
         <div class="navbar">
-            <a href="homepage.php"> 
+            <a href="#"> 
                 <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
             </a> 
             <div class="logo_name">The Krooked</div>
         
-        <nav>   
-        <ul>
-                      
-                      <li> 
-                          <a href="shopnow.php" class="about">
-                              <i class="fa-solid fa-table-list fa-xl"></i> 
-                          </a>
-                      </li>
-                      <li>     
-                          <a href="cart.php" class="cart">
-                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                          </a>
-                      </li>
-                      
-                      <li> 
-                          <a href="loginpage.php" class="profile">
-                              <i class="fa-regular fa-user fa-xl"></i>         
-                          </a>   
-                      </li> 
-                  </ul>
+            <nav>   
+            <ul>
+                <li> 
+                    <a href="logout.php" class="profile">
+                    <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
+                    </a>   
+                </li> 
+            </ul>
         </nav>  
         </div>
     </div>
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-        <button onclick="window.location.href='logout.php'">Log Out Account</button>
-        <button onclick="window.location.href='confirmOrder.php'">Check Payments</button>
-        <button onclick="window.location.href='trackOrder.php'">Track Order</button>
+       
+       <div class="btn"> <button onclick="window.location.href='confirmOrder.php'">Check Payments</button></div>
+        <div class="btn"><button onclick="window.location.href='trackOrder.php'">Track Order</button> </div>
+        
     </div>
 </body>
 </html>

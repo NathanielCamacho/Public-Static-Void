@@ -77,9 +77,10 @@ $conn->close();
     </div>
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-        <button onclick="window.location.href='logout.php'">Log Out Account</button>
+        
         <button onclick="window.location.href='receipts.php'">Check Payments</button>
         <button onclick="window.location.href='userTrackerOrder.php'">Track Order</button>
+        <button onclick="window.location.href='logout.php'">Log Out </button>
     </div>
 </body>
 </html>
