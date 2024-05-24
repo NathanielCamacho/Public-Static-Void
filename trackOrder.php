@@ -77,18 +77,18 @@
       Placed
     </label>
     
-    <input class="radio-input" name="radio-group" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
+    <input class="radio-input" name="orderstatus" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
     <label class="radio-label" for="radio2">
       <span class="radio-inner-circle"></span>
       Payment Confirmed
     </label>
     
-    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
+    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
     <label class="radio-label" for="radio3">
       <span class="radio-inner-circle"></span>
       Packed
     </label>
-    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
+    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
     <label class="radio-label" for="radio3">
       <span class="radio-inner-circle"></span>
       Shipped

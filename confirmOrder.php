@@ -1,3 +1,34 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') {
+    header("Location: loginpage.php");
+    exit();
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "krookedweb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT gcashname, refnumber, shipaddress FROM userpayments";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $refnumber = $row["refnumber"];
+        $shipaddress = $row["shipaddress"];
+        $gcashname = $row["gcashname"];
+    }
+} else {
+    echo "No orders found.";
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,18 +71,26 @@
                 <th>Customers</th>
                 <th>Reference Number</th>
                 <th>Customer's Address</th>
-                <th>Order</th>
-                <th>Total</th>
+
                 <th>Order Status</th>
             </tr>
 
             <tr>
-                <td>Customer#1</td>
-                <td></td>
-                <td></td>
-                <td>mamba black small 1pc</td>
-                <td></td>
-                <td><select name="" id=""><option value="Confirm">Confirm</option><option value="">Cancel</option></select></td>
+                <td><?php echo $gcashname; ?></td>
+                <td><?php echo $refnumber; ?></td>
+                <td><?php echo $shipaddress; ?></td>
+                <td><form action="paymentupdate.php" method="post">
+    <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
+    <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">
+    <input type="hidden" name="shipaddress" value="<?php echo $shipaddress; ?>">
+    <select name="paymentstatus">
+        <option value="pending">Pending</option>
+        <option value="successful">Accept</option>
+        <option value="failed">Cancel</option>
+    </select>
+    <button type="submit">Update Payment Status</button>
+</form>
+</form></td>
             </tr>
             
            </div>
@@ -59,8 +98,9 @@
 
         </table>
         <div class="display_btn">
-        
-        <button style="width: 15%; margin-left:5px">Update</button>
+        <form action="paymentupdate.php" method="post">
+        <button type="submit" style="width: 15%; margin-left:5px">Update</button>
+        </form>
         <a href="adminprofile.php"><button>Back</button></a>
     </div>
     </div>
