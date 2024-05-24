@@ -87,25 +87,63 @@
     <hr>
 
     <div class="background">
-        <div class="text3">You may Also Like:</div>
-
-        <div class="products">
-            <div class="wrapper">
-                <div class="parent">
-                    <div class="child bg-2">
-                        <a href="mamba.php">
-                            <img src="krooked product/mamba.png">
-                        </a>
-                    </div>
+    <div class="text3">You may Also Like: </div>
+    
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-2">
+                    <a href="mamba.php">
+                        <img src="krooked product/mamba.png">
+                    </a>        
                 </div>
             </div>
-            <div class="description">Mamba - ₱500.00</div>
         </div>
+        <div class="description">Mamba - ₱500.00</div>
+    </div>
+  
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-3">
+                    <a href="lebron.php">
+                        <img src="krooked product/lebron.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="description">Lebron - ₱500.00</div>
+    </div>
 
-        <div class="products">
-            <div class="wrapper">
-                <div class="parent">
-                    <div class="child bg-3">
-                        <a href="lebron.php">
-                            <img src="krooked product/lebron.png">
-                       
+    <div class="products">
+        <div class="wrapper">
+            <div class="parent">
+                <div class="child bg-4">
+                    <a href="anniversary.php">
+                        <img src="krooked product/tee.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="description">Anniversary - ₱500.00</div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="col-1">
+        <h3>CONTACTS</h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/thekrkdclothing" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@thekrooked/video/7276065830222318854" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/thekrkdclothing/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+        </div>
+    </div>
+    <div class="col-3">
+        <h3>@Bart Ceria</h3>
+    </div>
+</div>
+</form>
+<script src="script.js"></script>  
+</body>
+</html>

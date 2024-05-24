@@ -9,12 +9,13 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+   
 </head>
 <body>
 
 <div class="header">
     <div class="navbar">
-        <a href="homepage.php"> 
+        <a href="#"> 
             <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
         </a> 
         <div class="logo_name">The Krooked</div>
@@ -22,7 +23,7 @@
         <nav>   
             <ul>
                 <li> 
-                    <a href="loginpage.php" class="profile">
+                    <a href="logout.php" class="profile">
                         <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
                     </a>   
                 </li> 
@@ -31,12 +32,12 @@
     </div>
 </div>
 
-
-<div class="main"> <h1 class="text">Track of Customer Order</h1>
-<hr>
-<br>
+<div class="main">
+    <h1 class="text">Track of Customer Order</h1>
+    <hr>
+    <br>
     <div class="Content">
-        <table >
+        <table>
             <tr>
                 <th>Order ID</th>
                 <th>Total Amount</th>
@@ -44,7 +45,6 @@
                 <th>Status</th>
             </tr>
             <?php
-            // Establish database connection
             $servername = "localhost";
             $username = "root";
             $password = "";
@@ -69,32 +69,23 @@
                         <td>
                             <form action="orderupdate.php" method="post">
                                 <input type="hidden" name="orderid" value="<?php echo $row["orderid"]; ?>">
-                               
-                                <div class="radio-group">
-    <input class="radio-input" name="orderstatus" id="radio1" type="radio" value="placed" <?php if ($row["orderstatus"] === "placed") echo "checked"; ?> >
-    <label class="radio-label" for="radio1">
-      <span class="radio-inner-circle"></span>
-      Placed
-    </label>
-    
-    <input class="radio-input" name="orderstatus" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
-    <label class="radio-label" for="radio2">
-      <span class="radio-inner-circle"></span>
-      Payment Confirmed
-    </label>
-    
-    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
-    <label class="radio-label" for="radio3">
-      <span class="radio-inner-circle"></span>
-      Packed
-    </label>
-    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
-    <label class="radio-label" for="radio4">
-      <span class="radio-inner-circle"></span>
-      Shipped
-    </label>
-  </div>
-                               <div class="display_btn"> <button type="submit">Update</button></div>
+                                <label class="radio-container">Placed
+                                    <input type="radio" name="orderstatus" value="placed" <?php if ($row["orderstatus"] === "placed") echo "checked"; ?>>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Payment Confirmed
+                                    <input type="radio" name="orderstatus" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Packed
+                                    <input type="radio" name="orderstatus" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Shipped
+                                    <input type="radio" name="orderstatus" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="display_btn"><button type="submit">Update</button></div>
                             </form>
                         </td>
                     </tr>
@@ -105,21 +96,17 @@
             }
             $conn->close();
             ?>
-             
         </table>
     </div>
    
     <div class="clear-orders">
         <form action="clearorders.php" method="post">
-           <div class="clear_btn"> <button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button>
+            <div class="clear_btn"><button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button></div>
         </form>
-       
-        <a href="adminprofile.php"><button>Back</button></a>
-    </div>
-    </div>
+    </div> 
+    <div class="clear_btn"><button onclick="window.location.href='adminprofile.php'">Back</button></div>
+</div>
     
-       
-    <script src="script.js"></script>  
+<script src="script.js"></script>  
 </body>
 </html>
-        

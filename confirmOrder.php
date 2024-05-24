@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
         $gcashname = $row["gcashname"];
     }
 } else {
-    echo "No orders found.";
+    $noPaymentFound = true;
 }
 
 $conn->close();
@@ -45,7 +45,7 @@ $conn->close();
 
 <div class="header">
         <div class="navbar">
-            <a href="homepage.php"> 
+            <a href="#"> 
                 <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
             </a> 
             <div class="logo_name">The Krooked</div>
@@ -63,7 +63,7 @@ $conn->close();
     </div>
            
 
-<div class="main"> <h1 class="text">Customer Confirmation of Order</h1>
+<div class="main"> <h1>Customer Confirmation of Order</h1>
     <div class="content">
 
         <table>
@@ -71,38 +71,38 @@ $conn->close();
                 <th>Customers</th>
                 <th>Reference Number</th>
                 <th>Customer's Address</th>
-
                 <th>Order Status</th>
             </tr>
 
-            <tr>
-                <td><?php echo $gcashname; ?></td>
-                <td><?php echo $refnumber; ?></td>
-                <td><?php echo $shipaddress; ?></td>
-                <td><form action="paymentupdate.php" method="post">
-    <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
-    <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">
-    <input type="hidden" name="shipaddress" value="<?php echo $shipaddress; ?>">
-    <select name="paymentstatus">
-        <option value="pending">Pending</option>
-        <option value="successful">Accept</option>
-        <option value="failed">Cancel</option>
-    </select>
-    <button type="submit">Update Payment Status</button>
-</form>
-</form></td>
-            </tr>
-            
-           </div>
-           
-
+            <?php if (isset($noPaymentFound) && $noPaymentFound): ?>
+                <tr>
+                    <td colspan="4">No payments found.</td>
+                </tr>
+            <?php else: ?>
+                <tr>
+                    <td><?php echo $gcashname; ?></td>
+                    <td><?php echo $refnumber; ?></td>
+                    <td><?php echo $shipaddress; ?></td>
+                    <td>
+                        <form action="paymentupdate.php" method="post">
+                            <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
+                            <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">
+                            <input type="hidden" name="shipaddress" value="<?php echo $shipaddress; ?>">
+                            <select name="paymentstatus">
+                                <option value="">--Choose an Option--</option>
+                                <option value="pending">Pending</option>
+                                <option value="successful">Accept</option>
+                                <option value="failed">Cancel</option>
+                            </select>
+                            <div class="status_btn"><button type="submit">Update</button></div>
+                        </form>
+                    </td>
+                </tr>
+            <?php endif; ?>
         </table>
         <div class="display_btn">
-        <form action="paymentupdate.php" method="post">
-        <button type="submit" style="width: 15%; margin-left:5px">Update</button>
-        </form>
-        <a href="adminprofile.php"><button>Back</button></a>
-    </div>
+            <a href="adminprofile.php"><button>Back</button></a>
+        </div>
     </div>
 
     <script src="script.js"></script>  

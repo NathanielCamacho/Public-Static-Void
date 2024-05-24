@@ -91,6 +91,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 echo "Error: User not found.";
 }
 
+// Clear the cart
+unset($_SESSION['cart']);
+
+
+
     $conn->close();
 ?>
     </div>

@@ -66,7 +66,10 @@ if (!isset($_SESSION['username'])) {
             <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
             <label for="shipaddress">Shipping Address:</label>
             <input type="text" id="shipping_address" name="shipaddress" placeholder="123 Apple St., Manila City, Metro Manila" required>
-            <button type="submit">Submit Payment</button>
+            <form action="clearcart.php" method="post">
+            <button type="submit">Submit Payment</button> 
+            </form>
+            <button onclick="window.location.href='userprofile.php'">Back</button>
            
 
         </form>

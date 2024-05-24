@@ -92,7 +92,9 @@
 
         
     </table>
-    <br>
+    <br><form action="clear_user_payments.php" method="post">
+        <button type="submit" style="width: 20%;">Clear Payments</button>
+    </form>
     <a href="userprofile.php">
     <button style="width: 20%;" >BACK</button></a>
     </div>
