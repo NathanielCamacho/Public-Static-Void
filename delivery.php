@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>ADMIN</title>
-   <link rel="stylesheet" href="admin.css">
+   <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,19 +31,39 @@
         </div>
     </div>
 
-
-    <div class="container">
-        <h1>Admin Panel</h1>
-        <br>
-        <hr>
-        <br>
-   <a href="confirmOrder.php" class="btn"><button>Confirmation of Order</button></a>
-   <a href="trackOrder.php" class="btn"><button>Track Order</button></a>
-   <a href="salesTrack.php" class="btn"><button>Sales</button></a>
-
-</div>
-
   
-<script src="script.js"></script>  
+    <div class="main"> 
+        
+    <div class="Customers">
+ <h1 class="text">Delivery</h1>
+ <table>
+        <tr>
+            <th>Customers</th>
+           
+            <th>Customer's Address</th>
+            <th>Order</th>
+            <th>Order Status</th>
+        </tr>
+        <tr>
+            <td>Customer#1</td>
+           
+            <td></td>
+            <td>mamba black small 1pc</td>
+            <td>
+               <div class="delivery_btn"> <button >Parcel Delivered</button></div>
+            </td>
+        </tr>
+    </table>
+            
+            <div class="display_btn">
+        <a href="Admin.php"><button>back</button></a>
+        <button style="width: 15%; margin-left:5px">Update</button>
+    </div>
+    </div>
+  
+
+           
+    <script src="script.js"></script>  
 </body>
 </html>
+        

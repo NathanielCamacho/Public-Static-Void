@@ -33,9 +33,9 @@
 
   
     <div class="main"> 
-        
+         <h1 class="text">Track of Customer Order</h1>
+
     <div class="Customers">
- <h1 class="text">Track of Customer Order</h1>
  <table>
         <tr>
             <th>Customers</th>
@@ -58,10 +58,14 @@
                 </select>
             </td>
         </tr>
+    </div>
     </table>
+    
+
+    
             
             <div class="display_btn">
-        <a href="Admin.php"><button>back</button></a>
+        <a href="Admin.php"><button>Back</button></a>
         <button style="width: 15%; margin-left:5px">Update</button>
     </div>
     </div>

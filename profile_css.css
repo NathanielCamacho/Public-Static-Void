@@ -237,6 +237,29 @@ button:hover {
     background-color: #97cf97;
 }
 
+.delivery_btn{
+    font-size: 30px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.delivery_btn button{
+    margin: 10px;
+    width: 100%;
+    font-weight: bold;
+   
+    color: #3a3636;
+    padding: 10px 20px;
+    margin: 8px 0;
+    margin-right: 15px;
+    border: black solid 1.5px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .text{
     display: flex;
     justify-content: center;

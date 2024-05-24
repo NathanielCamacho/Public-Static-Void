@@ -30,9 +30,9 @@
         </nav>  
         </div>
     </div>
-            <h1 class="text">Customer Confirmation of Order</h1>
+           
 
-<div class="main">
+<div class="main"> <h1 class="text">Customer Confirmation of Order</h1>
     <div class="Customers">
 
         <table>
@@ -59,7 +59,7 @@
 
         </table>
         <div class="display_btn">
-        <a href="Admin.php"><button>back</button></a>
+        <a href="Admin.php"><button>Back</button></a>
         <button style="width: 15%; margin-left:5px">Update</button>
     </div>
     </div>

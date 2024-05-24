@@ -125,11 +125,16 @@ table, th, td {
 
 .main
 {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
+    padding: 20px; /* Updated padding for better spacing */
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    font-family: 'Times New Roman';
 }
 
 .display_btn{
