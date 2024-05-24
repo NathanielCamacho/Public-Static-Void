@@ -81,16 +81,14 @@ nav ul li a{
     font-family: 'Times New Roman';
 }
 
+
+
 .btn button{
     font-size: 40px;
     font-family:'Times New Roman', Times, serif;
 
     margin: 10px;
     width: 100%;
-  
-
-    
-   
     font-weight: bold;
    
     color: #3a3636;
@@ -98,6 +96,7 @@ nav ul li a{
     margin: 8px 0;
     margin-right: 15px;
     border: black solid 1.5px;
+    
     border-radius: 5px;
     cursor: pointer;
     
@@ -126,11 +125,16 @@ table, th, td {
 
 .main
 {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
+    padding: 20px; /* Updated padding for better spacing */
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    font-family: 'Times New Roman';
 }
 
 .display_btn{
@@ -176,6 +180,11 @@ select{
     border: black solid 1px;
     border-radius: 3px;
     padding: 3px;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bold;
 }
 
 

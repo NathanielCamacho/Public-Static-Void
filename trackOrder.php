@@ -92,6 +92,8 @@
     <div class="display_btn">
         <a href="adminprofile.php"><button>Back</button></a>
     </div>
-</div>
+</div>         
+    <script src="script.js"></script>  
 </body>
 </html>
+        

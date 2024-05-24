@@ -67,7 +67,7 @@
         ?>
         <hr>
        
-        <a href="shopnow.php" class="btn"><button><h1>Continue to product catalog</h1></button></a>
+        <a href="shopnow.php" class="btn"><button><h2>Continue to product catalog</h2></button></a>
     
         </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>ADMIN</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,19 +42,38 @@
         </nav>  
         </div>
     </div>
-    <div class="main">
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])) {
-        $_SESSION = array();
-        session_destroy();
-        echo "<h1>Logout successful.</h1>";
-    } else {
-        header("Location: loginpage.php");
-        exit();
-    }
-    ?>
-    <hr>
-        <a href="homepage.php" class="btn"><button><h2>Go back to home page.</h2></button></a>
-        </body>
+
+
+   
+    <div class="main"> <h1 class="text">Sales Record</h1>
+        <div class="content">
+    <table>
+            <tr>
+               
+                <th>Product</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Quantity</th>
+               
+            </tr>
+
+            <tr>
+               
+                <td>mamba black small 1pc</td>
+                <td></td>
+                <td>  </td>
+                <td></td>
+               
+               
+            </tr>
+            </div>
+         </table>
+         
+        
+    </div> <div class="display_btn">
+        <a href="Admin.php"><button>Back</button></a>
+    </div>
+    <script src="script.js"></script>  
+</body>
 </html>
+    

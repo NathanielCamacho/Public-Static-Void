@@ -1,10 +1,45 @@
+<?php
+session_start();
+$userInfo = [];
+
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "krookedweb";
+
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_SESSION['username'];
+$sql = "SELECT username, createstamp FROM userdata WHERE username='$username'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userInfo = [
+        'username' => $row['username'],
+        'regdate' => $row['createstamp'],
+    ];
+}
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>ADMIN</title>
-   <link rel="stylesheet" href="admin.css">
+   <title>Delivery</title>
+   <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,17 +66,15 @@
         </div>
     </div>
 
-
-    <div class="container">
-        <h1>Admin Panel</h1>
-        <br>
-        <hr>
-        <br>
-   <a href="confirmOrder.php" class="btn"><button>Confirmation of Order</button></a>
-   <a href="trackOrder.php" class="btn"><button>Track Order</button></a>
-   <a href="salesTrack.php" class="btn"><button>Sales</button></a>
-
-</div>
+    <div class="main">
+        <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
+        <?php if (!empty($userInfo)): ?>
+            
+        <?php endif; ?>
+       
+        <div class="btn"><button onclick="window.location.href='delivery.php'" >Delivery</button></div>
+        <div class="btn"><button onclick="window.location.href='logout.php'" >Log Out Account</button></div>
+    </div>
 
   
 <script src="script.js"></script>  
