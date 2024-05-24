@@ -53,7 +53,7 @@ $conn->close();
         <nav>   
             <ul>
                 <li> 
-                    <a href="loginpage.php" class="profile">
+                    <a href="logout.php" class="profile">
                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
                     </a>   
                 </li> 
@@ -64,7 +64,7 @@ $conn->close();
            
 
 <div class="main"> <h1 class="text">Customer Confirmation of Order</h1>
-    <div class="Customers">
+    <div class="content">
 
         <table>
             <tr>
