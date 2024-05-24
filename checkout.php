@@ -59,14 +59,13 @@ if (!isset($_SESSION['username'])) {
         <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
         <form action="paymentlanding.php" method="post">
             <label for="gcash_name">GCash Account Name:</label>
-            <input type="text" id="gcash_name" name="gcashname" required>
+            <input type="text" id="gcash_name" name="gcashname" placeholder="John Fitzgerald Kennedy" required>
             <label for="gcash_number">GCash Number:</label>
             <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
             <label for="reference_number">Reference Number:</label>
             <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
-             <!--
-            <label>Address:</label>
-            <input type="text" name="" id="" required> -->
+            <label for="shipaddress">Shipping Address:</label>
+            <input type="text" id="shipping_address" name="shipaddress" placeholder="123 Apple St., Manila City, Metro Manila" required>
             <button type="submit">Submit Payment</button>
            
 

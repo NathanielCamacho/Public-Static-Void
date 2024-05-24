@@ -1,3 +1,36 @@
+<?php
+session_start();
+$userInfo = [];
+
+if (!isset($_SESSION['username'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "krookedweb";
+
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_SESSION['username'];
+$sql = "SELECT username, createstamp FROM userdata WHERE username='$username'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userInfo = [
+        'username' => $row['username'],
+    ];
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
-   
+    
 </head>
 <body>
 <div class="header">
@@ -43,56 +76,10 @@
         </div>
     </div>
     <div class="main">
-    <?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: loginpage.php");
-    exit();
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $gcashname = $_POST['gcashname'];
-    $gcashnumber = $_POST['gcashnum'];
-    $refnumber = $_POST['refnumber'];
-    $shipaddress = $_POST['shipaddress'];
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "krookedweb";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $username = $_SESSION['username'];
-    $userid_query = "SELECT userid FROM userdata WHERE username = '$username'";
-    $result = $conn->query($userid_query);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $userid = $row['userid'];
-
-        
-        $sql = "INSERT INTO userpayments (userid, gcashname, gcashnum, refnumber, paymentstatus, shipaddress) 
-                VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending', '$shipaddress')";
-
-        if ($conn->query($sql) === TRUE) {
-                echo "Payment submitted successfully. Redirecting...";
-                header("refresh:3;url=userprofile.php");
-            } else {
-                echo "Error inserting payment details: " . $conn->error;
-            }
-        } else {
-            echo "Error: User not found.";
-    }
-} else {
-echo "Error: User not found.";
-}
-
-    $conn->close();
-?>
+        <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
+        <button onclick="window.location.href='logout.php'">Log Out Account</button>
+        <button onclick="window.location.href='confirmOrder.php'">Check Payments</button>
+        <button onclick="window.location.href='trackOrder.php'">Track Order</button>
     </div>
 </body>
 </html>

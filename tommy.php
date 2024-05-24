@@ -54,16 +54,28 @@
         <div class="price">₱500.00</div>
         <hr>
         <div class="container">
-            <label><input type="radio" name="color" checked=""><span>Black</span></label>
-        </div>
+                    <label>
+                        <input type="radio" name="color" value="Black" checked>
+                        <span>Black</span>
+                    </label>
+                </div>
         <br>
         Size
         <br>
         <div class="container">
-            <label><input type="radio" name="size" checked=""><span>Small</span></label>
-            <label><input type="radio" name="size"><span>Medium</span></label>
-            <label><input type="radio" name="size"><span>Large</span></label>
-        </div>
+                    <label>
+                        <input type="radio" name="size" value="S" checked>
+                        <span>Small</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="M">
+                        <span>Medium</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="L">
+                        <span>Large</span>
+                    </label>
+                </div>
         
         <br>
         Quantity: <br>

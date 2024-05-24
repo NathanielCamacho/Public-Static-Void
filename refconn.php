@@ -44,65 +44,72 @@
     </div>
 
     <div class="main">
-        <?php
-        session_start();
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "krookedweb";
-
-
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-
-if ($conn->connect_error) {
-    die("MySQL Connection failed. Reason: " . $conn->connect_error);
+    <?php
+session_start();
+if (isset($_SESSION['username'])) {
+    if ($_SESSION['usertype'] == 'admin') {
+        header("Location: adminprofile.php");
+    } else {
+        header("Location: userprofile.php");
+    }
+    exit();
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $uname = $_POST['username'];
-    $pword = $_POST['password'];
-    $action = $_POST['action'];
+    $servername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
+    $dbname = "krookedweb";
+    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
-
-    if (!preg_match('/^[A-Za-z0-9]{8,}$/', $pword)) {
-        echo "Password must be at least 8 characters long and contain only letters and numbers.";
-        exit;
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 
-
-    $uname = $conn->real_escape_string($uname);
-    $pword = $conn->real_escape_string($pword);
+    $inputUsername = $conn->real_escape_string($_POST['username']);
+    $inputPassword = $conn->real_escape_string($_POST['password']);
+    $action = $_POST['action'];
 
     if ($action == 'login') {
-        $sql = "SELECT * FROM userdata WHERE username = '$uname'";
+        $sql = "SELECT userid, password, usertype FROM userdata WHERE username = '$inputUsername'";
         $result = $conn->query($sql);
-    
+
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            if ($pword === $row['password']) {
-                session_start();
-                $_SESSION['username'] = $uname;
-                header("Location: loginlanding.php");
+            if ($inputPassword == $row['password']) {
+                $_SESSION['username'] = $inputUsername;
+                $_SESSION['userid'] = $row['userid'];
+                $_SESSION['usertype'] = $row['usertype'];
+                
+                if ($row['usertype'] == 'admin') {
+                    header("Location: adminprofile.php");
+                } else {
+                    header("Location: userprofile.php");
+                }
                 exit();
             } else {
-                echo "Invalid username/password combination.";
+                echo "Invalid password.";
             }
         } else {
-            echo "Invalid username/password combination.";
+            echo "No user found with that username.";
         }
     } elseif ($action == 'signup') {
-        $sql = "INSERT INTO userdata (username, password) VALUES ('$uname', '$pword')";
-        if ($conn->query($sql) === TRUE) {
-            echo "Signup successful. You may now log in using your credentials.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }    
-}    
+        $checkUserSql = "SELECT * FROM userdata WHERE username = '$inputUsername'";
+        $checkResult = $conn->query($checkUserSql);
 
-$conn->close();
+        if ($checkResult->num_rows > 0) {
+            echo "Username already taken. Please choose a different username.";
+        } else {
+            $sql = "INSERT INTO userdata (username, password, usertype) VALUES ('$inputUsername', '$inputPassword', 'user')";
+            if ($conn->query($sql) === TRUE) {
+                echo "Signup successful. You may now log in using your credentials.";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+    $conn->close();
+}
 ?>
    <hr>
         

@@ -69,15 +69,15 @@ if (!isset($_SESSION['username'])) {
                 Size<br>
                 <div class="container">
                     <label>
-                        <input type="radio" name="size" value="Small" checked>
+                        <input type="radio" name="size" value="S" checked>
                         <span>Small</span>
                     </label>
                     <label>
-                        <input type="radio" name="size" value="Medium">
+                        <input type="radio" name="size" value="M">
                         <span>Medium</span>
                     </label>
                     <label>
-                        <input type="radio" name="size" value="Large">
+                        <input type="radio" name="size" value="L">
                         <span>Large</span>
                     </label>
                 </div>

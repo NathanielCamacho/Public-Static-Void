@@ -27,7 +27,6 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $userInfo = [
         'username' => $row['username'],
-        'regdate' => $row['createstamp'],
     ];
 }
 $conn->close();
@@ -78,9 +77,6 @@ $conn->close();
     </div>
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
-        <?php if (!empty($userInfo)): ?>
-            <p>Registration Date & Time: <?php echo isset($userInfo['regdate']) ? $userInfo['regdate'] : 'N/A'; ?></p>
-        <?php endif; ?>
         <button onclick="window.location.href='logout.php'">Log Out Account</button>
         <button onclick="window.location.href='receipts.php'">Check Payments</button>
         <button onclick="window.location.href='userTrackerOrder.php'">Track Order</button>

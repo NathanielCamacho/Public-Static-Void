@@ -23,35 +23,33 @@ if (!isset($_SESSION['username'])) {
         <input type="hidden" name="product_name" value="Magatta"> 
         <input type="hidden" name="product_price" value="500.00">
         <div class="header">
-        <div class="navbar">
-            <a href="homepage.php"> 
-                <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
-            </a> 
-            <div class="logo_name">The Krooked</div>
-        
-        <nav>   
-        <ul>
-                      
-                      <li> 
-                          <a href="shopnow.php" class="about">
-                              <i class="fa-solid fa-table-list fa-xl"></i> 
-                          </a>
-                      </li>
-                      <li>     
-                          <a href="cart.php" class="cart">
-                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                          </a>
-                      </li>
-                      
-                      <li> 
-                          <a href="loginpage.php" class="profile">
-                              <i class="fa-regular fa-user fa-xl"></i>         
-                          </a>   
-                      </li> 
-                  </ul>
-        </nav>  
+            <div class="navbar">
+                <a href="homepage.php"> 
+                    <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
+                </a> 
+                <div class="logo_name">The Krooked</div>
+            
+            <nav>   
+            <ul>
+                <li> 
+                    <a href="shopnow.php" class="about">
+                        <i class="fa-solid fa-table-list fa-xl"></i> 
+                    </a>
+                </li>
+                <li>     
+                    <a href="cart.php" class="cart">
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                    </a>
+                </li>
+                <li> 
+                    <a href="loginpage.php" class="profile">
+                        <i class="fa-regular fa-user fa-xl"></i>         
+                    </a>   
+                </li> 
+            </ul>
+            </nav>  
+            </div>
         </div>
-    </div>
         <div class="product">
             <img src="krooked product/cypunk.png">
             <div class="product_container">
@@ -68,26 +66,27 @@ if (!isset($_SESSION['username'])) {
                 Size<br>
                 <div class="container">
                     <label>
-                        <input type="radio" name="size" value="Small" checked>
+                        <input type="radio" name="size" value="S" checked>
                         <span>Small</span>
                     </label>
                     <label>
-                        <input type="radio" name="size" value="Medium">
+                        <input type="radio" name="size" value="M">
                         <span>Medium</span>
                     </label>
                     <label>
-                        <input type="radio" name="size" value="Large">
+                        <input type="radio" name="size" value="L">
                         <span>Large</span>
                     </label>
                 </div>
                 <br>Quantity: <br>
-                <div class="qty-input">
-                    <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
-                    <div class="qty">
-                        <input class="product-qty" type="number" name="quantity" min="1" max="10" value="1">
-                    </div>
-                    <div class="number-right" data-content="+" onclick="increaseQty()"></div>
+            <div class="qty-input">
+                <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
+                <div class="qty">
+                    <input class="product-qty" type="number" name="quantity" min="1" max="10" value="1">
                 </div>
+                <div class="number-right" data-content="+" onclick="increaseQty()"></div>
+            </div>
+            <br>
                 <br>
                 <div class="submit">
                     <button class="Btn" type="submit">
@@ -101,39 +100,34 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
-
         <hr>
-
         <div class="background">
-    <div class="text3">You may Also Like: </div>
-    
-    <div class="products">
-        <div class="wrapper">
-            <div class="parent">
-                <div class="child bg-2">
-                    <a href="mamba.php">
-                        <img src="krooked product/mamba.png">
-                    </a>        
+            <div class="text3">You may Also Like: </div>
+            <div class="products">
+                <div class="wrapper">
+                    <div class="parent">
+                        <div class="child bg-2">
+                            <a href="mamba.php">
+                                <img src="krooked product/mamba.png">
+                            </a>        
+                        </div>
+                    </div>
                 </div>
+                <div class="description">Mamba - ₱500.00</div>
             </div>
-        </div>
-        <div class="description">Mamba - ₱500.00</div>
-    </div>
-  
-    <div class="products">
-        <div class="wrapper">
-            <div class="parent">
-                <div class="child bg-3">
-                    <a href="lebron.php">
-                        <img src="krooked product/lebron.png">
-                    </a>
+            <div class="products">
+                <div class="wrapper">
+                    <div class="parent">
+                        <div class="child bg-3">
+                            <a href="lebron.php">
+                                <img src="krooked product/lebron.png">
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <div class="description">Lebron - ₱500.00</div>
             </div>
-        </div>
-        <div class="description">Lebron - ₱500.00</div>
-    </div>
-
-    <div class="products">
+            <div class="products">
         <div class="wrapper">
             <div class="parent">
                 <div class="child bg-4">
