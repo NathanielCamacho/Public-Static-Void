@@ -35,8 +35,8 @@
 <div class="main"> <h1 class="text">Track of Customer Order</h1>
 <hr>
 <br>
-    <div class="Customers">
-        <table>
+    <div class="Content">
+        <table >
             <tr>
                 <th>Order ID</th>
                 <th>Total Amount</th>
@@ -77,19 +77,19 @@
       Placed
     </label>
     
-    <input class="radio-input" name="radio-group" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
+    <input class="radio-input" name="orderstatus" id="radio2" type="radio" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
     <label class="radio-label" for="radio2">
       <span class="radio-inner-circle"></span>
       Payment Confirmed
     </label>
     
-    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
+    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="packed" <?php if ($row["orderstatus"] === "packed") echo "checked"; ?>>
     <label class="radio-label" for="radio3">
       <span class="radio-inner-circle"></span>
       Packed
     </label>
-    <input class="radio-input" name="radio-group" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
-    <label class="radio-label" for="radio3">
+    <input class="radio-input" name="orderstatus" id="radio3" type="radio" value="shipped" <?php if ($row["orderstatus"] === "shipped") echo "checked"; ?>>
+    <label class="radio-label" for="radio4">
       <span class="radio-inner-circle"></span>
       Shipped
     </label>
@@ -105,17 +105,20 @@
             }
             $conn->close();
             ?>
+             
         </table>
     </div>
+   
     <div class="clear-orders">
         <form action="clearorders.php" method="post">
-           <div class="clear_btn"> <button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button></div>
+           <div class="clear_btn"> <button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button>
         </form>
-    </div>
-    <div class="display_btn">
+       
         <a href="adminprofile.php"><button>Back</button></a>
     </div>
-</div>         
+    </div>
+    
+       
     <script src="script.js"></script>  
 </body>
 </html>

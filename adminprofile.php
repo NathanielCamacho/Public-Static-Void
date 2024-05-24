@@ -69,6 +69,7 @@ $conn->close();
        <hr>
        <div class="btn"> <button onclick="window.location.href='confirmOrder.php'">Check Payments</button></div>
         <div class="btn"><button onclick="window.location.href='trackOrder.php'">Track Order</button> </div>
+        <div class="btn"><button onclick="window.location.href='salesTrack.php'">Sales</button></div>
         
     </div>
 </body>
