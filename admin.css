@@ -114,8 +114,6 @@ table{
 }
 
 table, th, td {
-    
-    
     padding: 15px;
     border: 1px solid;
     border-radius: 2px;
@@ -140,20 +138,12 @@ table, th, td {
 .display_btn{
     display: flex;
     justify-content: center;
-    
-    
 }
 
 .display_btn button{
     font-size: 17px;
     font-family:'Times New Roman', Times, serif;
-
-   
-
-    
-   
     font-weight: bold;
-   
     color: #3a3636;
     padding: 5px 15px;
     margin: 8px 0;
@@ -161,7 +151,6 @@ table, th, td {
     border: black solid 1.5px;
     border-radius: 5px;
     cursor: pointer;
-    
     width: 100%;
 }
 
@@ -171,7 +160,6 @@ table, th, td {
     border: none;
     font-size: 40px;
     font-family:'Times New Roman', Times, serif;
-
     margin: 10px;
     width: 100%;
 }
@@ -186,5 +174,7 @@ h1{
     font-size: 40px;
     font-weight: bold;
 }
+
+
 
 

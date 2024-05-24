@@ -157,10 +157,6 @@ label {
 }
 
 
-
-
-
-
 .error {
     color: #cd8022;
     display: none;
@@ -220,7 +216,7 @@ table, th, td {
 
 button{
     margin: 10px;
-    width: 20%;
+    width: 30%;
     font-weight: bold;
    
     color: #3a3636;
@@ -277,3 +273,10 @@ button:hover {
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+.userBtn{
+    display: inline-block;
+    width: 100%;
+}
+
+

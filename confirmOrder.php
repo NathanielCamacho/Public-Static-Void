@@ -59,8 +59,9 @@
 
         </table>
         <div class="display_btn">
-        <a href="adminprofile.php"><button>back</button></a>
+        
         <button style="width: 15%; margin-left:5px">Update</button>
+        <a href="adminprofile.php"><button>Back</button></a>
     </div>
     </div>
 
