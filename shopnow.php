@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: userprofile.php");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,24 +43,11 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
 
-<div class="top_text">WINDBREAKER</div>
-  <div class="windbreaker">
-    <div class="wrapper">
-    <div class="parent">
-      <div class="child bg-1">
-        <a href="windbreaker.php">
-          <img src="krooked product/windbreaker_front.jpg" alt="windbreaker">
-        </a>
-      </div>
-    </div>
-    <div class="description">Port Black windbreaker - ₱999.00</div>
-  </div>
-</div>
 
-    <hr>
 
-    <div class="text3">StreetWear</div>
-
+    <div class="text3">Street Wear /Collection</div>
+    
+    <div class="products_container">
     <div class="products">
       <div class="wrapper">
         <div class="parent">
@@ -105,7 +86,9 @@ if (!isset($_SESSION['username'])) {
       </div>
       <div class="description">Anniversary - ₱500.00</div>
   </div>
-  
+   </div>
+
+   <div class="products_container">
   <div class="products">
       <div class="wrapper">
           <div class="parent">
@@ -144,7 +127,7 @@ if (!isset($_SESSION['username'])) {
       </div>
       <div class="description">Dali Doll - ₱500.00</div>
   </div>
-  
+  </div>
 
     <div class="footer">
         <div class="col-1">

@@ -56,19 +56,19 @@ $conn->close();
         <ul>
                       
                       <li> 
-                          <a href="shopnow.php" class="about">
-                              <i class="fa-solid fa-table-list fa-xl"></i> 
+                          <a href="receipts.php" class="about">
+                              Check Payments
                           </a>
                       </li>
                       <li>     
-                          <a href="cart.php" class="cart">
-                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                          <a href="userTrackerOrder.php" class="cart">
+                              Track Order        
                           </a>
                       </li>
                       
                       <li> 
-                          <a href="loginpage.php" class="profile">
-                              <i class="fa-regular fa-user fa-xl"></i>         
+                          <a href="logout.php" class="profile">
+                              Logout         
                           </a>   
                       </li> 
                   </ul>
@@ -78,9 +78,9 @@ $conn->close();
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
         
-        <button onclick="window.location.href='receipts.php'">Check Payments</button>
-        <button onclick="window.location.href='userTrackerOrder.php'">Track Order</button>
-        <button onclick="window.location.href='logout.php'">Log Out </button>
+        <button onclick="window.location.href='shopnow.php'">Catalog</button>
+        <button onclick="window.location.href='cart.php'">Cart</button>
+        
     </div>
 </body>
 </html>

@@ -63,8 +63,11 @@
         </div>
     </div>
     <hr>
-    <div class="background">
-        <div class="text3">NEW ARRIVALS</div>
+    <div class="background"> 
+      <div class="text3">New Arrival</div>
+      <div class="products_container">
+      
+     
         <div class="products">
             <div class="wrapper">
               <div class="parent">
@@ -103,7 +106,7 @@
             </div>
             <div class="description">Anniversary - ₱500.00</div>
         </div>
-        
+        </div>
     </div>
     <div class="footer">
         <div class="col-1">

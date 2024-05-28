@@ -48,17 +48,13 @@
     </div>
 
 <div class="product">
+    <div class="content">
     <img src="krooked product/tommy.png">
     <div class="product_container">
         <div class="description">FELIX</div>
         <div class="price">₱500.00</div>
         <hr>
-        <div class="container">
-                    <label>
-                        <input type="radio" name="color" value="Black" checked>
-                        <span>Black</span>
-                    </label>
-                </div>
+       
         <br>
         Size
         <br>
@@ -99,12 +95,12 @@
         </div>
     </div>
 </div>
-
+</div>
 <hr>
 
 <div class="background">
     <div class="text3">You may Also Like: </div>
-    
+    <div class="img_container">
     <div class="products">
         <div class="wrapper">
             <div class="parent">
@@ -143,7 +139,7 @@
         </div>
         <div class="description">Anniversary - ₱500.00</div>
     </div>
-
+</div>
 </div>
 
 <div class="footer">
@@ -156,8 +152,8 @@
         </div>
     </div>
     <div class="col-3">
-        <h3>@Bart Ceria</h3>
-    </div>
+        
+    <h3>2023-2024</h3>    </div>
 </div>
 </form>
 <script src="script.js"></script>  

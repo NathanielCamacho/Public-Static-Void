@@ -99,11 +99,7 @@
         </table>
     </div>
    
-    <div class="clear-orders">
-        <form action="clearorders.php" method="post">
-            <div class="clear_btn"><button type="submit" onclick="return confirm('Are you sure you want to delete all orders?')">Clear All Orders</button></div>
-        </form>
-    </div> 
+    
     <div class="clear_btn"><button onclick="window.location.href='adminprofile.php'">Back</button></div>
 </div>
     

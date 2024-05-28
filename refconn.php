@@ -113,8 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
    <hr>
         
-        <a href=loginpage.php class="btn"><button><h1>Go back to login page.</h1></button></a>
-       <a href=homepage.php class="btn"><button><h1>Go back to home page.</h1></button></a>
+        <a href=loginpage.php class="btn"><button>Go back to login page.</button></a>
+       <a href=homepage.php class="btn"><button>Go back to home page.</button></a>
   
     </div>
     </body>

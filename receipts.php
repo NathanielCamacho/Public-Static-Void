@@ -44,6 +44,7 @@
     </div>
     <div class="main">
     <h2>User Payments</h2>
+    <center>
     <br>
     <table>
         <thead>
@@ -89,12 +90,10 @@
             $conn->close();
             ?>
         </tbody>
-
+</center>
         
     </table>
-    <br><form action="clear_user_payments.php" method="post">
-        <button type="submit" style="width: 20%;">Clear Payments</button>
-    </form>
+    <br>
     <a href="userprofile.php">
     <button style="width: 20%;" >BACK</button></a>
     </div>

@@ -93,7 +93,7 @@ nav ul li a{
 }
 
 .text1 {
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: bold;
     font-family: "Almendra SC";
     color: #0a0909;
@@ -101,7 +101,7 @@ nav ul li a{
 }
 
 .text2 {
-    font-size: 20px;
+    font-size: 1.5vw;
     text-decoration: none;
     color: #0a0909;
     cursor: default;
@@ -130,7 +130,14 @@ nav ul li a{
 }
 
 .background {
+
+   
     background-image: linear-gradient(to top, rgb(64, 64, 155), rgb(107, 105, 105));
+}
+
+.products_container{
+    display: flex;
+    justify-content: center;
 }
 
 hr {
@@ -144,11 +151,9 @@ hr {
     font-family: "Cinzel Decorative";
     font-weight: bold;
     font-style: italic;
+    font-size: 2vw;
+    padding: 10px;
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 35px;
-    position: relative;
-    top: 15px;
     cursor: default;
 }
 
@@ -157,8 +162,9 @@ hr {
     align-items: center;
     width: 200px;
     border: 2px solid black;
-    margin-bottom: 15px;
-    margin-left: 12.5%;
+    margin: 15px;
+    margin-left: auto;
+   margin-right: auto;
     background-color: #1d1919;
 }
 

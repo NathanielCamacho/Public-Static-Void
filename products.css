@@ -67,27 +67,42 @@ nav ul li a{
 }
 
 
-.product {
-    display: inline-flex;
+
+
+.content{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    background-color: rgb(241, 222, 222); 
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2%;
+    margin-top: 3%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 1px rgb(69, 80, 80);
+    width: 50%;
+   
+    
 }
+
+
 
 .product img {
-    height: 800px;
+    height: 540px;
     width: auto;
     border: #2b2929 solid 2px;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin: auto;
+   
+   
 }
 
+
+
 .product_container {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 20px;
-    padding-right: 17%;
-    border: #2b2929 solid 3px;
-    margin-left: 10%;
+   
+ 
+    margin: 10%;
 }
 
 .product_container .description {
@@ -315,6 +330,11 @@ hr {
     transform: scale(1.03);
 }
 
+.img_container{
+    display: flex;
+    justify-content: center;
+}
+
 .bg-1 {
     background-image: url("krooked%20product/windbreaker_front.jpg");
 }
@@ -364,7 +384,8 @@ hr {
     width: 200px;
     border: 2px solid black;
     margin-bottom: 15px;
-    margin-left: 12.5%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #1d1919;
 }
 

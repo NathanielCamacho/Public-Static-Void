@@ -50,19 +50,13 @@
     </div>
 
     <div class="product">
+        <div class="content">
         <img src="krooked product/gamble.png">
         <div class="product_container">
             <div class="description">Dali Doll</div> 
             <div class="price">₱500.00</div>
             <hr>
-            <div class="container">
-                
-                    <label>
-                        <input type="radio" name="color" value="Black" checked="">
-                        <span>Black</span>
-                    </label>
-               
-            </div>    
+           
             <br>Size<br>
             <div class="container">
                
@@ -101,12 +95,12 @@
             </div>
         </div>
     </div>
-    
+    </div>
     <hr>
 
     <div class="background">
         <div class="text3">You may Also Like:</div>
-
+        <div class="img_container">
         <div class="products">
             <div class="wrapper">
                 <div class="parent">
@@ -146,7 +140,7 @@
             <div class="description">Anniversary - ₱500.00</div>
         </div>
     </div>
-
+</div>
     <div class="footer">
         <div class="col-1">
             <h3>CONTACTS</h3>

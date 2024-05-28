@@ -96,7 +96,9 @@ $result = $conn->query($sql);
             $conn->close();
             ?>
         </table>
-    </div><div class="display_btn">
+        
+    </div>
+    <br><div class="display_btn">
     <a href="userprofile.php"><button>Back</button></a>
 </div>
 </div>

@@ -90,30 +90,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="main">
         <form id="unameForm" action="refconn.php" method="post">
             <label for="uname"><b>Username</b></label>
-            <input autocomplete="off" type="text" placeholder="Enter Username" id="uname" name="username" required>
+            <input autocomplete="off" type="text" placeholder="John Doe" id="uname" name="username" required>
             <span class="error" id="usernameError">Username cannot contain spaces.</span>
 
             <label for="psw"><b>Password</b></label>
-            <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="password"      required>
-             <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
-           <span class="error" id="passwordError">Password must be at least 8 characters long and contain only letters and numbers.<br></span> 
-            <label><input type="checkbox"  checked="checked" name="remember"  class="ui-checkbox"> Remember me</label>
-            
-           
-            <button type="submit" name="action" value="login">Login</button>
-           
+            <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
+
+             <label for="psw"><b>Confirm Password</b></label>
+             <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
+    <br>
+              <label for=""><input type="checkbox" name="" id="" class="ui-checkbox"``>I Accept the terms and Conditions</label>
+            <button type="submit" name="action" value="login">Sign Up</button>
+        
           
                 
             
         </form>
 
-        <div class="container">
-            <span class="psw"><a href="forgotpw.php" class="pass">Forgot password?</a></span>
-        </div>
-
-        <div class="signup_btn">
-        <a href="signuppage.php">I DON'T HAVE AN ACCOUNT YET</a>
-    </div>
     </div>
     <script src="script.js"></script>
 </body>

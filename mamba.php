@@ -49,18 +49,14 @@
     </div>
 
     <div class="product">
+        <div class="content">
         <img src="krooked product/mamba.png" alt="lebron">
         <div class="product_container">
             <div class="description">Mamba</div> 
             <input type="hidden" name="price" value="500">
             <div class="price">₱500.00</div>
             <hr>
-            <div class="container">
-                <label>
-                    <input type="radio" name="color" value="Black" checked="">
-                    <span>Black</span>
-                </label>
-            </div>    
+            
             <br>
             Size
             <br>
@@ -101,11 +97,11 @@
             </div>
         </div>
     </div>
-
+</div>
     <hr>
     <div class="background">
         <div class="text3">You may Also Like: </div>
-
+<div class="img_container">
         <div class="products">
             <div class="wrapper">
                 <div class="parent">
@@ -145,7 +141,7 @@
             <div class="description">Felix - ₱500.00</div>
         </div>
     </div>   
-
+</div>
     <div class="footer">
         <div class="col-1">
             <h3>CONTACTS</h3>
