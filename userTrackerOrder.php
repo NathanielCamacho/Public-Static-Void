@@ -69,7 +69,6 @@ $result = $conn->query($sql);
                 <th>Order Status</th>
                 <th>Item</th>
                 <th>Quantity</th>
-                <th>Color</th>
                 <th>Size</th>
             </tr>
 
@@ -85,13 +84,12 @@ $result = $conn->query($sql);
                         <td><?php echo $row["orderstatus"]; ?></td>
                         <td><?php echo $row["itemname"]; ?></td>
                         <td><?php echo $row["quantity"]; ?></td>
-                        <td><?php echo $row["color"]; ?></td>
                         <td><?php echo $row["size"]; ?></td>
                     </tr>
                     <?php
                 }
             } else {
-                echo "<tr><td colspan='8'>No orders found.</td></tr>";
+                echo "<tr><td colspan='7'>No orders found.</td></tr>";
             }
             $conn->close();
             ?>
