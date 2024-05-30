@@ -95,7 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="psw"><b>Password</b></label>
             <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="password"      required>
-            <label class="error" id="passwordError">Password must be at least 8 characters long and contain only letters and numbers.<br></label> 
             <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
             <label><input type="checkbox"  checked="checked" name="remember"  class="ui-checkbox"> Remember me</label>
             

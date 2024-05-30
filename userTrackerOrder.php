@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch orders and their contents from the database
-$sql = "select o.orderid, o.totalamount, o.createstamp, o.orderstatus, oc.itemid,oc.quantity,oc.color,oc.size,p.itemname from orders as o inner join ordercontents as oc on o.orderid = oc.orderid inner join products as p on oc.itemid = p.itemid;"; // Adjust the query according to your database schema
+$sql = "select o.orderid, o.totalamount, o.createstamp, o.orderstatus, oc.itemid,oc.quantity,oc.size,p.itemname from orders as o inner join ordercontents as oc on o.orderid = oc.orderid inner join products as p on oc.itemid = p.itemid;"; // Adjust the query according to your database schema
 $result = $conn->query($sql);
 
 ?>
@@ -73,7 +73,6 @@ $result = $conn->query($sql);
                
                 <th>Item</th>
                 <th>Quantity</th>
-                <th>Color</th>
                 <th>Size</th>
             </tr>
 
@@ -86,7 +85,6 @@ $result = $conn->query($sql);
                         <td><?php echo $row["orderid"]; ?></td>
                         <td><?php echo $row["itemname"]; ?></td>
                         <td><?php echo $row["quantity"]; ?></td>
-                        <td><?php echo $row["color"]; ?></td>
                         <td><?php echo $row["size"]; ?></td>
                     </tr>
                     <?php

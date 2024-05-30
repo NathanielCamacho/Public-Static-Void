@@ -94,6 +94,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                                 $product_price = $row['itemprice'];
                                 $itemTotal = $product_price * $quantity;
                                 $totalPrice += $itemTotal;
+                                $totalAmount = $totalPrice + 38.00;
                                 ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($product_name); ?></td>
@@ -106,9 +107,13 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                         }
                     }
                     ?>
+                     <tr>
+                        <td colspan="3" style="text-align: right;"><strong>Shipping fee:</strong></td>
+                        <td><?php echo number_format(38, 2); ?></td>
+                    </tr>
                     <tr>
                         <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
-                        <td><?php echo number_format($totalPrice, 2); ?></td>
+                        <td><?php echo number_format($totalAmount, 2); ?></td>
                     </tr>
                 </table>
                 <p><br>ALL ORDERS SUBMITTED ARE CONSIDERED FINAL. PLEASE DOUBLE-CHECK YOUR ORDERS TO AVOID ANY ISSUES!</p>

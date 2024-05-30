@@ -78,7 +78,6 @@
                 </div>
               </div>
             </div>
-            <div class="description">Mamba - ₱500.00</div>
           </div>
         
           <div class="products">
@@ -91,7 +90,7 @@
                 </div>
               </div>
             </div>
-            <div class="description">Lebron - ₱500.00</div>
+           
           </div>
 
         <div class="products">
@@ -104,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="description">Anniversary - ₱500.00</div>
+            
         </div>
         </div>
     </div>
@@ -119,7 +118,7 @@
             </div>
         </div>
         <div class="col-3">
-            <h3>@Bakal si ralph</h3>
+            <h3>@2023-2024</h3>
         </div>
     </div>
   </body>

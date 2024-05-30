@@ -4,7 +4,7 @@
 function increaseQty() {
     const qtyInput = document.querySelector('.product-qty');
     let qty = parseInt(qtyInput.value);
-    if (qty < 10) {
+    if (qty < 9) {
         qtyInput.value = qty + 1;
     }
 }

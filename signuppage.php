@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
     <br>
               <label for=""><input type="checkbox" name="" id="" class="ui-checkbox"``>I Accept the terms and Conditions</label>
-            <button type="submit" name="action" value="login">Sign Up</button>
+            <button type="submit" name="action" value="signup">Sign Up</button>
         
           
                 

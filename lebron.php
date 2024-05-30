@@ -78,9 +78,9 @@
             Quantity: <br>
             <div class="qty-input">
                 <div class="number-left" data-content="-" onclick="decreaseQty()"></div>
-                <div class="qty">
-                    <input class="product-qty" type="number" name="quantity" min="1" max="10" value="1">
-                </div>
+                
+                    <input class="product-qty" type="number" name="quantity" value="1" min="1" max="9" >
+                
                 <div class="number-right" data-content="+" onclick="increaseQty()"></div>
             </div>
             <br>
