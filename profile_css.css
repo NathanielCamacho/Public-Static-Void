@@ -11,14 +11,18 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    background-image: linear-gradient(to left, #000000, #434343);
+    background-color: rgb(243, 237, 237);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
 .header {
     width: 100%;
     height: 75px;
-    background-color: #2b2929;
+    background-color: black;
     padding-left: 3%;
     padding-right: 5%;
     box-sizing: border-box;
@@ -101,7 +105,7 @@ nav ul li a{
 
 
 .main {
-    background-color: #fff;
+    background-color: #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
     padding: 20px; /* Updated padding for better spacing */
@@ -121,12 +125,11 @@ input[type="text"],
 input[type="password"] {
   
     height: 44px;
-    background-color: #05060f0a;
+    
     border-radius: .5rem;
     padding: 2px;
     border: 2px solid transparent;
     font-size: 1rem;
-    transition: border-color .3s cubic-bezier(.25, .01, .25, 1) 0s, color .3s cubic-bezier(.25, .01, .25, 1) 0s, background .2s cubic-bezier(.25, .01, .25, 1) 0s;
     margin: 8px 0;
     display: block; /* Ensuring input elements appear in block */
     width: 100%; /* Ensuring input elements occupy full width */
@@ -136,7 +139,6 @@ input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="text"]:focus,
 input[type="password"]:focus {
-    outline: none;
     border-color: #05060f;
 }
 
@@ -165,6 +167,7 @@ label {
    
 }
 
+
 .showpass{
     position: relative;
     top: -38px;
@@ -190,19 +193,39 @@ table{
     box-shadow: 1px 1px 2px 2px rgb(139, 133, 133);
 }
 th{
-    background-color: #635959;
+    background-color: #f4ecec;
 }
-table, th, td {
+
+td{
+    background-color: rgb(244, 244, 237);
+}
+ th, td {
    
     padding: 5px;
-    border: 1px solid;
+    border: 1px solid black;
+   text-align: center;
    
   }
+
+td button{
+    width: 100%;
+    border-radius: 1px;
+}
+
+td button:hover{
+    color: white;
+    background-color: rgb(27, 26, 26);
+   
+}
 
 .content{
     display: flex;
     justify-content: center;
-    align-items: center;
+   
+   
+    text-align: left;
+    font-size: 1.5vw;
+    font-family:'Cambria';
 }
 
 .display_btn{
@@ -246,14 +269,18 @@ button{
     padding: 10px 20px;
     margin: 8px 0;
     margin-right: 15px;
-    border: black solid 1.5px;
+    border: black solid transparent 1.5px;
     
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #97cf97;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+   
+    border-radius: 1.5px;
+    
 }
 
 .delivery_btn{
@@ -312,6 +339,20 @@ button:hover {
         border-bottom: #000000 solid 1px;  
 }
 
+
+.tracker_btn{
+    display: inline-flex;
+    width: 100%;
+}
+
+.tracker_btn button{
+    margin: 10px 3px;
+    width: 36%;
+}
+
+.tracker_btn button:hover{
+    background-color: #676767;
+}
 
 
 /* checkbox settings 👇 */

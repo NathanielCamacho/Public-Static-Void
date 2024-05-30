@@ -69,7 +69,7 @@ if (!isset($_SESSION['username'])) {
             <form action="clearcart.php" method="post">
             <button type="submit">Submit Payment</button> 
             </form>
-            <button onclick="window.location.href='userprofile.php'">Back</button>
+            <button onclick="window.location.href='cart.php'">Back</button>
            
 
         </form>

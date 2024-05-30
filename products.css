@@ -11,14 +11,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-image: linear-gradient(to top, gray, rgb(231, 218, 218));
+    background-color: #FCFBFC;
+    
 }
 
 
 .header {
     width: 100%;
     height: 75px;
-    background-color: #2b2929;
+    background-color: black;
     padding-left: 3%;
     padding-right: 5%;
     box-sizing: border-box;
@@ -71,17 +72,16 @@ nav ul li a{
 
 .content{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(241, 222, 222); 
+    
+    background-color: rgb(243, 242, 242); 
     margin-right: auto;
     margin-left: auto;
     padding: 2%;
     margin-top: 3%;
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 20px 1px rgb(69, 80, 80);
-    width: 50%;
+    box-shadow: 1px 1px 20px 1px rgb(201, 201, 201);
+    width: 75%;
    
     
 }
@@ -91,7 +91,10 @@ nav ul li a{
 .product img {
     height: 540px;
     width: auto;
-    border: #2b2929 solid 2px;
+    border-top: #2b2929 solid 2px;
+    border-bottom: 5px black solid;
+    border-right:  black 5px solid;
+    border-left: 2px solid black;
     margin: auto;
    
    
@@ -101,20 +104,29 @@ nav ul li a{
 
 .product_container {
    
- 
-    margin: 10%;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    
+    padding: 20px;
+    padding-top: 4%;
+    padding-bottom: 10%;
+    margin: 5%;
+    width: 75%;
+    height: 100%;
+    background-color: #f4f4f7;
+   
+
 }
 
 .product_container .description {
     font-family: 'Sedan';
     font-weight: 400;
-    text-align: left;
     font-size: 40px;
     margin-bottom: 10px;
 }
 
 .product_container .price {
-    text-align: left;
+    
     font-size: 25px;
     margin-bottom: 10px;
 }
@@ -157,16 +169,16 @@ nav ul li a{
 
 .number-left::before,
 .number-right::after {
-    border-radius: 4px;
+    
     margin-top: 5px;
     content: attr(data-content);
     background-color: #333333;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+   
     width: 23px;
-    height: 23px;
+    height: 25.5px;
     color: white;
     transition: background-color 0.3s;
     cursor: pointer;
@@ -304,10 +316,14 @@ hr {
     box-shadow: inset 0 0 0 0.125em #15154b;
 }
 
+
+
+
 .wrapper {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    background-color: #f5f4f4;
 }
 
 .parent {
@@ -379,23 +395,27 @@ hr {
 }
 
 .products {
+   
     display: inline-block;
     align-items: center;
-    width: 200px;
-    border: 2px solid black;
-    margin-bottom: 15px;
+    width: 220px;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-top:  1px solid black;
+    margin: 15px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #1d1919;
+    background-color: #f5f4f4;
 }
 
 .products .description {
-    padding: 10px;
+    padding: 5%;
     text-align: center;
     font-size: 17px;
     font-family: 'Calibri';
     cursor: default;
-    color: whitesmoke;
+    color: black;
 }
 
 .products img {
@@ -405,7 +425,7 @@ hr {
 
 .footer {
     width: 100%;
-    background: #333;
+    background: black;
     color: #efefef;
     padding-top: 10px;
     cursor: default;

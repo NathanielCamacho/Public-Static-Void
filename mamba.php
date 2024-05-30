@@ -55,8 +55,17 @@
             <div class="description">Mamba</div> 
             <input type="hidden" name="price" value="500">
             <div class="price">₱500.00</div>
-            <hr>
             
+
+            <div class="container">
+                <hr>
+                
+                    <label>
+                        <input type="radio" name="color" value="Black" checked="">
+                        <span>Black</span>
+                    </label>
+               
+            </div>    
             <br>
             Size
             <br>

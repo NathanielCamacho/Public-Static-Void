@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <hr>
+    
     <div class="background"> 
       <div class="text3">New Arrival</div>
       <div class="products_container">
