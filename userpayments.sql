@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 06:44 PM
+-- Generation Time: May 30, 2024 at 11:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,16 +35,19 @@ CREATE TABLE `userpayments` (
   `refnumber` varchar(10) NOT NULL,
   `paymentstatus` enum('Pending','Successful','Failed') NOT NULL DEFAULT 'Pending',
   `paymentstamp` timestamp NOT NULL DEFAULT current_timestamp(),
-  `shipaddress` varchar(50) NOT NULL
+  `street` varchar(50) NOT NULL,
+  `baranggay` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `zipcode` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userpayments`
 --
 
-INSERT INTO `userpayments` (`paymentid`, `userid`, `gcashname`, `gcashnum`, `refnumber`, `paymentstatus`, `paymentstamp`, `shipaddress`) VALUES
-(6, 1, 'Lars Ulrich Jumaquio Pons', '09763430975', '1234567890', 'Pending', '2024-05-24 03:48:40', 'aaaaaaa'),
-(7, 3, 'Hans Dominic Arcilla', '09763430975', '1234567891', 'Pending', '2024-05-24 16:20:42', 'aaaaaaa');
+INSERT INTO `userpayments` (`paymentid`, `userid`, `gcashname`, `gcashnum`, `refnumber`, `paymentstatus`, `paymentstamp`, `street`, `baranggay`, `city`, `state`, `zipcode`) VALUES
+(10, 3, 'Hans Dominic Arcilla', '09763430975', '1234567891', 'Pending', '2024-05-30 07:29:36', '3271 A. Mabini St.', 'Brgy. Poblacion', 'Makati City', 'Metro Manila', '1210');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `userpayments`
 -- AUTO_INCREMENT for table `userpayments`
 --
 ALTER TABLE `userpayments`
-  MODIFY `paymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `paymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
