@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN</title>
+    <title>Inventory Page</title>
     <link rel="stylesheet" href="admin.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +32,13 @@
            
 
 <div class="main">
-    <h1 class="text">Inventory</h1>
+    <h1 class="text">Item Inventory</h1>
     <div class="content">
         <table>
             <tr>
                 <th>Product</th>
-                <th>Color</th>
                 <th>Size</th>
-                <th>Quantity</th>
+                <th>Remaining Stocks</th>
                
             </tr>
             <?php
@@ -57,21 +56,50 @@
             }
 
             // Fetch sales records from the database
-            $sql = "SELECT p.itemname, o.color, o.size, SUM(o.quantity) as total_quantity
-                    FROM products p
-                    JOIN ordercontents o ON p.itemid = o.itemid
-                    GROUP BY p.itemname, o.color, o.size";
+            $sql = "SELECT 'mamba' AS itemname, 'S' AS size, sstock AS stock FROM mamba
+            UNION ALL
+            SELECT 'mamba' AS itemname, 'M' AS size, mstock AS stock FROM mamba
+            UNION ALL
+            SELECT 'mamba' AS itemname, 'L' AS size, lstock AS stock FROM mamba
+            UNION ALL
+            SELECT 'lebron' AS itemname, 'S' AS size, sstock AS stock FROM lebron
+            UNION ALL
+            SELECT 'lebron' AS itemname, 'M' AS size, mstock AS stock FROM lebron
+            UNION ALL
+            SELECT 'lebron' AS itemname, 'L' AS size, lstock AS stock FROM lebron
+            UNION ALL
+            SELECT 'anniversary' AS itemname, 'S' AS size, sstock AS stock FROM anniversary
+            UNION ALL
+            SELECT 'anniversary' AS itemname, 'M' AS size, mstock AS stock FROM anniversary
+            UNION ALL
+            SELECT 'anniversary' AS itemname, 'L' AS size, lstock AS stock FROM anniversary
+            UNION ALL
+            SELECT 'felix' AS itemname, 'S' AS size, sstock AS stock FROM felix
+            UNION ALL
+            SELECT 'felix' AS itemname, 'M' AS size, mstock AS stock FROM felix
+            UNION ALL
+            SELECT 'felix' AS itemname, 'L' AS size, lstock AS stock FROM felix
+            UNION ALL
+            SELECT 'magatta' AS itemname, 'S' AS size, sstock AS stock FROM magatta
+            UNION ALL
+            SELECT 'magatta' AS itemname, 'M' AS size, mstock AS stock FROM magatta
+            UNION ALL
+            SELECT 'magatta' AS itemname, 'L' AS size, lstock AS stock FROM magatta
+            UNION ALL
+            SELECT 'dalidoll' AS itemname, 'S' AS size, sstock AS stock FROM dalidoll
+            UNION ALL
+            SELECT 'dalidoll' AS itemname, 'M' AS size, mstock AS stock FROM dalidoll
+            UNION ALL
+            SELECT 'dalidoll' AS itemname, 'L' AS size, lstock AS stock FROM dalidoll";
+        
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
                             <td>{$row['itemname']}</td>
-                            <td>{$row['color']}</td>
                             <td>{$row['size']}</td>
-                            <td>{$row['total_quantity']}</td>
-                           
-                            
+                            <td>{$row['stock']}</td>
                           </tr>";
                 }
             } else {

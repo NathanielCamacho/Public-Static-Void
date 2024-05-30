@@ -14,14 +14,40 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT gcashname, refnumber, shipaddress FROM userpayments";
+$sql = "SELECT up.`gcashname`, up.`refnumber`, up.`street`, up.`gcashnum`, up.`baranggay`, up.`city`, up.`state`, up.`zipcode`, o.`orderstatus`
+        FROM userpayments up
+        INNER JOIN orders o ON up.`userid` = o.`userid`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $refnumber = $row["refnumber"];
-        $shipaddress = $row["shipaddress"];
+        $gcashnumber = $row["gcashnum"];
         $gcashname = $row["gcashname"];
+        $street = $row["street"];
+        $baranggay = $row["baranggay"];
+        $city = $row["city"];
+        $state = $row["state"];
+        $zipcode = $row["zipcode"];
+        $orderstatus = $row["orderstatus"];
+
+        // Mapping orderstatus to display values
+        switch ($orderstatus) {
+            case 'placed':
+                $orderstatus_display = "Order Placed";
+                break;
+            case 'payconfirmed':
+                $orderstatus_display = "Payment Confirmed";
+                break;
+            case 'packed':
+                $orderstatus_display = "Order Packed";
+                break;
+            case 'shipped':
+                $orderstatus_display = "Order Shipped";
+                break;
+            default:
+                $orderstatus_display = "Unknown";
+        }
     }
 } else {
     $noPaymentFound = true;
@@ -34,7 +60,7 @@ $conn->close();
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>ADMIN</title>
+   <title>Admin Payment Page</title>
    <link rel="stylesheet" href="admin.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,15 +89,21 @@ $conn->close();
     </div>
            
 
-<div class="main"> <h1>Customer Confirmation of Order</h1>
+<div class="main"> <h1>Customer's Payment Confirmation Page</h1>
     <div class="content">
 
         <table>
             <tr>
-                <th>Customers</th>
+                <th>Customer Name</th>
+                <th>GCash Number</th>
                 <th>Reference Number</th>
-                <th>Customer's Address</th>
+                <th>Street</th>
+                <th>Baranggay</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
                 <th>Order Status</th>
+                <th>Action</th>
             </tr>
 
             <?php if (isset($noPaymentFound) && $noPaymentFound): ?>
@@ -81,13 +113,25 @@ $conn->close();
             <?php else: ?>
                 <tr>
                     <td><?php echo $gcashname; ?></td>
+                    <td><?php echo $gcashnumber; ?></td>
                     <td><?php echo $refnumber; ?></td>
-                    <td><?php echo $shipaddress; ?></td>
+                    <td><?php echo $street; ?></td>
+                    <td><?php echo $baranggay; ?></td>
+                    <td><?php echo $city; ?></td>
+                    <td><?php echo $state; ?></td>
+                    <td><?php echo $zipcode; ?></td>
+                    <td><?php echo $orderstatus_display; ?></td>
+
                     <td>
                         <form action="paymentupdate.php" method="post">
-                            <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
                             <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">
-                            <input type="hidden" name="shipaddress" value="<?php echo $shipaddress; ?>">
+                            <input type="hidden" name="gcashnumber" value="<?php echo $gcashnumber; ?>">
+                            <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
+                            <input type="hidden" name="street" value="<?php echo $street; ?>">
+                            <input type="hidden" name="baranggay" value="<?php echo $baranggay; ?>">
+                            <input type="hidden" name="city" value="<?php echo $city; ?>">
+                            <input type="hidden" name="state" value="<?php echo $state; ?>">
+                            <input type="hidden" name="zipcode" value="<?php echo $zipcode; ?>">
                             <select name="paymentstatus">
                                 <option value="">--Choose an Option--</option>
                                 <option value="pending">Pending</option>

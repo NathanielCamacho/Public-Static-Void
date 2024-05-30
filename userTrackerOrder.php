@@ -74,9 +74,7 @@ $result = $conn->query($sql);
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Color</th>
-                <th>Size</th> 
-                <th>Order Amount</th>
-                <th>Order Status</th>
+                <th>Size</th>
             </tr>
 
             <?php
@@ -89,14 +87,12 @@ $result = $conn->query($sql);
                         <td><?php echo $row["itemname"]; ?></td>
                         <td><?php echo $row["quantity"]; ?></td>
                         <td><?php echo $row["color"]; ?></td>
-                        <td><?php echo $row["size"]; ?></td> 
-                        <td><?php echo $row["totalamount"]; ?></td> 
-                        <td><button onclick="window.location.href='userTrackerPage.php'">Details</button></td>
+                        <td><?php echo $row["size"]; ?></td>
                     </tr>
                     <?php
                 }
             } else {
-                echo "<tr><td colspan='8'>No orders found.</td></tr>";
+                echo "<tr><td colspan='7'>No orders found.</td></tr>";
             }
             $conn->close();
             ?>

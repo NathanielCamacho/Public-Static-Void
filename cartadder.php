@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Check if the necessary data is provided
-if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantity'])) {
+if (isset($_POST['product_id'], $_POST['size'], $_POST['quantity'])) {
     // Establish database connection
     $servername = "localhost";
     $username = "root";
@@ -21,7 +21,6 @@ if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantit
 
     // Retrieve data from the POST request and perform basic validation
     $item_id = intval($_POST['product_id']);
-    $color = $_POST['color'];
     $size = $_POST['size'];
     $quantity = intval($_POST['quantity']);
 
@@ -49,8 +48,8 @@ if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantit
         $order_id = $conn->insert_id;
 
         // Insert into ordercontents table
-        $sql_insert_ordercontent = "INSERT INTO ordercontents (orderid, itemid, quantity, color, size)
-                                    VALUES ($order_id, $item_id, $quantity, '$color', '$size')";
+        $sql_insert_ordercontent = "INSERT INTO ordercontents (orderid, itemid, quantity, size)
+                                    VALUES ($order_id, $item_id, $quantity, '$size')";
         $conn->query($sql_insert_ordercontent);
 
         // Store cart item in session
@@ -60,7 +59,6 @@ if (isset($_POST['product_id'], $_POST['color'], $_POST['size'], $_POST['quantit
 
         $_SESSION['cart'][] = array(
             'product_id' => $item_id,
-            'color' => $color,
             'size' => $size,
             'quantity' => $quantity,
             'totalamount' => $totalamount
