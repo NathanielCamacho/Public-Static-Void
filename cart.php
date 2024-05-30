@@ -79,9 +79,8 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                     $totalPrice = 0;
                     foreach ($cartItems as $cartItem) {
                         // Ensure the cart item is not null
-                        if (!empty($cartItem) && isset($cartItem['product_id'], $cartItem['color'], $cartItem['size'], $cartItem['quantity'])) {
+                        if (!empty($cartItem) && isset($cartItem['product_id'], $cartItem['size'], $cartItem['quantity'])) {
                             $product_id = $cartItem['product_id'];
-                            $color = $cartItem['color'];
                             $size = $cartItem['size'];
                             $quantity = $cartItem['quantity'];
 
@@ -112,6 +111,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                         <td><?php echo number_format($totalPrice, 2); ?></td>
                     </tr>
                 </table>
+                <p><br>ALL ORDERS SUBMITTED ARE CONSIDERED FINAL. PLEASE DOUBLE-CHECK YOUR ORDERS TO AVOID ANY ISSUES!</p>
             </center>
 
             <div class="display_btn">

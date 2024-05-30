@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Payment Page</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +53,12 @@ if (!isset($_SESSION['username'])) {
         <h1>Payment Instructions</h1>
         <p>Please follow the steps below to complete your payment:</p><br>
         <ol>
-            <li>Open GCash app</li><br>
-            <li>Scan QR code</li><br>
+            <li>1. Open GCash app</li><br>
+            <li>2. Scan QR code</li><br>
+            <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
+            <li>3. Input the required data</li><br>
         </ol>
-        <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
+        
         <form action="paymentlanding.php" method="post">
             <label for="gcash_name">GCash Account Name:</label>
             <input type="text" id="gcash_name" name="gcashname" placeholder="John Fitzgerald Kennedy" required>
@@ -64,14 +66,22 @@ if (!isset($_SESSION['username'])) {
             <input type="text" id="gcash_number" name="gcashnum" placeholder="09XX-XXX-XXXX" pattern="[0-9]*" required>
             <label for="reference_number">Reference Number:</label>
             <input type="text" id="reference_number" name="refnumber" placeholder="XXXX-XXXX-XXXXX" pattern="[0-9]*" required>
-            <label for="shipaddress">Shipping Address:</label>
-            <input type="text" id="shipping_address" name="shipaddress" placeholder="123 Apple St., Manila City, Metro Manila" required>
+            <label>Shipping Address:</label>
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" placeholder="123 Apple Street" required>
+            <label for="street">Barangay:</label>
+            <input type="text" id="baranggay" name="baranggay" placeholder="Brgy. Malinis" required>
+            <label for="street">City:</label>
+            <input type="text" id="city" name="city" placeholder="Manila City" required>
+            <label for="street">State:</label>
+            <input type="text" id="state" name="state" placeholder="Metro Manila" required>
+            <label for="street">Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="1000" required>
+            <p><br>By clicking submit, you acknowlege that we do not provide REFUNDS for any CANCELLATIONS.</p>
             <form action="clearcart.php" method="post">
             <button type="submit">Submit Payment</button> 
             </form>
             <button onclick="window.location.href='userprofile.php'">Back</button>
-           
-
         </form>
     </div>
 </body>

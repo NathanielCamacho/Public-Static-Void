@@ -55,7 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gcashname = $_POST['gcashname'];
     $gcashnumber = $_POST['gcashnum'];
     $refnumber = $_POST['refnumber'];
-    $shipaddress = $_POST['shipaddress'];
+    $street = $_POST['street'];
+    $baranggay = $_POST['baranggay'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zipcode = $_POST['zipcode'];
 
     $servername = "localhost";
     $username = "root";
@@ -75,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userid = $row['userid'];
 
         
-        $sql = "INSERT INTO userpayments (userid, gcashname, gcashnum, refnumber, paymentstatus, shipaddress) 
-                VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending', '$shipaddress')";
+        $sql = "INSERT INTO userpayments (`userid`, `gcashname`, `gcashnum`, `refnumber`, `paymentstatus`, `street`, `baranggay`, `city`, `state`, `zipcode`) 
+                VALUES ('$userid', '$gcashname', '$gcashnumber', '$refnumber', 'Pending', '$street','$baranggay','$city','$state','$zipcode')";
 
         if ($conn->query($sql) === TRUE) {
                 echo "Payment submitted successfully. Redirecting...";
