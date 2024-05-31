@@ -91,21 +91,25 @@ $conn->close();
 
 <div class="main"> <h1>Customer's Payment Confirmation Page</h1>
     <div class="content">
-
-        <table>
+<div class="tbl-header">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
             <tr>
                 <th>Customer Name</th>
                 <th>GCash Number</th>
                 <th>Reference Number</th>
-                <th>Street</th>
-                <th>Baranggay</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zipcode</th>
+                <th>Address</th>
+              
                 <th>Order Status</th>
                 <th>Action</th>
             </tr>
+        </thead>
+</table>
+</div>
 
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0">
+        <tbody>
             <?php if (isset($noPaymentFound) && $noPaymentFound): ?>
                 <tr>
                     <td colspan="4">No payments found.</td>
@@ -115,11 +119,7 @@ $conn->close();
                     <td><?php echo $gcashname; ?></td>
                     <td><?php echo $gcashnumber; ?></td>
                     <td><?php echo $refnumber; ?></td>
-                    <td><?php echo $street; ?></td>
-                    <td><?php echo $baranggay; ?></td>
-                    <td><?php echo $city; ?></td>
-                    <td><?php echo $state; ?></td>
-                    <td><?php echo $zipcode; ?></td>
+                    <td><?php echo $street.",<br>".$baranggay .", ".$city; ?></td>
                     <td><?php echo $orderstatus_display; ?></td>
 
                     <td>
@@ -133,7 +133,7 @@ $conn->close();
                             <input type="hidden" name="state" value="<?php echo $state; ?>">
                             <input type="hidden" name="zipcode" value="<?php echo $zipcode; ?>">
                             <select name="paymentstatus">
-                                <option value="">--Choose an Option--</option>
+                                <option value="">--Option--</option>
                                 <option value="pending">Pending</option>
                                 <option value="successful">Accept</option>
                                 <option value="failed">Cancel</option>
@@ -143,7 +143,9 @@ $conn->close();
                     </td>
                 </tr>
             <?php endif; ?>
+        </tbody>
         </table>
+    </div>
         <div class="display_btn">
             <a href="adminprofile.php"><button>Back</button></a>
         </div>

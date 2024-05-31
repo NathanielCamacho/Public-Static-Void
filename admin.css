@@ -10,7 +10,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-image: linear-gradient(to left,#282525, #3e3838);
+    background-color: rgb(212, 211, 211);
     overflow-x: hidden;
    
 }
@@ -102,29 +102,70 @@ nav ul li a{
     
 }
 
-button:hover {
-    background-color: #97cf97;
-}
-table{
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
-    padding: 20px;
+button:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
    
+    border-radius: 1.5px;
 }
-table{
- margin: 0 auto; width: 100%;
-}
-table, th, td {
-    padding: 15px;
-    border: 1px solid;
-    border-radius: 2px;
-    cursor: default;
-    margin-top: 10px;
-    
-   
+h1{
+    font-size: 30px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+
+   }
+  .tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+    color: #000000;
+    text-transform: uppercase;
+    border-right: solid 2px rgba(0, 0, 0, 0.1);
 
   }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.1);
+   
+    border-right: solid 2px rgba(0, 0, 0, 0.1);
+  }
+
+  
+td button{
+    width: 100%;
+    border-radius: 1px;
+}
+
+td button:hover{
+    color: white;
+    background-color: rgb(27, 26, 26);
+   
+}
 
 
 .main
@@ -133,13 +174,14 @@ table, th, td {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
     padding: 20px; /* Updated padding for better spacing */
-    width: 60%;
+    width: 80%;
     text-align: center;
     margin: auto;
     position: relative;
     top: 50px;
     font-family: 'Times New Roman';
-
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(#e0ffe5, #989cac);
    
 }
 .content{
@@ -152,22 +194,30 @@ table, th, td {
 }
 
 .display_btn button{
-    font-size: 17px;
-    font-family:'Times New Roman', Times, serif;
+    margin: 10px;
+    width: 100%;
     font-weight: bold;
+   
     color: #3a3636;
-    padding: 5px 15px;
+    padding: 10px 20px;
     margin: 8px 0;
     margin-right: 15px;
-    border: black solid 1.5px;
+    border: black solid transparent 1.5px;
+    
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+}
+
+.display_btn button:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+   
+    border-radius: 1.5px;
 }
 
 
 
-.clear_btn button{
+button{
     font-size: 17px;
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
@@ -179,7 +229,7 @@ table, th, td {
     border: black solid 1.5px;
     border-radius: 5px;
     cursor: pointer;
-    width: 22%;
+    width: 10%;
 }
 
 
@@ -199,10 +249,12 @@ table, th, td {
 }
 
 
-select{
+select,option{
     border: black solid 1px;
     border-radius: 3px;
     padding: 3px;
+    width: 100%;
+    text-align: center;
 }
 
 h1{

@@ -46,31 +46,69 @@
 <div class="main">
     <div class="content">
     <table>
-        <tr>
-            <th>
-               OrderPlaced
-            </th>
+            <tr>
+                <th>Order ID</th>
+                <th>Item</th>
+                <th>Item Quantity</th>
+                <th>Total Amount</th>
+                <th>Date Placed</th>
 
-            <th>
-                Payment Info Confirmed
-            </th>
 
-            <th>
-                Order Shipped out
-            </th>
+                <th>Payment Confirmed Timestamp</th>
+                <th>Packed Timestamp</th>
+                <th>Shipped Timestamp</th>
+               
+            </tr>
+            <?php
+            // Define an associative array mapping item IDs to item names
+            $item_names = array(
+                1 => "Mamba",
+                2 => "LeBron",
+                3 => "Anniversary Tee",
+                4 => "Felix",
+                5 => "Magatta",
+                6 => "Dali Doll"
+            );
 
-            <th>
-                Order Received
-            </th>
-        </tr>
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "krookedweb";
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-        <tr>
-            <td> nigga <hr><br>time</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+            // Fetch orders from the database
+            $sql = "SELECT o.orderid, o.totalamount, o.createstamp, o.updatestamp, o.orderstatus, o.placed_timestamp, o.payconfirmed_timestamp, o.packed_timestamp, o.shipped_timestamp, oc.itemid, oc.quantity, up.gcashname
+                    FROM orders o
+                    INNER JOIN ordercontents oc ON o.orderid = oc.orderid
+                    INNER JOIN userpayments up ON o.userid = up.userid";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["orderid"]; ?></td>
+                        <td><?php echo $item_names[$row["itemid"]]; ?></td>
+                        <td><?php echo $row["quantity"]; ?></td>
+                        <td><?php echo $row["totalamount"]; ?></td>
+                        <td><?php echo $row["createstamp"]; ?></td>
+                        <td><?php echo $row["payconfirmed_timestamp"]; ?></td>
+                        <td><?php echo $row["packed_timestamp"]; ?></td>
+                        <td><?php echo $row["shipped_timestamp"]; ?></td>
+                      
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='10'>No orders found.</td></tr>";
+            }
+            $conn->close();
+            ?>
+        </table>
     
 </div>
 <button onclick="window.location.href='userTrackerOrder.php'" > Back</button>

@@ -128,7 +128,7 @@
         </table>
     </div>
    
-    <div class="clear_btn"><button onclick="window.location.href='adminprofile.php'">Back</button></div>
+    <button onclick="window.location.href='adminprofile.php'">Back</button>
 </div>
     
 <script src="script.js"></script>  

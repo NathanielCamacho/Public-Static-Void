@@ -65,17 +65,25 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     </div>
 </div>
 <div class="main">
-        <center><h1>Your Shopping Cart</h1></center>
-        <?php if (!empty($cartItems)): ?>
-            <center>
-                <table>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                    </tr>
-                    <?php
+<h1>Your Shopping Cart</h1>
+<?php if (!empty($cartItems)): ?>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" >
+      <thead>
+        <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" >
+      <tbody>
+        <tr>
+        <?php
                     $totalPrice = 0;
                     foreach ($cartItems as $cartItem) {
                         // Ensure the cart item is not null
@@ -107,7 +115,8 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                         }
                     }
                     ?>
-                     <tr>
+        </tr>
+        <tr>
                         <td colspan="3" style="text-align: right;"><strong>Shipping fee:</strong></td>
                         <td><?php echo number_format(38, 2); ?></td>
                     </tr>
@@ -115,9 +124,13 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                         <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
                         <td><?php echo number_format($totalAmount, 2); ?></td>
                     </tr>
-                </table>
+        
+      </tbody>
+    </table>
+  </div>
+        
                 <p><br>ALL ORDERS SUBMITTED ARE CONSIDERED FINAL. PLEASE DOUBLE-CHECK YOUR ORDERS TO AVOID ANY ISSUES!</p>
-            </center>
+        
 
             <div class="display_btn">
             <form action="clearcart.php" method="post">

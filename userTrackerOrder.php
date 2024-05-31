@@ -74,6 +74,7 @@ $result = $conn->query($sql);
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Size</th>
+                <th>Order Details</th>
             </tr>
 
             <?php
@@ -86,6 +87,7 @@ $result = $conn->query($sql);
                         <td><?php echo $row["itemname"]; ?></td>
                         <td><?php echo $row["quantity"]; ?></td>
                         <td><?php echo $row["size"]; ?></td>
+                        <td><button onclick="window.location.href='userTrackerPage.php'">Details</button></td>
                     </tr>
                     <?php
                 }
