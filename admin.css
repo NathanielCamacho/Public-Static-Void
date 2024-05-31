@@ -117,7 +117,7 @@ h1{
     margin-bottom: 15px;
   }
   table{
-    width:100%;
+    width:130%;
     table-layout: fixed;
   }
   .tbl-header{
@@ -134,13 +134,16 @@ h1{
     border: 1px solid rgba(0, 0, 0, 0.3);
   }
   th{
+    
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     color: #000000;
     text-transform: uppercase;
     border-right: solid 2px rgba(0, 0, 0, 0.1);
+    border-bottom:  solid 2px rgba(0,0,0,0.1);
+    
 
   }
   td{
@@ -156,16 +159,7 @@ h1{
   }
 
   
-td button{
-    width: 100%;
-    border-radius: 1px;
-}
 
-td button:hover{
-    color: white;
-    background-color: rgb(27, 26, 26);
-   
-}
 
 
 .main
@@ -186,22 +180,24 @@ td button:hover{
 }
 .content{
   margin: 0 auto; /* This centers the container horizontally */
-  width: 80%;
+  width: 100%;
 }
 .display_btn{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .display_btn button{
-    margin: 10px;
-    width: 100%;
+    
+    width: 150%;
     font-weight: bold;
-   
+   margin: auto;
     color: #3a3636;
-    padding: 10px 20px;
-    margin: 8px 0;
-    margin-right: 15px;
+    text-align: center;
+
+    
+   
     border: black solid transparent 1.5px;
     
     border-radius: 5px;
@@ -255,6 +251,7 @@ select,option{
     padding: 3px;
     width: 100%;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 h1{
@@ -267,11 +264,12 @@ h1{
        .radio-container {
            display: inline-block;
            position: relative;
-           padding-left: 35px;
-           margin-right: 15px;
+           padding-left: 25px;
+           margin-bottom:18px;
            cursor: pointer;
-           font-size: 18px;
+           font-size: 13px;
            user-select: none;
+           width: 100%;
        }
 
        .radio-container input {
@@ -284,8 +282,8 @@ h1{
            position: absolute;
            top: 0;
            left: 0;
-           height: 25px;
-           width: 25px;
+           height: 20px;
+           width: 20px;
            background-color: #eee;
            border-radius: 50%;
        }
@@ -309,8 +307,8 @@ h1{
        }
 
        .radio-container .checkmark:after {
-           top: 9px;
-           left: 9px;
+           top: 7px;
+           left: 6px;
            width: 8px;
            height: 8px;
            border-radius: 50%;

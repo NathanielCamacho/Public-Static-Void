@@ -44,7 +44,9 @@
     </div>
 
 <div class="main">
+    <h1>Parcel Information</h1>
     <div class="content">
+        <div class="tbl-content">
     <table>
             <tr>
                 <th>Order ID</th>
@@ -109,8 +111,10 @@
             $conn->close();
             ?>
         </table>
+    </div>
     
 </div>
-<button onclick="window.location.href='userTrackerOrder.php'" > Back</button>
+<div class="display_btn">
+<button onclick="window.location.href='userTrackerOrder.php'" > Back</button></div>
 </div>
 

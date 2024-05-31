@@ -67,6 +67,7 @@ $result = $conn->query($sql);
  
  
  <div class="content">
+    <div class="tbl-content">
         <table>
             <tr>
                 <th>Order ID</th>
@@ -95,7 +96,7 @@ $result = $conn->query($sql);
             }
             $conn->close();
             ?>
-        </table>
+        </table></div>
         </div>
     <br><div class="display_btn">
     <a href="userprofile.php"><button>Back</button></a>

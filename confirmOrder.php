@@ -92,7 +92,7 @@ $conn->close();
 
 <div class="main"> <h1>Customer's Payment Confirmation Page</h1>
     <div class="content">
-<div class="tbl-header">
+<div class="tbl-content">
         <table cellpadding="0" cellspacing="0">
             <thead>
             <tr>
@@ -106,9 +106,9 @@ $conn->close();
             </tr>
         </thead>
 </table>
-</div>
 
-<div class="tbl-content">
+
+
     <table cellpadding="0" cellspacing="0">
         <tbody>
             <?php if (isset($noPaymentFound) && $noPaymentFound): ?>
@@ -139,7 +139,8 @@ $conn->close();
                                 <option value="successful">Accept</option>
                                 <option value="failed">Cancel</option>
                             </select>
-                            <div class="status_btn"><button type="submit">Update</button></div>
+                            <br>
+                            <div class="display_btn"><button type="submit">Update</button></div>
                         </form>
                     </td>
                 </tr>
@@ -147,9 +148,9 @@ $conn->close();
         </tbody>
         </table>
     </div>
-        <div class="display_btn">
-            <a href="adminprofile.php"><button>Back</button></a>
-        </div>
+    
+            <a href="adminprofile.php"><button >Back</button></a>
+        
     </div>
 
     <script src="script.js"></script>  

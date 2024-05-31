@@ -160,8 +160,8 @@ nav ul li a{
     margin-top: 5px;
     text-align: center;
    width: 5%;
-   background-color: #007b0c;
-   color: white;
+   background-color: #e6e6e6;
+   color: black;
 }
 
 .qty-input {
@@ -175,7 +175,7 @@ nav ul li a{
     
     margin-top: 5px;
     content: attr(data-content);
-    background-color: #008909;
+    background-color: #e6e6e6;
     color: black;
     display: flex;
     align-items: center;
@@ -183,7 +183,7 @@ nav ul li a{
    
     width: 23px;
     height: 24px;
-    color: white;
+    color: black;
     transition: background-color 0.3s;
     cursor: pointer;
     border: 1px solid black;
@@ -213,7 +213,7 @@ nav ul li a{
 
 .number-left:hover::before,
 .number-right:hover::after {
-    background-color: #2da34d;
+    background-color: #373938;
 }
 
 /* Add to Cart Button */
@@ -237,7 +237,7 @@ nav ul li a{
     align-items: center;
     justify-content: center;
     color: white;
-    background-color:#007b0c ;
+    background-color:#000c4a ;
   }
   
   .svgIcon {
@@ -247,11 +247,11 @@ nav ul li a{
     align-items: center;
     justify-content: center;
     color: white;
-    background-color:#00ac20 ;
+    background-color:#1900fe ;
   }
   
   .Btn:hover .text {
-    background-color: #2E8B57;
+    background-color: #005b0e;
   }
   
   .Btn:hover .svgIcon {
@@ -292,12 +292,12 @@ hr {
 }
 
 .container label input:checked + span {
-    background-color: #015609;
+    background-color: #2800dd;
     color: white;
 }
 
 .container label input:checked + span:before {
-    box-shadow: inset 0 0 0 0.4375em #4eff60;
+    box-shadow: inset 0 0 0 0.4375em #4649e9;
 }
 
 .container label span {
@@ -306,7 +306,7 @@ hr {
     padding: 0.375em 0.75em 0.375em 0.375em;
     border-radius: 99em;
     transition: 0.25s ease;
-    color: #418156;
+    color: #000000;
 }
 
 .container label span:hover {
@@ -323,7 +323,7 @@ hr {
     border-radius: 50%;
     margin-right: 0.375em;
     transition: 0.25s ease;
-    box-shadow: inset 0 0 0 0.125em #194b15;
+    box-shadow: inset 0 0 0 0.125em #cfcfcf;
 }
 
 

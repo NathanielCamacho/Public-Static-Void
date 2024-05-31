@@ -99,7 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              <label for="psw"><b>Confirm Password</b></label>
              <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
     <br>
-              <label for=""><input type="checkbox" name="" id="" class="ui-checkbox"``>I Accept the terms and Conditions</label>
             <button type="submit" name="action" value="signup">Sign Up</button>
             <button onclick="window.location.href='loginpage.php'">Cancel</button>
         
