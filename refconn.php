@@ -102,7 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $sql = "INSERT INTO userdata (username, password, usertype) VALUES ('$inputUsername', '$inputPassword', 'user')";
             if ($conn->query($sql) === TRUE) {
-                echo "Signup successful. You may now log in using your credentials.";
+                echo "Signup successful. You may now log in using your credentials. Redirecting...";
+                header("refresh:3;url=homepage.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

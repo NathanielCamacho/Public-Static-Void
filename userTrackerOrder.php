@@ -61,16 +61,16 @@ $result = $conn->query($sql);
 
 
 <div class="main">
-    <h2>My Purchase</h2>
+    <h2>My Orders</h2>
 <br>
   
  
  
  <div class="content">
+    <div class="tbl-content">
         <table>
             <tr>
                 <th>Order ID</th>
-               
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Size</th>
@@ -96,7 +96,7 @@ $result = $conn->query($sql);
             }
             $conn->close();
             ?>
-        </table>
+        </table></div>
         </div>
     <br><div class="display_btn">
     <a href="userprofile.php"><button>Back</button></a>

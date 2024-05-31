@@ -64,7 +64,7 @@
     </div>
     
     <div class="background"> 
-      <div class="text3">New Arrival</div>
+      <div class="text3">New Arrivals</div>
       <div class="products_container">
       
      

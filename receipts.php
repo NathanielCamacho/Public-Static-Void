@@ -46,6 +46,7 @@
     <h2>User Payments</h2>
     <center>
     <br>
+    <div class="tbl-content">
     <table>
         <thead>
             <tr>
@@ -93,9 +94,10 @@
 </center>
         
     </table>
+</div>
     <br>
     <a href="userprofile.php">
-    <button style="width: 20%;" >BACK</button></a>
+    <button style="width: 10%;" >BACK</button></a>
     </div>
 </body>
 </html>

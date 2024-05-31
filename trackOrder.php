@@ -36,6 +36,7 @@
     <hr>
     <br>
     <div class="Content">
+        <div class="tbl-content">
         <table>
             <tr>
                 <th>Order ID</th>
@@ -93,7 +94,7 @@
                         <td>
                             <form action="orderstatusupdate.php" method="post">
                                 <input type="hidden" name="orderid" value="<?php echo $row["orderid"]; ?>">
-                                <label class="radio-container">Payment Confirmed
+                                <label class="radio-container">Payment
                                     <input type="radio" name="orderstatus" value="payconfirmed" <?php if ($row["orderstatus"] === "payconfirmed") echo "checked"; ?>>
                                     <span class="checkmark"></span>
                                 </label>
@@ -113,8 +114,10 @@
                         <td><?php echo $row["shipped_timestamp"]; ?></td>
                         <td>
                             <form action="orderdelete.php" method="post">
+                                <div class="display_btn">
                                 <input type="hidden" name="orderid" value="<?php echo $row["orderid"]; ?>">
                                 <button type="submit">Remove</button>
+                                </div>
                             </form>
                         </td>
                     </tr>
@@ -126,6 +129,7 @@
             $conn->close();
             ?>
         </table>
+    </div>
     </div>
    
     <button onclick="window.location.href='adminprofile.php'">Back</button>

@@ -92,24 +92,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="uname"><b>Username</b></label>
             <input autocomplete="off" type="text" placeholder="Enter Username" id="uname" name="username" required>
             <span class="error" id="usernameError">Username cannot contain spaces.</span>
-
             <label for="psw"><b>Password</b></label>
-            <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="password"      required>
+            <input autocomplete="off" type="password" placeholder="Enter Password" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
             <label><input type="checkbox"  checked="checked" name="remember"  class="ui-checkbox"> Remember me</label>
-            
-           
             <button type="submit" name="action" value="login">Login</button>
-           
-          
-                
-            
         </form>
-
         <div class="container">
             <span class="psw"><a href="forgotpw.php" class="pass">Forgot password?</a></span>
         </div>
-
         <div class="signup_btn">
         <a href="signuppage.php">I DON'T HAVE AN ACCOUNT YET</a>
     </div>

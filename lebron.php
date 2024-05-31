@@ -96,6 +96,61 @@
             </div>
         </div>
     </div>
+    <div class="item-details">
+        <h1>Product description</h1>
+        <p>Greatness is everywhere. The LeBron shirt was inspired by the King himself. Made from polyester for better versatility and comfort.</p>
+        <br>
+        <p>
+        🔘Features
+        <br>
+        &emsp;       ○ Cotton 
+<br>
+&emsp;      ○ Asian Size
+<br>
+&emsp;      ○ Premium Quality
+<br>
+&emsp;           ○ Soft, Stretchable, and Comfortable
+<br>
+&emsp;           ○ Designed for a relaxed and cozy look
+</p>
+<br>
+<p>
+    🔘Size/Fit
+    <br>
+
+    &emsp;○ Small - Chest: 18" x Length: 28" <br>
+    &emsp;○ Medium - Chest: 20" x Length: 29" <br>
+    &emsp;○ Large: Chest: 22" x Length: 30" <br>
+</p>
+<br>
+<p>
+🔘 Composition and Care
+<br>
+&emsp;◙ Washing
+<br>
+&emsp; &emsp; : Gentle cycle
+<br>
+&emsp; &emsp;: Wash dark colors separately
+<br>
+&emsp; &emsp;: Wash inside out with cold water
+<br>
+&emsp; ◙ Drying
+<br>
+&emsp; &emsp;: Hang-dry
+<br>
+&emsp; &emsp;: Tumble dry low
+<br>
+⚠️DO NOT ⚠️
+<br>
+&emsp;&emsp;: Do not dry clean
+<br>
+&emsp;&emsp;: Avoid using bleach esp. on dark fabrics
+</p>
+
+
+
+
+    </div>
 </div>
     <hr>
     

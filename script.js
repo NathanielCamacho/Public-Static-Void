@@ -72,4 +72,29 @@ function myFunction() {
     }
 }
 
+function myShowPass() {
+    var passwordField = document.getElementById("password1");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
+
+function myShowpass() {
+    var passwordField = document.getElementById("password2");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
+
+
+
+
+
+
+
+
 

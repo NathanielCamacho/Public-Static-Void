@@ -55,59 +55,82 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            display: none;
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("psw").value;
+            var confirmPassword = document.getElementById("psw-confirm").value;
+            var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+            confirmPasswordError.style.display = "none";
+
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                confirmPasswordError.style.display = "block";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div class="header">
-        <div class="navbar">
-            <a href="homepage.php"> 
-                <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
-            </a> 
-            <div class="logo_name">The Krooked</div>
-        
+    <div class="navbar">
+        <a href="homepage.php"> 
+            <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
+        </a> 
+        <div class="logo_name">The Krooked</div>
         <nav>   
         <ul>
-                      
-                      <li> 
-                          <a href="shopnow.php" class="about">
-                              <i class="fa-solid fa-table-list fa-xl"></i> 
-                          </a>
-                      </li>
-                      <li>     
-                          <a href="cart.php" class="cart">
-                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                          </a>
-                      </li>
-                      
-                      <li> 
-                          <a href="loginpage.php" class="profile">
-                              <i class="fa-regular fa-user fa-xl"></i>         
-                          </a>   
-                      </li> 
-                  </ul>
+            <li> 
+                <a href="shopnow.php" class="about">
+                    <i class="fa-solid fa-table-list fa-xl"></i> 
+                </a>
+            </li>
+            <li>     
+                <a href="cart.php" class="cart">
+                    <i class="fa-solid fa-cart-shopping fa-xl"></i>        
+                </a>
+            </li>
+            <li> 
+                <a href="loginpage.php" class="profile">
+                    <i class="fa-regular fa-user fa-xl"></i>         
+                </a>   
+            </li> 
+        </ul>
         </nav>  
-        </div>
     </div>
-    <div class="main">
-        <form id="unameForm" action="refconn.php" method="post">
-            <label for="uname"><b>Username</b></label>
-            <input autocomplete="off" type="text" placeholder="John Doe" id="uname" name="username" required>
-            <span class="error" id="usernameError">Username cannot contain spaces.</span>
+</div>
+<div class="main">
+    <form id="signupForm" action="refconn.php" method="post" onsubmit="return validateForm()">
+        <label for="uname"><b>Username</b></label>
+        <input autocomplete="off" type="text" placeholder="John_Doe" id="uname" name="username" required>
+        <span class="error" id="usernameError">Username cannot contain spaces.</span>
 
-            <label for="psw"><b>Password</b></label>
-            <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
+        <label for="psw"><b>Password</b></label>
+        <input autocomplete="off" type="password" placeholder="••••••••" id="psw" name="password" required>
 
-             <label for="psw"><b>Confirm Password</b></label>
-             <input autocomplete="off" type="password" placeholder="••••••••••••••" id="psw" name="password"   required>
-    <br>
-              <label for=""><input type="checkbox" name="" id="" class="ui-checkbox"``>I Accept the terms and Conditions</label>
-            <button type="submit" name="action" value="signup">Sign Up</button>
+        <label for="psw-confirm"><b>Confirm Password</b></label>
+        <input autocomplete="off" type="password" placeholder="••••••••" id="psw-confirm" name="confirm_password" required>
+        <span class="error" id="confirmPasswordError">Passwords do not match.</span>
         
-          
-                
-            
-        </form>
-
-    </div>
-    <script src="script.js"></script>
+        <br>
+        <label for="terms"><input type="checkbox" name="terms" id="terms" class="ui-checkbox" required>I Accept the Terms and Conditions</label>
+        <button type="submit" name="action" value="signup">Sign Up</button>
+    </form>
+</div>
 </body>
 </html>

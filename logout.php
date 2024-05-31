@@ -18,28 +18,6 @@
                 <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
             </a> 
             <div class="logo_name">The Krooked</div>
-        
-        <nav>   
-        <ul>
-                      
-                      <li> 
-                          <a href="shopnow.php" class="about">
-                              <i class="fa-solid fa-table-list fa-xl"></i> 
-                          </a>
-                      </li>
-                      <li>     
-                          <a href="cart.php" class="cart">
-                              <i class="fa-solid fa-cart-shopping fa-xl"></i>        
-                          </a>
-                      </li>
-                      
-                      <li> 
-                          <a href="loginpage.php" class="profile">
-                              <i class="fa-regular fa-user fa-xl"></i>         
-                          </a>   
-                      </li> 
-                  </ul>
-        </nav>  
         </div>
     </div>
     <div class="main">
@@ -48,13 +26,12 @@
     if(isset($_SESSION['username'])) {
         $_SESSION = array();
         session_destroy();
-        echo "<h1>Logout successful.</h1>";
+        echo "<h1>Logout successful. Redirecting...</h1>";
+        header("refresh:2;url=userprofile.php");
     } else {
         header("Location: loginpage.php");
         exit();
     }
     ?>
-    <hr>
-        <a href="homepage.php" class="btn"><button><h2>Go back to home page.</h2></button></a>
         </body>
 </html>
