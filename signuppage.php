@@ -101,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
               <label for=""><input type="checkbox" name="" id="" class="ui-checkbox"``>I Accept the terms and Conditions</label>
             <button type="submit" name="action" value="signup">Sign Up</button>
+            <button onclick="window.location.href='loginpage.php'">Cancel</button>
         
           
                 

@@ -492,6 +492,43 @@ button:hover {
   }
 
   /* Hide the default checkbox */
+
+  .eye_container_duplicate{
+    display: inline-flex;
+    justify-content: flex-end;
+     position: relative;
+     top: -55px;
+     left: 40.5vw;
+ 
+     cursor: pointer;
+     font-size: 13px;
+     user-select: none;
+  }
+
+  .eye_container_duplicate input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0s;
+    width: 0;
+  }
+
+  .eye_container_duplicate input:checked ~ .checkmark:after {
+    display: block;
+   }
+   
+   /* Style the checkmark/indicator */
+   .eye_container_duplicate .checkmark:after {
+    left: 0.35em;
+    top: 0.20em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #21f38a;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(-5deg);
+    animation: upAnimate 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+   }
+
 .eye_container input {
     position: absolute;
     opacity: 0;
@@ -505,7 +542,7 @@ button:hover {
    justify-content: flex-end;
     position: relative;
     top: -45px;
-    left: 23vw;
+    left: 30vw;
 
     cursor: pointer;
     font-size: 13px;
