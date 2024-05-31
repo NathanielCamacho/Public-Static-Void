@@ -34,6 +34,7 @@
 <div class="main">
     <h1 class="text">Item Inventory</h1>
     <div class="content">
+        <div class="tbl-content">
         <table>
             <tr>
                 <th>Product</th>
@@ -109,6 +110,7 @@
             $conn->close();
             ?>
         </table>
+    </div>
     </div>
     <div class="display_btn">
         <a href="adminprofile.php"><button>Back</button></a>
