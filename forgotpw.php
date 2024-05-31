@@ -48,13 +48,11 @@ session_start();
     </div>
     <div class="main">
         <h1>Reset Password</h1>
-        <p>Please enter your username and the date when your account was created to proceed with password reset.</p>
+        <p>Please enter your account's username to proceed with password reset.</p>
         <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            <label for="createstamp">Account Creation Date:</label>
-            <input type="text" name="createstamp" id="createstamp" placeholder="yyyy-mm-dd" required>
             <button type="submit">Validate</button>
         </form>
         <?php
@@ -77,11 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    if (isset($_POST['username']) && isset($_POST['createstamp'])) {
+    if (isset($_POST['username'])) {
         $username = $_POST['username'];
-        $createstamp_input = $_POST['createstamp'];
 
-        $sql = "SELECT *, DATE(createstamp) AS date_created FROM userdata WHERE username = '$username'";
+        $sql = "SELECT username FROM userdata WHERE username = '$username'";
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {

@@ -63,7 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $update_sql = "UPDATE userdata SET password = '$password1' WHERE username = '$username'";
         
         if ($conn->query($update_sql) === TRUE) {
-            echo "Password updated successfully. You can now <a href='loginpage.php'>login</a> with your new password.";
+            echo "Password updated successfully. You can now login with your new password.";
+            header("refresh:3;url=userprofile.php");
             unset($_SESSION['reset_username']);
             exit();
         } else {

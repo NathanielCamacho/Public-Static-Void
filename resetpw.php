@@ -16,6 +16,7 @@ if (!isset($_SESSION['reset_username'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="header">
@@ -53,9 +54,13 @@ if (!isset($_SESSION['reset_username'])) {
         <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
         <form action="resetpwlanding.php" method="post">
             <label for="password1">New Password:</label>
-            <input type="password" id="password1" name="password1" required>
+            <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
+            <span class="error" id="password1error">Password does not match.</span>
             <label for="password2">Confirm Password:</label>
-            <input type="password" id="password2" name="password2" required>
+            <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
+            <span class="error" id="password2error">Password does not match.</span>
             <button type="submit">Reset Password</button>
         </form>
     </div>
