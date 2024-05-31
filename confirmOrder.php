@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT up.`gcashname`, up.`refnumber`, up.`street`, up.`gcashnum`, up.`baranggay`, up.`city`, up.`state`, up.`zipcode`, o.`orderstatus`
+$sql = "SELECT up.`gcashname`, up.`refnumber`, up.`street`, up.`gcashnum`, up.`baranggay`, up.`city`, up.`state`, up.`zipcode`, up.`paymentstatus`, o.`orderstatus`
         FROM userpayments up
         INNER JOIN orders o ON up.`userid` = o.`userid`";
 $result = $conn->query($sql);
@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
         $city = $row["city"];
         $state = $row["state"];
         $zipcode = $row["zipcode"];
+        $paymentstatus = $row["paymentstatus"];
         $orderstatus = $row["orderstatus"];
 
         // Mapping orderstatus to display values
@@ -99,7 +100,7 @@ $conn->close();
                 <th>GCash Number</th>
                 <th>Reference Number</th>
                 <th>Address</th>
-              
+                <th>Payment Status</th>
                 <th>Order Status</th>
                 <th>Action</th>
             </tr>
@@ -120,8 +121,8 @@ $conn->close();
                     <td><?php echo $gcashnumber; ?></td>
                     <td><?php echo $refnumber; ?></td>
                     <td><?php echo $street.",<br>".$baranggay .", ".$city; ?></td>
+                    <td><?php echo $paymentstatus ?></td>
                     <td><?php echo $orderstatus_display; ?></td>
-
                     <td>
                         <form action="paymentupdate.php" method="post">
                             <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">

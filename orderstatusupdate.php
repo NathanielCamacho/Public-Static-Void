@@ -11,8 +11,6 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $orderid = $_POST["orderid"];
     $orderstatus = $_POST["orderstatus"];
-
-    // Remove SQL injection protection
     $sql_update = "UPDATE orders SET orderstatus='$orderstatus', updatestamp=NOW()";
     $sql_history = "INSERT INTO orderhistory (orderid, orderstatus) VALUES ('$orderid', '$orderstatus')";
 

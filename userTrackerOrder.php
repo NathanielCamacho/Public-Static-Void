@@ -61,7 +61,7 @@ $result = $conn->query($sql);
 
 
 <div class="main">
-    <h2>My Purchase</h2>
+    <h2>My Orders</h2>
 <br>
   
  
@@ -70,7 +70,6 @@ $result = $conn->query($sql);
         <table>
             <tr>
                 <th>Order ID</th>
-               
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Size</th>
