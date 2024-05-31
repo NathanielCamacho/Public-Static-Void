@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: loginpage.php");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,6 +90,61 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
+        <div class="item-details">
+        <h1>Product description</h1>
+        <p>The Magatta shirt is a mix of bright colors and intricate designs that capture the dynamic energy of the city streets. Stand out from the crowd with its distinct style and charisma.</p>
+        <br>
+        <p>
+        🔘Features
+        <br>
+        &emsp;       ○ Cotton 
+<br>
+&emsp;      ○ Asian Size
+<br>
+&emsp;      ○ Premium Quality
+<br>
+&emsp;           ○ Soft, Stretchable, and Comfortable
+<br>
+&emsp;           ○ Designed for a relaxed and cozy look
+</p>
+<br>
+<p>
+    🔘Size/Fit
+    <br>
+
+    &emsp;○ Small - Chest: 18" x Length: 28" <br>
+    &emsp;○ Medium - Chest: 20" x Length: 29" <br>
+    &emsp;○ Large: Chest: 22" x Length: 30" <br>
+</p>
+<br>
+<p>
+🔘 Composition and Care
+<br>
+&emsp;◙ Washing
+<br>
+&emsp; &emsp; : Gentle cycle
+<br>
+&emsp; &emsp;: Wash dark colors separately
+<br>
+&emsp; &emsp;: Wash inside out with cold water
+<br>
+&emsp; ◙ Drying
+<br>
+&emsp; &emsp;: Hang-dry
+<br>
+&emsp; &emsp;: Tumble dry low
+<br>
+⚠️DO NOT ⚠️
+<br>
+&emsp;&emsp;: Do not dry clean
+<br>
+&emsp;&emsp;: Avoid using bleach esp. on dark fabrics
+</p>
+
+
+
+
+    </div>
     </div>
         <hr>
         <div class="background">
