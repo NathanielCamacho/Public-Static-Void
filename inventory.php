@@ -113,7 +113,7 @@
     </div>
     </div>
            <a href="adminprofile.php"><button>Back</button></a>
-           <button onclick="window.location.href='increaseInventory.php'">Update Inventory</button>
+           <button onclick="window.location.href='inventorymgr.php'">Update Inventory</button>
     
 </div>
 <script src="script.js"></script>
