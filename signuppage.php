@@ -122,15 +122,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="psw"><b>Password</b></label>
         <input autocomplete="off" type="password" placeholder="••••••••" id="psw" name="password" required>
+        <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
+
 
         <label for="psw-confirm"><b>Confirm Password</b></label>
         <input autocomplete="off" type="password" placeholder="••••••••" id="psw-confirm" name="confirm_password" required>
+        <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunctionn()"><div class="checkmark"></div></label>
+
         <span class="error" id="confirmPasswordError">Passwords do not match.</span>
         
         <br>
-        <label for="terms"><input type="checkbox" name="terms" id="terms" class="ui-checkbox" required>I Accept the Terms and Conditions</label>
         <button type="submit" name="action" value="signup">Sign Up</button>
+        <button onclick="window.location.href='loginpage.php'">Cancel</button>
     </form>
 </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>

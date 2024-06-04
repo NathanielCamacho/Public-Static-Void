@@ -178,6 +178,38 @@ h1{
     background: linear-gradient(#e0ffe5, #989cac);
    
 }
+.sales-main h2{
+    border-top: #000000 solid 1px;
+    border-bottom: #000000 solid 1px;
+
+    width: 130%;
+}
+
+.sales-main{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(104, 104, 104, 0.2);
+    padding: 20px; /* Updated padding for better spacing */
+    
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    margin: auto;
+    margin-bottom: 50px;
+    position: relative;
+    top: 50px;
+    font-family: 'Times New Roman';
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(#e0ffe5, #989cac);
+}
+
+
+.sales-main .tbl-content{
+    height:450px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
 .content{
   margin: 0 auto; /* This centers the container horizontally */
   width: 100%;

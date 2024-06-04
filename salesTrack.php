@@ -112,9 +112,9 @@
         </table>
     </div>
     </div>
-           <a href="adminprofile.php"><button>Back</button></a>
-           <button onclick="window.location.href='increaseInventory.php'">Update Inventory</button>
-    
+    <div class="display_btn">
+        <a href="adminprofile.php"><button>Back</button></a>
+    </div>
 </div>
 <script src="script.js"></script>
 </body>

@@ -10,11 +10,11 @@ if (!isset($_SESSION["usertype"]) || $_SESSION["usertype"] != 'admin') {
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // Correctly use the password variable
 $dbname = "krookedweb";
 
 // Connect to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname); // Use password instead of username twice
 
 // Check connection
 if ($conn->connect_error) {
@@ -51,57 +51,48 @@ while($row = $salesData->fetch_assoc()) {
 $conn->close();
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Sales Track</title>
     <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
 <div class="header">
-        <div class="navbar">
-            <a href="#"> 
-                <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
-            </a> 
-            <div class="logo_name">The Krooked</div>
-        
-            <nav>   
+    <div class="navbar">
+        <a href="#">
+            <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo">
+        </a>
+        <div class="logo_name">The Krooked</div>
+        <nav>
             <ul>
                 <li>
-                    <a href="confirmOrder.php">Check Payments</a>
-                </li>
-                <li>
-                    <a href="trackOrder.php">Check Order</a>
-                </li>
-                <li>
-                    <a href="inventory.php">Inventory</a>
-                </li>
-                <li> 
                     <a href="logout.php" class="profile">
-                    <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
-                    </a>   
-                </li> 
+                        <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    </a>
+                </li>
             </ul>
-        </nav>  
-        </div>
+        </nav>
     </div>
-
+</div>
+<div class="main-content">
     <div class="main">
-
-      
-    <canvas id="salesChart" width="400" height="200"></canvas>
-    
+        <h1>Chart</h1>
+         
+         
+       
+         
+        
+        <canvas id="salesChart" width="400" height="200"></canvas>
+        <button onclick="window.location.href='adminprofile.php'">Back</button>
+   
 
 <script>
     const salesData = <?php echo json_encode($salesArray); ?>;
@@ -113,7 +104,6 @@ $conn->close();
             label: 'Number of Sold Items',
             data: salesData.map(item => item.sold_items),
             backgroundColor: [
-                
   "#b91d47",
   "#00aba9",
   "#2b5797",
@@ -146,9 +136,7 @@ $conn->close();
         document.getElementById('salesChart'),
         config
     );
-</script> 
-
-
-      
+</script> </div>
+</div>
 </body>
 </html>
