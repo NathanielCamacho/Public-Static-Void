@@ -136,7 +136,9 @@ $conn->close();
         data: data,
         options: {
             scales: {
-               
+               y:{
+                beginAtZero: true
+               }
             }
             
         }
@@ -147,6 +149,50 @@ $conn->close();
         config
     );
 </script> 
+<hr>
+<br>
+        <h1>Sales Numbers</h1>
+     
+          <div class="calendar">
+        <form method="POST" action="">
+         
+            <label for="start_date">Start Date:</label>
+            <input type="date" name="start_date" id="start_date" value="<?php echo htmlspecialchars($selectedStartDate); ?>">
+            <label for="end_date">End Date:</label>
+            <input type="date" name="end_date" id="end_date" value="<?php echo htmlspecialchars($selectedEndDate); ?>">
+            <br>
+         
+          <button type="submit">Filter</button>
+          <br>
+    </div>  
+  
+     </form>
+      
+            <h2>Sales from <?php echo htmlspecialchars($selectedStartDate); ?> to <?php echo htmlspecialchars($selectedEndDate); ?></h2>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Number of Sold Items</th>
+                </tr>
+                <?php 
+                $totalRevenue = 0; // Variable to store total revenue
+                foreach($salesArray as $row): 
+                    $itemRevenue = $row['itemprice'] * $row['sold_items']; // Calculate revenue for the current item
+                    $totalRevenue += $itemRevenue; // Add item revenue to total revenue 
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($row['itemname']); ?></td>
+                    <td><?php echo htmlspecialchars($row['itemprice']); ?></td>
+                    <td><?php echo htmlspecialchars($row['sold_items'] ?? 0); ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="2">Total Revenue</td>
+                    <td><?php echo '₱' . number_format($totalRevenue, 2); ?></td> <!-- Display total revenue -->
+                </tr>
+            </table>
+        </div>
 
 
       

@@ -58,13 +58,8 @@ function updateStock($conn, $itemname, $size, $quantity, $operation) {
 
         if ($operation === 'add') {
             $newStock = $currentStock + $quantity;
-        } else if ($operation === 'subtract') {
-            if ($currentStock >= $quantity) {
-                $newStock = $currentStock - $quantity;
-            } else {
-                return "Error: Not enough stock to remove.";
-            }
-        } else {
+        } 
+         else {
             return "Error: Invalid operation.";
         }
 
@@ -106,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,40 +128,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <div class="main">
+    
     <h1 class="text">Inventory Management</h1>
+   
     <form method="post" action="">
-        <p><input type="radio" name="operation" value="add"> Add Stocks</p>
-        <p><input type="radio" name="operation" value="subtract"> Remove Stocks</p><br>
-        <input type="submit" value="Continue">
-        <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["operation"])): ?>
-            <?php if ($_POST["operation"] == "add"): ?>
+    
+       
                 <h2>Add Stocks</h2>
                 <p>Item: <input type="text" name="additemname" placeholder="Mamba"></p>
                 <p>Size: <input type="text" name="additemsize" placeholder="S/M/L"></p>
-                <p>Count: <input type="number" name="addquantity" placeholder="15"></p><br>
-                <input type="submit" value="   Add   ">
-            <?php else: ?>
-                <h2>Remove Stocks</h2>
-                <p>Item: <input type="text" name="revitemname" placeholder="Mamba"></p>
-                <p>Size: <input type="text" name="revitemsize" placeholder="S/M/L"></p>
-                <p>Count: <input type="number" name="revquantity" placeholder="15"></p><br>
-                <input type="submit" value="  Remove  ">
-            <?php endif; ?>
-        <?php endif; ?>
-		<?php if ($addMessage && strpos($addMessage, 'Error') === false): ?>
-                <p><?php echo $addMessage; ?></p>
-            <?php elseif ($addMessage): ?>
-                <p style="color: red;"><?php echo $addMessage; ?></p>
-            <?php endif; ?>
-            
-            <!-- Display error/success messages for subtract operation -->
-            <?php if ($revMessage && strpos($revMessage, 'Error') === false): ?>
-                <p><?php echo $revMessage; ?></p>
-            <?php elseif ($revMessage): ?>
-                <p style="color: red;"><?php echo $revMessage; ?></p>
-            <?php endif; ?>
-    </form>
-    <button onclick="window.location.href='inventory.php'">Back</button>
+                <p>Count: <input type="number" name="addquantity" placeholder="15" class="addquantity"></p>
+                <input type="submit" value="   Add   " class="submit">
+                
+            </form>
+                <button onclick="window.location.href='inventory.php'" >Back</button>
+
+           
+    
+
+
+        
+
 </div>
 </body>
 </html>

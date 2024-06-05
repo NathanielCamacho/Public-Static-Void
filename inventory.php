@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Page</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="profile_css.css">
     <script src="https://kit.fontawesome.com/43b9de10c9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,9 +111,10 @@
             ?>
         </table>
     </div>
-    </div>
-           <a href="adminprofile.php"><button>Back</button></a>
-           <button onclick="window.location.href='inventorymgr.php'">Update Inventory</button>
+    </div>          
+     <button onclick="window.location.href='inventorymgr.php'" style="width: 15%;">Add Stocks</button> <a href="adminprofile.php"><button style="width: 15%;">Back</button></a>
+<br>
+          
     
 </div>
 <script src="script.js"></script>
