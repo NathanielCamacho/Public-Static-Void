@@ -24,8 +24,8 @@
                       
                       <li> 
                           <a href="receipts.php" class="about">
-                              Check Payments
-                          </a>
+                          Payment Status    
+                                              </a>
                       </li>
                       <li>     
                           <a href="userTrackerOrder.php" class="cart">
@@ -114,7 +114,9 @@
     </div>
     
 </div>
-<div class="display_btn">
-<button onclick="window.location.href='userTrackerOrder.php'" > Back</button></div>
-</div>
 
+<button onclick="window.location.href='userTrackerOrder.php'" > Back</button></div>
+
+
+</body>
+</html>

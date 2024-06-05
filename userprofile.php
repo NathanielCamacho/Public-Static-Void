@@ -57,7 +57,7 @@ $conn->close();
                       
                       <li> 
                           <a href="receipts.php" class="about">
-                              Check Payments
+                              Payment Status
                           </a>
                       </li>
                       <li>     
@@ -78,7 +78,7 @@ $conn->close();
     <div class="main">
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
         
-        <button onclick="window.location.href='shopnow.php'">Catalog</button>
+        <button onclick="window.location.href='shopnow.php'" style="width: 12%;">Catalog</button>
         <button onclick="window.location.href='cart.php'">Cart</button>
         
     </div>

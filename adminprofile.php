@@ -79,7 +79,7 @@ $conn->close();
             <nav>   
             <ul>
                 <li>
-                    <a href="confirmOrder.php">Check Payments</a>
+                    <a href="confirmOrder.php">Payments status</a>
                 </li>
                 <li>
                     <a href="trackOrder.php">Check Order</a>
@@ -99,7 +99,7 @@ $conn->close();
 
     <div class="main">
 
-      
+      <h1>Sales Chart</h1>
     <canvas id="salesChart" width="400" height="200"></canvas>
     
 
@@ -151,7 +151,7 @@ $conn->close();
 </script> 
 <hr>
 <br>
-        <h1>Sales Numbers</h1>
+        <h1>number of item sold</h1>
      
           <div class="calendar">
         <form method="POST" action="">
@@ -173,7 +173,7 @@ $conn->close();
                 <tr>
                     <th>Item</th>
                     <th>Price</th>
-                    <th>Number of Sold Items</th>
+                    <th>Number of sales</th>
                 </tr>
                 <?php 
                 $totalRevenue = 0; // Variable to store total revenue

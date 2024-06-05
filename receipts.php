@@ -24,7 +24,7 @@
                       
                       <li> 
                           <a href="receipts.php" class="about">
-                              Check Payments
+                          Payment Status
                           </a>
                       </li>
                       <li>     

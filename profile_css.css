@@ -122,7 +122,9 @@ nav ul li a{
   
 }
 
-
+.main ul li {
+    list-style: none;
+}
 
 .main h2{
     text-align: center;
@@ -224,7 +226,23 @@ label {
 }
 
    
+.calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    
 
+}
+
+.calendar input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.calendar button{
+    width: 100%;
+}
 
 .showpass{
     position: relative;

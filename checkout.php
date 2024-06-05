@@ -52,12 +52,12 @@ if (!isset($_SESSION['username'])) {
     <div class="main">
         <h1>Payment Instructions</h1>
         <p>Please follow the steps below to complete your payment:</p><br>
-        <ol>
-            <li>1. Open GCash app</li><br>
+        <ul>
+            <li> 1. Open GCash app</li><br>
             <li>2. Scan QR code</li><br>
             <img src="krooked product/QR.jpg" class="qr-code" alt="QR Code" witdh="300" height="300">
             <li>3. Input the required data</li><br>
-        </ol>
+</ul>
         
         <form action="paymentlanding.php" method="post">
             <label for="gcash_name">GCash Account Name:</label>
@@ -79,7 +79,7 @@ if (!isset($_SESSION['username'])) {
             <input type="text" id="zipcode" name="zipcode" placeholder="1000" required>
             <p><br>By clicking submit, you acknowlege that we do not provide REFUNDS for any CANCELLATIONS.</p>
             <form action="clearcart.php" method="post">
-            <button type="submit">Submit Payment</button> 
+            <button type="submit" style="width: 20%;">Submit Payment</button> 
             </form>
             <button onclick="window.location.href='userprofile.php'">Back</button>
            

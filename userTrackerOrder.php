@@ -40,7 +40,7 @@ $result = $conn->query($sql);
                       
                       <li> 
                           <a href="receipts.php" class="about">
-                              Check Payments
+                          Payment Status    
                           </a>
                       </li>
                       <li>     
@@ -61,7 +61,7 @@ $result = $conn->query($sql);
 
 
 <div class="main">
-    <h2>My Orders</h2>
+    <h1>My Orders</h1>
 <br>
   
  

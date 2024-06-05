@@ -19,36 +19,10 @@ $sql = "SELECT up.`gcashname`, up.`refnumber`, up.`street`, up.`gcashnum`, up.`b
         INNER JOIN orders o ON up.`userid` = o.`userid`";
 $result = $conn->query($sql);
 
+$payments = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $refnumber = $row["refnumber"];
-        $gcashnumber = $row["gcashnum"];
-        $gcashname = $row["gcashname"];
-        $street = $row["street"];
-        $baranggay = $row["baranggay"];
-        $city = $row["city"];
-        $state = $row["state"];
-        $zipcode = $row["zipcode"];
-        $paymentstatus = $row["paymentstatus"];
-        $orderstatus = $row["orderstatus"];
-
-        // Mapping orderstatus to display values
-        switch ($orderstatus) {
-            case 'placed':
-                $orderstatus_display = "Order Placed";
-                break;
-            case 'payconfirmed':
-                $orderstatus_display = "Payment Confirmed";
-                break;
-            case 'packed':
-                $orderstatus_display = "Order Packed";
-                break;
-            case 'shipped':
-                $orderstatus_display = "Order Shipped";
-                break;
-            default:
-                $orderstatus_display = "Unknown";
-        }
+        $payments[] = $row;
     }
 } else {
     $noPaymentFound = true;
@@ -105,51 +79,67 @@ $conn->close();
                 <th>Action</th>
             </tr>
         </thead>
-</table>
-
-
-
-    <table cellpadding="0" cellspacing="0">
         <tbody>
             <?php if (isset($noPaymentFound) && $noPaymentFound): ?>
                 <tr>
-                    <td colspan="4">No payments found.</td>
+                    <td colspan="7">No payments found.</td>
                 </tr>
             <?php else: ?>
-                <tr>
-                    <td><?php echo $gcashname; ?></td>
-                    <td><?php echo $gcashnumber; ?></td>
-                    <td><?php echo $refnumber; ?></td>
-                    <td><?php echo $street.",<br>".$baranggay .", ".$city; ?></td>
-                    <td><?php echo $paymentstatus ?></td>
-                    <td><?php echo $orderstatus_display; ?></td>
-                    <td>
-                        <form action="paymentupdate.php" method="post">
-                            <input type="hidden" name="gcashname" value="<?php echo $gcashname; ?>">
-                            <input type="hidden" name="gcashnumber" value="<?php echo $gcashnumber; ?>">
-                            <input type="hidden" name="refnumber" value="<?php echo $refnumber; ?>">
-                            <input type="hidden" name="street" value="<?php echo $street; ?>">
-                            <input type="hidden" name="baranggay" value="<?php echo $baranggay; ?>">
-                            <input type="hidden" name="city" value="<?php echo $city; ?>">
-                            <input type="hidden" name="state" value="<?php echo $state; ?>">
-                            <input type="hidden" name="zipcode" value="<?php echo $zipcode; ?>">
-                            <select name="paymentstatus">
-                                <option value="">--Option--</option>
-                                <option value="pending">Pending</option>
-                                <option value="successful">Accept</option>
-                                <option value="failed">Cancel</option>
-                            </select>
-                            <br>
-                            <div class="display_btn"><button type="submit">Update</button></div>
-                        </form>
-                    </td>
-                </tr>
+                <?php foreach ($payments as $payment): ?>
+                    <?php
+                    // Mapping orderstatus to display values
+                    switch ($payment['orderstatus']) {
+                        case 'placed':
+                            $orderstatus_display = "Order Placed";
+                            break;
+                        case 'payconfirmed':
+                            $orderstatus_display = "Payment Confirmed";
+                            break;
+                        case 'packed':
+                            $orderstatus_display = "Order Packed";
+                            break;
+                        case 'shipped':
+                            $orderstatus_display = "Order Shipped";
+                            break;
+                        default:
+                            $orderstatus_display = "Unknown";
+                    }
+                    ?>
+                    <tr>
+                        <td><?php echo $payment['gcashname']; ?></td>
+                        <td><?php echo $payment['gcashnum']; ?></td>
+                        <td><?php echo $payment['refnumber']; ?></td>
+                        <td><?php echo $payment['street'] . ",<br>" . $payment['baranggay'] . ", " . $payment['city']; ?></td>
+                        <td><?php echo $payment['paymentstatus']; ?></td>
+                        <td><?php echo $orderstatus_display; ?></td>
+                        <td>
+                            <form action="paymentupdate.php" method="post">
+                                <input type="hidden" name="gcashname" value="<?php echo $payment['gcashname']; ?>">
+                                <input type="hidden" name="gcashnumber" value="<?php echo $payment['gcashnum']; ?>">
+                                <input type="hidden" name="refnumber" value="<?php echo $payment['refnumber']; ?>">
+                                <input type="hidden" name="street" value="<?php echo $payment['street']; ?>">
+                                <input type="hidden" name="baranggay" value="<?php echo $payment['baranggay']; ?>">
+                                <input type="hidden" name="city" value="<?php echo $payment['city']; ?>">
+                                <input type="hidden" name="state" value="<?php echo $payment['state']; ?>">
+                                <input type="hidden" name="zipcode" value="<?php echo $payment['zipcode']; ?>">
+                                <select name="paymentstatus">
+                                    <option value="">--Option--</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="successful">Accept</option>
+                                    <option value="failed">Cancel</option>
+                                </select>
+                                <br>
+                                <div class="display_btn"><button type="submit">Update</button></div>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             <?php endif; ?>
         </tbody>
         </table>
     </div>
     
-            <a href="adminprofile.php"><button >Back</button></a>
+            <a href="adminprofile.php"><button>Back</button></a>
         
     </div>
 
