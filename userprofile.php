@@ -79,7 +79,7 @@ $conn->close();
         <h1>Welcome, <?php echo isset($userInfo['username']) ? $userInfo['username'] : 'Guest'; ?>!</h1>
         
         <button onclick="window.location.href='shopnow.php'" style="width: 12%;">Catalog</button>
-        <button onclick="window.location.href='cart.php'">Cart</button>
+        <button onclick="window.location.href='cart.php'" style="width: 12%;">Cart</button>
         
     </div>
 </body>

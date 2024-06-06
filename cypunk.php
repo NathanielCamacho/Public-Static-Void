@@ -12,6 +12,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Bangers&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quintessential&family=Satisfy&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<?php
+       $servername = "localhost";
+       $dbusername = "root";
+       $dbpassword = "";
+       $dbname = "krookedweb";
+       
+       // Create connection
+       $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+       
+        
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Fetch stock values
+        $sql = "SELECT sstock, mstock, lstock FROM magatta WHERE itemid = 5";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+
+        $s_stock = $row['sstock'];
+        $m_stock = $row['mstock'];
+        $l_stock = $row['lstock'];
+
+        
+
+        $conn->close();
+    ?>
     <form action="cartadder.php" method="post">
         <input type="hidden" name="product_id" value="5">
         <input type="hidden" name="product_name" value="Magatta"> 
@@ -74,12 +102,13 @@
                 
                     <input class="product-qty" type="number" name="quantity" value="1" min="1" max="9" >
                 
-                <div class="number-right" data-content="+" onclick="increaseQty()"></div>
+                <div class="number-right" data-content="+" onclick="increaseQty()"></div> &emsp;<div id="stockInfo" class="stockinfo"></div>
+            
             </div>
             <br>
                 <br>
                 <div class="submit">
-                    <button class="Btn" type="submit">
+                    <button id="addToCartBtn" class="Btn" type="submit">
                         <span class="text">Add To Cart</span>
                         <span class="svgIcon">
                             <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -89,6 +118,8 @@
                     </button>
                 </div>
             </div>
+            </div>
+
         </div>
         <div class="item-details">
         <h1>Product description</h1>
@@ -199,11 +230,65 @@
                     <a href="https://www.instagram.com/thekrkdclothing/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
                 </div>
                 <div class="col-3">
-                    <h3>@Bart Ceria</h3>
+                    <h3>@2023-2024</h3>
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
-    </form>
+
+       
+
+    <div class="popup" id="outOfStockPopup">
+        This product is out of stock!
+    </div>
+      <script src="script.js"></script>
+
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+                var s_stock = <?php echo $s_stock; ?>;
+                var m_stock = <?php echo $m_stock; ?>;
+                var l_stock = <?php echo $l_stock; ?>;
+
+                var sizeInputs = document.querySelectorAll('input[name="size"]');
+                var stockInfo = document.getElementById('stockInfo');
+                var addToCartBtn = document.getElementById('addToCartBtn');
+            var sizeInputs = document.querySelectorAll('input[name="size"]');
+            var outOfStockPopup = document.getElementById('outOfStockPopup');
+
+                function updateStockInfo() {
+                    var selectedSize = document.querySelector('input[name="size"]:checked').value;
+                    var stock = 0;
+
+                    if (selectedSize === 'S') stock = s_stock;
+                    if (selectedSize === 'M') stock = m_stock;
+                    if (selectedSize === 'L') stock = l_stock;
+
+                    stockInfo.textContent = selectedSize + ": " + stock + " available";
+                
+              
+                
+
+                if (selectedSize === 'S') stock = s_stock;
+                if (selectedSize === 'M') stock = m_stock;
+                if (selectedSize === 'L') stock = l_stock;
+
+                addToCartBtn.disabled = stock <= 0;
+                if (stock <= 0) {
+                    outOfStockPopup.classList.add('show-popup');
+                    setTimeout(function() {
+                        outOfStockPopup.classList.remove('show-popup');
+                    }, 3000); // Remove popup after 3 seconds
+                }
+            
+}
+
+                sizeInputs.forEach(function(input) {
+                    input.addEventListener('change', updateStockInfo);
+                });
+
+                updateStockInfo(); // Initial check
+              
+            });
+    </script> 
+    </form>  
 </body>
 </html>

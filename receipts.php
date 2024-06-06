@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="main">
-    <h2>User Payments</h2>
+    <h1>User Payments</h1>
     <center>
     <br>
     <div class="tbl-content">

@@ -501,6 +501,28 @@ hr {
     cursor: pointer;
 }
 
+.stockinfo
+{
+    font-family: 'Calibri';
+    font-size: 15px;
+    margin-top: 5px;
+}
 
 
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
 
+/* Displayed when needed */
+.show-popup {
+    display: block;
+}
