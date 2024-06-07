@@ -14,9 +14,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT up.`gcashname`, up.`refnumber`, up.`street`, up.`gcashnum`, up.`baranggay`, up.`city`, up.`state`, up.`zipcode`, up.`paymentstatus`, o.`orderstatus`
-        FROM userpayments up
-        INNER JOIN orders o ON up.`userid` = o.`userid`";
+// Initialize filter status
+$filterStatus = isset($_POST['filterstatus']) ? $_POST['filterstatus'] : 'all';
+
+// Adjust SQL query based on filter status
+if ($filterStatus === 'all') {
+    $sql = "SELECT up.gcashname, up.refnumber, up.street, up.gcashnum, up.baranggay, up.city, up.state, up.zipcode, up.paymentstatus, o.orderstatus
+            FROM userpayments up
+            INNER JOIN orders o ON up.userid = o.userid";
+} else {
+    $sql = "SELECT up.gcashname, up.refnumber, up.street, up.gcashnum, up.baranggay, up.city, up.state, up.zipcode, up.paymentstatus, o.orderstatus
+            FROM userpayments up
+            INNER JOIN orders o ON up.userid = o.userid
+            WHERE up.paymentstatus = '$filterStatus'";
+}
+
 $result = $conn->query($sql);
 
 $payments = [];
@@ -66,7 +78,17 @@ $conn->close();
 
 <div class="main"> <h1>Customer's Payment Confirmation Page</h1>
     <div class="content">
-<div class="tbl-content">
+    <form method="post" action="confirmOrder.php">
+        <label for="filterstatus">Filter by Payment Status:</label>
+        <select name="filterstatus" id="filterstatus">
+            <option value="all" <?php if ($filterStatus === 'all') echo 'selected'; ?>>All</option>
+            <option value="pending" <?php if ($filterStatus === 'pending') echo 'selected'; ?>>Pending</option>
+            <option value="successful" <?php if ($filterStatus === 'successful') echo 'selected'; ?>>Successful</option>
+            <option value="failed" <?php if ($filterStatus === 'failed') echo 'selected'; ?>>Failed</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <div class="tbl-content">
         <table cellpadding="0" cellspacing="0">
             <thead>
             <tr>
@@ -114,19 +136,12 @@ $conn->close();
                         <td><?php echo $orderstatus_display; ?></td>
                         <td>
                             <form action="paymentupdate.php" method="post">
-                                <input type="hidden" name="gcashname" value="<?php echo $payment['gcashname']; ?>">
-                                <input type="hidden" name="gcashnumber" value="<?php echo $payment['gcashnum']; ?>">
                                 <input type="hidden" name="refnumber" value="<?php echo $payment['refnumber']; ?>">
-                                <input type="hidden" name="street" value="<?php echo $payment['street']; ?>">
-                                <input type="hidden" name="baranggay" value="<?php echo $payment['baranggay']; ?>">
-                                <input type="hidden" name="city" value="<?php echo $payment['city']; ?>">
-                                <input type="hidden" name="state" value="<?php echo $payment['state']; ?>">
-                                <input type="hidden" name="zipcode" value="<?php echo $payment['zipcode']; ?>">
                                 <select name="paymentstatus">
                                     <option value="">--Option--</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="successful">Accept</option>
-                                    <option value="failed">Cancel</option>
+                                    <option value="pending" <?php if ($payment['paymentstatus'] === 'pending') echo 'selected'; ?>>Pending</option>
+                                    <option value="successful" <?php if ($payment['paymentstatus'] === 'successful') echo 'selected'; ?>>Accept</option>
+                                    <option value="failed" <?php if ($payment['paymentstatus'] === 'failed') echo 'selected'; ?>>Cancel</option>
                                 </select>
                                 <br>
                                 <div class="display_btn"><button type="submit">Update</button></div>
