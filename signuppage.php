@@ -121,19 +121,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <span class="error" id="usernameError">Username cannot contain spaces.</span>
 
         <label for="psw"><b>Password</b></label>
-        <input autocomplete="off" type="password" placeholder="••••••••" id="psw" name="password" required>
+        <input autocomplete="off" type="password" placeholder="••••••••" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunction()"><div class="checkmark"></div></label>
 
 
         <label for="psw-confirm"><b>Confirm Password</b></label>
-        <input autocomplete="off" type="password" placeholder="••••••••" id="psw-confirm" name="confirm_password" required>
+        <input autocomplete="off" type="password" placeholder="••••••••" id="psw-confirm" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         <label class="eye_container"><input checked="checked" type="checkbox" onclick="myFunctionn()"><div class="checkmark"></div></label>
 
         <span class="error" id="confirmPasswordError">Passwords do not match.</span>
         
         <br>
-        <button type="submit" name="action" value="signup">Sign Up</button>
-        <button onclick="window.location.href='loginpage.php'">Cancel</button>
+        <button type="submit" name="action" value="signup" style="width: 13%;">Sign Up</button>
+        <button onclick="window.location.href='loginpage.php'" style="width: 13%;">Cancel</button>
     </form>
 </div>
 

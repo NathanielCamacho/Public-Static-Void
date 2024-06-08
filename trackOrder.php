@@ -14,16 +14,25 @@
 
 <div class="header">
     <div class="navbar">
-        <a href="#"> 
+        <a href="adminprofile.php"> 
             <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
         </a> 
         <div class="logo_name">The Krooked</div>
         
         <nav>   
-            <ul>
+        <ul>
+                <li>
+                    <a href="confirmOrder.php">Payments status</a>
+                </li>
+                <li>
+                    <a href="trackOrder.php">Check Order</a>
+                </li>
+                <li>
+                    <a href="inventory.php">Inventory</a>
+                </li>
                 <li> 
                     <a href="logout.php" class="profile">
-                        <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
+                  Logout     
                     </a>   
                 </li> 
             </ul>

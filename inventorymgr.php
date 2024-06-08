@@ -58,8 +58,7 @@ function updateStock($conn, $itemname, $size, $quantity, $operation) {
 
         if ($operation === 'add') {
             $newStock = $currentStock + $quantity;
-        } 
-         else {
+        } else {
             return "Error: Invalid operation.";
         }
 
@@ -75,7 +74,32 @@ function updateStock($conn, $itemname, $size, $quantity, $operation) {
     }
 }
 
+// Fetch product names for the select options
+$productNames = [];
+$productQuery = "SELECT DISTINCT itemname FROM (
+    SELECT itemname FROM mamba
+    UNION ALL
+    SELECT itemname FROM lebron
+    UNION ALL
+    SELECT itemname FROM anniversary
+    UNION ALL
+    SELECT itemname FROM felix
+    UNION ALL
+    SELECT itemname FROM magatta
+    UNION ALL
+    SELECT itemname FROM dalidoll
+) AS products";
+
+$result = $conn->query($productQuery);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $productNames[] = $row['itemname'];
+    }
+}
+
 $addMessage = $revMessage = "";
+$popupMessage = "";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -84,6 +108,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $addItemSize = $_POST["additemsize"];
         $addQuantity = (int)$_POST["addquantity"];
         $addMessage = updateStock($conn, $addItemName, $addItemSize, $addQuantity, 'add');
+        if (strpos($addMessage, 'successfully') !== false) {
+            $popupMessage = $addMessage;
+        }
     }
 
     if (isset($_POST["revitemname"], $_POST["revitemsize"], $_POST["revquantity"])) {
@@ -93,6 +120,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $revMessage = updateStock($conn, $revItemName, $revItemSize, $revQuantity, 'subtract');
     }
 }
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -118,37 +147,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <ul>
                 <li>
-                    <a href="logout.php" class="profile">
-                        <i class="fa-solid fa-right-from-bracket fa-xl"></i>
-                    </a>
+                    <a href="confirmOrder.php">Payments status</a>
                 </li>
+                <li>
+                    <a href="trackOrder.php">Check Order</a>
+                </li>
+                <li>
+                    <a href="inventory.php">Inventory</a>
+                </li>
+                <li> 
+                    <a href="logout.php" class="logout">
+                        Logout     
+                    </a>   
+                </li> 
             </ul>
         </nav>
     </div>
 </div>
 
 <div class="main">
-    
-    <h1 class="text">Inventory Management</h1>
-   
+    <h1 class="text">Stocks Update</h1>
     <form method="post" action="">
-    
        
-                <h2>Add Stocks</h2>
-                <p>Item: <input type="text" name="additemname" placeholder="Mamba"></p>
-                <p>Size: <input type="text" name="additemsize" placeholder="S/M/L"></p>
-                <p>Count: <input type="number" name="addquantity" placeholder="15" class="addquantity"></p>
-                <input type="submit" value="   Add   " class="submit">
-                
-            </form>
-                <button onclick="window.location.href='inventory.php'" >Back</button>
-
-           
-    
-
-
-        
-
+        <p>Item: 
+            <select name="additemname">
+                <?php
+                foreach ($productNames as $productName) {
+                    echo "<option value=\"$productName\">$productName</option>";
+                }
+                ?>
+            </select>
+        </p>
+        <p>Size: 
+            <select name="additemsize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+        </p>
+        <p>Count: <input type="number" name="addquantity" placeholder="15" class="addquantity" value="1" min="1"></p>
+        <input type="submit" value="Add" class="submit"></form> 
+   
 </div>
+
+<?php
+if (!empty($popupMessage)) {
+    echo "<script>alert('$popupMessage');</script>";
+}
+?>
+
 </body>
 </html>

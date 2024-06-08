@@ -58,16 +58,25 @@ $conn->close();
 
 <div class="header">
         <div class="navbar">
-            <a href="#"> 
+            <a href="adminprofile.php"> 
                 <img src="krooked product/white_logo.png" class="logo" alt="The Krooked Logo"> 
             </a> 
             <div class="logo_name">The Krooked</div>
         
         <nav>   
-            <ul>
+        <ul>
+                <li>
+                    <a href="confirmOrder.php">Payments status</a>
+                </li>
+                <li>
+                    <a href="trackOrder.php">Check Order</a>
+                </li>
+                <li>
+                    <a href="inventory.php">Inventory</a>
+                </li>
                 <li> 
                     <a href="logout.php" class="profile">
-                    <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
+                  Logout     
                     </a>   
                 </li> 
             </ul>
@@ -80,13 +89,16 @@ $conn->close();
     <div class="content">
     <form method="post" action="confirmOrder.php">
         <label for="filterstatus">Filter by Payment Status:</label>
-        <select name="filterstatus" id="filterstatus">
+        <br>
+        <select name="filterstatus" id="filterstatus" style="width: 10%;">
             <option value="all" <?php if ($filterStatus === 'all') echo 'selected'; ?>>All</option>
             <option value="pending" <?php if ($filterStatus === 'pending') echo 'selected'; ?>>Pending</option>
             <option value="successful" <?php if ($filterStatus === 'successful') echo 'selected'; ?>>Successful</option>
             <option value="failed" <?php if ($filterStatus === 'failed') echo 'selected'; ?>>Failed</option>
         </select>
-        <button type="submit">Filter</button>
+        <br>
+        <button type="submit" class="filter_btn">Filter</button>
+        <br>
     </form>
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0">

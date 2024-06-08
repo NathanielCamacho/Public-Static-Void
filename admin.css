@@ -171,11 +171,12 @@ h1{
     width: 80%;
     text-align: center;
     margin: auto;
+    margin-bottom: 100px;
     position: relative;
     top: 50px;
     font-family: 'Times New Roman';
     background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-    background: linear-gradient(#e0ffe5, #989cac);
+    background: linear-gradient(#c0c0c0, #e9fcff);
    
 }
 .sales-main h2{
@@ -254,6 +255,21 @@ button{
    margin-top: 10px;
     
     margin-right: 15px;
+    border: black solid 1.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10%;
+}
+
+.filter_btn{
+    font-size: 17px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #3a3636;
+    padding: 5px 15px;
+   margin: 10px;
+    
+   
     border: black solid 1.5px;
     border-radius: 5px;
     cursor: pointer;

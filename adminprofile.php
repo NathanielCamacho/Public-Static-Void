@@ -51,9 +51,6 @@ while($row = $salesData->fetch_assoc()) {
 $conn->close();
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +86,7 @@ $conn->close();
                 </li>
                 <li> 
                     <a href="logout.php" class="profile">
-                    <i class="fa-solid fa-right-from-bracket fa-xl"></i>      
+                  Logout     
                     </a>   
                 </li> 
             </ul>
@@ -118,14 +115,16 @@ $conn->close();
   "#00aba9",
   "#2b5797",
   "#e8c3b9",
-  "#1e7145"
+  "#1e7145",
+  "#6F4417"
 ],
             borderColor: [
   "#b91d47",
   "#00aba9",
   "#2b5797",
   "#e8c3b9",
-  "#1e7145"
+  "#1e7145",
+  "#6F4417"
 ],
             borderWidth: 1
         }]
@@ -135,12 +134,22 @@ $conn->close();
         type: 'bar',
         data: data,
         options: {
-            scales: {
-               y:{
-                beginAtZero: true
-               }
-            }
+            plugins: {
+                legend: {
+                    display: false,},
+                    title: {
+      display: true,
+      text: "Number of sold items"
+    }
+                
+            },
+
             
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
     };
 

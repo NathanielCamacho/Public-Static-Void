@@ -63,7 +63,7 @@ if (!isset($_SESSION['reset_username'])) {
             <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             <label class="eye_container_duplicate"><input checked="checked" type="checkbox" onclick="myShowpass()"><div class="checkmark"></div></label>
             <span class="error" id="password2error">Password does not match.</span>
-            <button type="submit">Reset Password</button>
+            <button type="submit" style="width: 20%;">Reset Password</button>
         </form>
     </div>
 </body>

@@ -53,7 +53,8 @@ session_start();
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            <button type="submit">Validate</button>
+            <button type="submit" style="width: 12%;">Validate</button>
+            <button onclick="window.location.href='loginpage.php'" style="width: 12%;">Back</button>
         </form>
         <?php
 $servername = "localhost";

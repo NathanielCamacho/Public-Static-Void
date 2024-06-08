@@ -138,7 +138,7 @@
                 <a href="https://www.instagram.com/thekrkdclothing/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
             </div>
             <div class="col-3">
-                <h3>@Bart Ceria</h3>
+                <h3>@2023-2024</h3>
             </div>
         </div>
     </div>
